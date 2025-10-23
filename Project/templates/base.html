@@ -11,6 +11,9 @@
     </head>
     <body>
         <header>
+            {% block header %}
+                
+            {% endblock %}
             <nav class="nav-header">
                 <span class="links">
                     <a href="/shop">КАТАЛОГ</a>
@@ -41,9 +44,6 @@
                     {% endif %}
                 </span>
             </nav>
-            {% block header %}
-                
-            {% endblock %}
             
         </header>
 

@@ -22,6 +22,7 @@ user.user.add_url_rule(
     view_func = user.logout
 
 )
+
 shop.shop.add_url_rule(
     rule ="/shop",
     view_func = shop.render_shop,

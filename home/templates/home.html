@@ -1,11 +1,12 @@
 {% extends "base.html"%}
 
 {% block title %}
-    Home
+    Drones
 {% endblock %}
 
 {% block links %}
     <link rel="stylesheet" href="{{ url_for('home.static', filename= 'css/home_header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('home.static', filename= 'css/home.css')}}">
 {% endblock %}
 
 {% block header %}
@@ -15,8 +16,77 @@
         <p>ЯКІ ЗМІНЮЮТЬ РЕАЛЬНІСТЬ</p>
     </span>
     <img class="drones" src="{{ url_for('home.static', filename= 'icon/drones.svg') }}" alt="">
+    
+    <div class="to-catalog">
+        <p>Передові технології в новому місці.</p>
+        <p>Обирай найкраще для найважливішого.</p>
+        <button id="to-catalog-button" type="button"><a href="/shop">До каталогу</a></button>
+    </div>
 {% endblock %}
 
+
 {% block content %}
-    <h1>Home page</h1>
+    <div class="about-us">
+        <h1>ПРО НАС</h1>
+        
+        <p>Ми — команда, що об'єднує технології та надійність. </p>
+        <p>Пропонуємо дрони й тепловізори, перевірені у найскладніших умовах.</p>
+        <p>Обираємо тільки те, чому довіряємо самі.</p>
+        
+        <button id="read-more" type="button">ЧИТАТИ БІЛЬШЕ<img src="{{ url_for('home.static', filename= 'icon/arrow.svg') }}" alt=""></button>
+    </div>
+
+
+
+    <div class="new">
+        <h1>НОВЕ НА САЙТІ</h1>
+        <div id="new-img-container">
+            <div class="new-drones">
+                <img class = "drone-new" src="{{ url_for('home.static', filename= 'media/images/.png') }}" alt="">
+                <img class = "background-new" src="{{ url_for('home.static', filename= 'media/images/river.png') }}" alt="">
+                <div id="new-text">
+                    <div>
+                    <h1>DJI Mini 4k</h1>
+                    <p>Easy-to Use Mini Camera Drone</p>
+                    </div>
+                    
+                    <div>
+                        <p>from 100$ to 299$</p>
+                        <button>купити</button>
+                    </div>
+                </div>
+                
+            </div>
+            <div>
+                <img class = "drone-new" src="{{ url_for('home.static', filename= 'media/images/.png') }}" alt="">
+                <div class = "background-new">
+                    <h1></h1>
+                    <p></p>
+                    <p></p>
+                </div>
+                <button></button>
+            </div>
+            <div>
+                <img class = "drone-new" src="{{ url_for('home.static', filename= 'media/images/.png') }}" alt="">
+                <div class = "background-new"></div>
+                <h1></h1>
+                <p></p>
+                <p></p>
+                <button></button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="catalog">
+        <h1>КАТАЛОГ</h1>
+        <div class = ""></div>
+        <div class = ""></div>
+        <div class = ""></div>
+        <div class = ""></div>
+        <button class = ""></button>
+    </div>
 {% endblock %}
+
+

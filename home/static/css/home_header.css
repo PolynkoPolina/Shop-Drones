@@ -1,3 +1,21 @@
+body{
+    overflow-x: hidden;
+}
+
+button{
+    cursor: pointer;
+}
+
+
+@font-face {
+    font-family: GT Walsheim Pro;
+    src: url(fonts/GT_Walsheim_Pro.otf);
+}
+
+body *{
+    font-family: GT Walsheim Pro;
+}
+
 :root{
     --sizeImageDrone: 115vh;
 }
@@ -16,12 +34,14 @@ header{
     border-radius: 50%;
     background-color: #FFFFFF;
 }
+
 .drones{
     position: absolute;
     top: 11vh;
     width: var(--sizeImageDrone);
     height: var(--sizeImageDrone);
 }
+
 .slogan{
     display: flex;
     flex-direction: column;
@@ -29,5 +49,36 @@ header{
     align-items: center;
     margin-bottom: 35vh;
     font-size: 8.24vh;
+    /*font: ;*/
     color: #FFFFFF;
+}
+
+.to-catalog{
+    width: 20vw;
+    height: 4.2vh;
+    position: absolute;
+    font-size: 2vh;
+    margin-left: 63vw;
+    margin-top: 76vh;
+    font-size: 2vh;
+}
+
+
+
+#to-catalog-button{
+    width: 13vw;
+    height: 6.1vh;
+    border-radius: 6vh;
+    background-color: #0C122A;
+    margin-top: 3vh;
+    border: none;
+}
+
+#to-catalog-button:hover{
+    background-color: #02040c;
+}
+
+#to-catalog-button a{
+    color: #FFFFFF;
+    font-size: 2.7vh
 }
