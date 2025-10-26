@@ -41,38 +41,55 @@
     <div class="new">
         <h1>НОВЕ НА САЙТІ</h1>
         <div id="new-img-container">
-            <div class="new-drones">
-                <img class = "drone-new" src="{{ url_for('home.static', filename= 'media/images/.png') }}" alt="">
+            <div class="new-drones" >    
+                <img class = "drone-new" src="{{ url_for('home.static', filename= 'media/images/drone_1.png') }}" alt="">
                 <img class = "background-new" src="{{ url_for('home.static', filename= 'media/images/river.png') }}" alt="">
-                <div id="new-text">
-                    <div>
-                    <h1>DJI Mini 4k</h1>
-                    <p>Easy-to Use Mini Camera Drone</p>
+                <div class="new-text" id="new-1">
+                    
+                    <div id="new-name-description">
+                    <p id="new-name">DJI Mini 4k</p>
+                    <span>Easy-to Use Mini Camera Drone</span>
                     </div>
                     
-                    <div>
+                    <div class = "buy">
                         <p>from 100$ to 299$</p>
-                        <button>купити</button>
+                        <button type = "button" class="new-buy-button">КУПИТИ <img src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt=""></button>
                     </div>
                 </div>
-                
+              
             </div>
-            <div>
-                <img class = "drone-new" src="{{ url_for('home.static', filename= 'media/images/.png') }}" alt="">
+            <div class="new-drones">
+                <img src="{{ url_for('home.static', filename= 'media/images/drone_2.png') }}" alt="" class="drone-new">
                 <div class = "background-new">
-                    <h1></h1>
-                    <p></p>
-                    <p></p>
+                    <div class="new-text" id="new-2">
+                    
+                        <div id="new-name-description">
+                        <p id="new-name">DJI Mini 4k Pro</p>
+                        <span>Easy-to Use Mini Camera Drone</span>
+                        </div>
+                        
+                        <div class = "buy">
+                            <p>from 100$ to 299$</p>
+                            <button type = "button" class="new-buy-button">КУПИТИ <img src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt=""></button>
+                        </div>
+                    </div>
                 </div>
-                <button></button>
             </div>
-            <div>
-                <img class = "drone-new" src="{{ url_for('home.static', filename= 'media/images/.png') }}" alt="">
+            <div class="new-drones">
+                <img class = "drone-new" src="{{ url_for('home.static', filename= 'media/images/drone_1.png') }}" alt="">
                 <div class = "background-new"></div>
-                <h1></h1>
-                <p></p>
-                <p></p>
-                <button></button>
+                <div class="new-text" id="new-3">
+                    
+                    <div id="new-name-description">
+                    <p id="new-name">DJI Mini 4k</p>
+                    <span>Easy-to Use Mini Camera Drone</span>
+                    </div>
+                    
+                    <div class = "buy">
+                        <p>from 100$ to 299$</p>
+                        <button type = "button" class="new-buy-button">КУПИТИ <img src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt=""></button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

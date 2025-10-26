@@ -51,6 +51,7 @@ main{
 }
 
 #new-img-container{
+    position: relative;
     display: flex;
     width: 94.5vw;
     justify-content: space-between;
@@ -58,39 +59,89 @@ main{
 }
 
 .drone-new{
-    
+    position: absolute;
+    width: 20.9vw;
+    height: 45.8vh;
+    bottom: 260;
+    left: 100;
 }
 
 .background-new{
-    position: absolute;
     top: 0;
     left: 0;
-    height: 51.4vh;
-    width: 30.3vw;
-}
-
-#new-text{
-    position: absolute;
-    bottom: 0;
-    height: 40vh;
-    width: 30.3vw;
-    color: #FFFFFF;
-    background-image: linear-gradient(to top, #F5BE4F 3%, transparent 100%);
-}
-
-#new-text h1{
-    color: #FFFFFF;
-}
-
-.new-drones{
-    position: relative;
-    overflow: hidden;
     height: 51.4vh;
     width: 30.3vw;
     border-radius: 2vh;
 }
 
-#read-more{
+.new-text{
+    position: absolute;
+    bottom: 0;
+    height: 40vh;
+    width: 30.3vw;
+    color: #FFFFFF;
+    border-radius: 2vh;
+}
+
+
+#new-1{
+    background-image: linear-gradient(to top, #F5BE4F 3%, transparent 90%);
+}
+
+#new-2{
+    background-image: linear-gradient(to top, #1A271B 3%, transparent 90%);
+}
+
+#new-3{
+    background-image: linear-gradient(to top, #4F94A4 3%, transparent 90%);
+}
+.new-text h1{
+    color: #FFFFFF;
+    
+}
+
+#new-name{
+    font-size: 5vh;
+}
+
+#new-name-description{
+    margin-top: 15.7vh;
+    margin-left: 2vw;
+}
+
+.buy{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2vw;
+    margin-top: 8vh;
+    margin-right: 2vw;
+    align-items: center;
+}
+
+.new-drones{
+    position: relative;
+    border-radius: 2vh;
+    height: 51.4vh;
+    width: 30.3vw;
+}
+
+.new-buy-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6vh;
+    width: 8.4vw;
+    height: 4.7vh;
+    margin-top: 2vh;
+    background-color: transparent;
+    border: 0.1vh solid #FFFFFF;
+    font-size: 2vh;
+    gap: 1vw;
+    color: #FFFFFF;
+    margin-bottom: 2vh;
+}
+
+#read-more {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,6 +160,10 @@ main{
     background-color: #eaeaec;
 }
 
+.catalog h1{
+    color: #CDD5DD;
+    margin-top: 10vh;
+}
 
 
 
