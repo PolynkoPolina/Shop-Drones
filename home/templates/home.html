@@ -20,7 +20,7 @@
     <div class="to-catalog">
         <p>Передові технології в новому місці.</p>
         <p>Обирай найкраще для найважливішого.</p>
-        <button id="to-catalog-button" type="button"><a href="/shop">До каталогу</a></button>
+        <button id="to-catalog-button" type="button"><a href="/shop">ДО КАТАЛОГУ</a></button>
     </div>
 {% endblock %}
 
@@ -95,15 +95,45 @@
     </div>
 
 
-
-    <div class="catalog">
+    <div class="catalog-container">
         <h1>КАТАЛОГ</h1>
-        <div class = ""></div>
-        <div class = ""></div>
-        <div class = ""></div>
-        <div class = ""></div>
-        <button class = ""></button>
+        <div class="catalog">
+            <div class = "catalog-product">
+                <img class = "catalog-img" src="{{ url_for('home.static', filename= 'media/images/drone_2.png') }}" alt="">             
+                <div class = "catalog-price">
+                    <h2>DJI Mini 4K</h2>
+                    <div id="discount-container">
+                        <p id = "discount">29 900$</p>
+                        <p id="price-with-discount">29 900$</p>
+                    </div>
+                </div>
+            </div>
+            <div class = "catalog-product">
+                <img class = "catalog-img" id="catalog-3" src="{{ url_for('home.static', filename= 'media/images/drone_3.png') }}" alt="">
+                <div class = "catalog-price">
+                    <h2>DJI Mini 4K</h2>
+                    <p>29 900$</p>
+                </div> 
+            </div>
+            <div class = "catalog-product">
+                <img class = "catalog-img" src="{{ url_for('home.static', filename= 'media/images/drone_4.png') }}" alt="">
+                <div class = "catalog-price">   
+                    <h2>DJI Mini 4 Pro</h2>
+                    <p>29 900$</p>
+                </div >
+            </div>
+            <div class = "catalog-product">
+                <img class = "catalog-img" src="{{ url_for('home.static', filename= 'media/images/drone_5.png') }}" alt="">
+                <div class = "catalog-price">
+                    <h2>DJI Flip</h2>
+                    <p>29 900$</p>
+                </div>
+            </div>
+
+        </div>
+        <button id = "view-all-button"> <a href="/shop">ДИВИТИСЬ ВСІ</a><img id= "catalog-arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt=""></button>
     </div>
+
 {% endblock %}
 
 

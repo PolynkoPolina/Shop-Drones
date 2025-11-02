@@ -6,6 +6,7 @@
 .new h1{
     color: #CDD5DD;
     margin-bottom: 18.8vh;
+    font-family: GT Walsheim Pro UltraBold;
 }
 
 body{
@@ -40,6 +41,7 @@ main{
 .about-us h1{
     margin-bottom: 3vh;
     color: #CDD5DD;
+    font-family: GT Walsheim Pro UltraBold;
 }
 
 
@@ -160,18 +162,75 @@ main{
     background-color: #eaeaec;
 }
 
-.catalog h1{
+.catalog{
+    display: flex;
+    gap: 1.6vw;
+}
+
+.catalog-container h1{
     color: #CDD5DD;
     margin-top: 10vh;
+    font-family: GT Walsheim Pro UltraBold;
+}
+
+.catalog-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+}
+
+.catalog-product{
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    align-items: center;
+    justify-content: space-between;
+    width: 22.3vw;
+    height: 42.7vh;
+}
+
+.catalog-img{
+    width: 14.3vw;
+    height: 31.5vh;
+}
+
+.catalog-price{
+    display: flex;
+    flex-direction: column;
+    margin-right: 12vw;
+    gap: 5vh;
+}
+
+#discount-container{
+    display: flex;
+    gap: 1vw;
+}
+
+#catalog-3{
+    width: 11.4vw;
+    height: 25.2vh;
+    margin-top: 4vh;
+}
+
+#discount{
+    text-decoration: line-through;
+}
+
+#price-with-discount{
+    color: #B62D11;
+}
+
+#catalog-arrow{
+    width: 1.6vw;
+    height: 2.8vh;
 }
 
 
-
-
-
-
-
-
+::selection {
+  background-color: rgb(197, 209, 211); 
+  color: rgb(48, 71, 114); 
+}
 
 ::-webkit-scrollbar {
     background-color: none;

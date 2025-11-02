@@ -46,12 +46,23 @@
             </nav>
             
         </header>
-
         <main>
             {% block content %}  {% endblock %}
         </main>
         {% block scripts %}
-            
         {% endblock %}
+        <footer>
+            <div class="ellipse-footer"></div>
+            <img id = 'logo_footer' src="{{ url_for('static', filename= 'icon/logo_footer.svg') }}" alt="">
+            <div>
+                <a href="">КАТАЛОГ</a>
+                <a href="">ПРО НАС</a>
+                <a href="">КОНТАКТИ</a>
+                <a href="">КОШИК</a>
+                <a href="">КАБІНЕТ</a>
+            </div>
+            <hr>
+            <p>© 2025 Drones Всі права захищені.</p>
+        </footer>
     </body>
 </html>

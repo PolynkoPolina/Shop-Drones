@@ -1,0 +1,22 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+    background-color: #CDD5DD;
+    width: 100vw;
+    overflow-y: hidden;
+}
+
+
+.ellipse-footer{
+    position: absolute;
+    bottom: 60vh;
+    width: 110vw;
+    height: 90vh;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    left: -95;
+}
