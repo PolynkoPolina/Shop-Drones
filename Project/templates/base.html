@@ -53,16 +53,31 @@
         {% endblock %}
         <footer>
             <div class="ellipse-footer"></div>
-            <img id = 'logo_footer' src="{{ url_for('static', filename= 'icon/logo_footer.svg') }}" alt="">
-            <div>
-                <a href="">КАТАЛОГ</a>
-                <a href="">ПРО НАС</a>
-                <a href="">КОНТАКТИ</a>
-                <a href="">КОШИК</a>
-                <a href="">КАБІНЕТ</a>
+            <img id = 'logo-footer' src="{{ url_for('static', filename= 'icon/logo_footer.svg') }}" alt="">
+            <div id="client-container">
+                
+                <div class="client">
+                    <span>1K+</span>
+                    <p>Успішних відправок</p>
+                </div>
+                <div class="client">
+                    <span>1.5K+</span>
+                    <p>Задовалених клієнтів</p>
+                </div>
+                <div class="client">
+                    <span>24/7</span>
+                    <p>Підтримка клієнтів</p>
+                </div>
+            </div>
+            <div class="footer-details">
+                <a href="/shop">КАТАЛОГ</a>
+                <a href="/about">ПРО НАС</a>
+                <a href="/contacts">КОНТАКТИ</a>
+                <a href="/cart">КОШИК</a>
+                <a href="/profile">КАБІНЕТ</a>
             </div>
             <hr>
-            <p>© 2025 Drones Всі права захищені.</p>
+            <p id="drones-footer">© 2025 Drones Всі права захищені.</p>
         </footer>
     </body>
 </html>

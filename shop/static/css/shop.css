@@ -1,3 +1,9 @@
 main{
     margin-top: 20vh;
 }
+
+body{
+    display: flex;
+}
+
+

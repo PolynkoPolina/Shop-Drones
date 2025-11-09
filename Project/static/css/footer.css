@@ -10,6 +10,12 @@ footer{
     overflow-y: hidden;
 }
 
+hr{
+    height: 0.1vh;
+    width: 95vw;
+    border: 0.1vh solid #FFFFFF;
+    margin-bottom: 3vh;
+}
 
 .ellipse-footer{
     position: absolute;
@@ -20,3 +26,59 @@ footer{
     background-color: #FFFFFF;
     left: -95;
 }
+
+#logo-footer{
+    position: absolute;
+    top: 39vh;
+}
+
+#client-container{
+    position: absolute;
+    top: 15vh;
+    left: 20vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 55.5vw;
+    height: 13.6vh;
+}
+
+.client{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5.6vh;
+}
+
+.client span{
+    font-family: GT Walsheim Pro UltraBold;
+    font-size: 5vh;
+}
+
+.client p{
+    font-size: 2.3vh;
+}
+
+
+.footer-details{
+    display: flex;
+    gap: 2vw;
+    margin-top: 78vh;
+    height: 50vh;
+    word-spacing: 0.2vw;
+}
+
+.footer-details a{
+    color: #0C122A;
+    font-weight: bold;
+    letter-spacing: 0.1vw;
+}
+
+#drones-footer{
+    color: #9EA0AA;
+    height: 2.1vh;
+    margin-bottom: 5vh; 
+}
+
+

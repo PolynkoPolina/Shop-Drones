@@ -11,29 +11,6 @@ button{
     user-select: contain;
 }
 
-@font-face {
-    font-family: GT Walsheim Pro UltraBold;
-    src: url(fonts/GTWalsheimPro-UltraBold.ttf);
-}
-
-@font-face {
-    font-family: GT Walsheim Pro;
-    src: url(fonts/GTWalsheimPro-Regular.ttf);
-}
-
-
-@font-face {
-    font-family: GT Walsheim Pro Bold;
-    src: url(fonts/GTWalsheimPro-Bold.ttf);
-}
-
-
-
-
-body *{
-    font-family: GT Walsheim Pro;
-}
-
 :root{
     --sizeImageDrone: 115vh;
 }
