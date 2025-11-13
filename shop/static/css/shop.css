@@ -1,9 +1,43 @@
+:root{
+    --textColor: #0C122A;
+}
+
+
+
 main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 20vh;
+    justify-content: center;
 }
 
 body{
     display: flex;
+    justify-content: center;
 }
 
+#wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 94.5vw;
+    height: 199vh;
+}
 
+#products{
+    display: grid;
+    grid-template-columns: repeat(4, 22.4vw);
+    grid-template-rows: repeat(4, 42.7vh);
+    width: 96vw;
+    height: 179.2vh;
+    row-gap: 2.8vh;
+    column-gap: 3vw;
+}
+
+.product{
+    width: 22.4vw;
+    height: 42.7vh;
+    overflow: hidden;
+    color: var(--textColor);
+}

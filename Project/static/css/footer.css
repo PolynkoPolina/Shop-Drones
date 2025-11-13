@@ -8,6 +8,7 @@ footer{
     background-color: #CDD5DD;
     width: 100vw;
     overflow-y: hidden;
+    bottom: 0;
 }
 
 hr{

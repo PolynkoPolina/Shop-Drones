@@ -50,20 +50,15 @@
     </select>
     <button id="filter" type="button">Фільтрувати</button>
     <!-- Відображення продукту і його зображення  -->
-    <div>
+    <div id="wrapper">
         <div id="products">
             {% if list_product %}
                 {% for product in list_product %}
                 <!--  <div id="product-1">  -->
-                    <div id="product-{{product.id}}"> 
-                        <hr>
+                    <div id="product-{{product.id}}" class="product"> 
                         <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
-                        <p>Назва продукту: {{product.product_name}}</p>
-                        <p>Вартість продукту: {{product.price}}</p>
-                        <p>Знижка на одиницю продукту: {{product.discount}}</p>
-                        <p>Кількість продукту: {{product.count}}</p>
-                        <p>Опис продукту: {{product.description}}</p>
-
+                        <h3>{{product.product_name}}</h3>
+                        <p>{{product.price}}</p>
                         <!-- <a href="/buy?id={{product.id}}">BUY</a> -->
                         <button type="button" class="buy" id="{{product.id}}">Купити</button>
                     
@@ -71,7 +66,6 @@
                             <!-- <a href="/delete_product?id={{product.id}}">DELETE</a> -->
                             <button type="button" id="delete" value="{{product.id}}">Видалити</button>
                         {% endif %}
-                        <hr>
                     </div>
                 {% endfor %}
             {% endif %}

@@ -43,7 +43,7 @@ def render_shop():
                 
                 message = "Продукт успішно додано"
             else:
-                message = "Продукт з таокю назвою вже існує"
+                message = "Продукт з такою назвою вже існує"
         # elif type == 'filter':
         #     type_product_form = flask.request.form['type_product']
         #     if type_product_form != 'all':
