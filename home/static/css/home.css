@@ -3,12 +3,6 @@
     padding: 0;
 }
 
-.new h1{
-    color: #CDD5DD;
-    margin-bottom: 18.8vh;
-    font-family: GT Walsheim Pro UltraBold;
-}
-
 body{
     display: flex;
     flex-direction: column;
@@ -28,6 +22,11 @@ main{
     align-items: center
 }
 
+.new h1{
+    color: #CDD5DD;
+    margin-bottom: 18.8vh;
+    font-family: GT Walsheim Pro UltraBold;
+}
 
 .about-us{
     margin-top: 16vh;
@@ -50,14 +49,6 @@ main{
     flex-direction: column;
     align-items: center;
     margin-top: 20.3vh;
-}
-
-#new-img-container{
-    position: relative;
-    display: flex;
-    width: 94.5vw;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .drone-new{
@@ -85,30 +76,8 @@ main{
     border-radius: 2vh;
 }
 
-
-#new-1{
-    background-image: linear-gradient(to top, #F5BE4F 3%, transparent 90%);
-}
-
-#new-2{
-    background-image: linear-gradient(to top, #1A271B 3%, transparent 90%);
-}
-
-#new-3{
-    background-image: linear-gradient(to top, #4F94A4 3%, transparent 90%);
-}
 .new-text h1{
     color: #FFFFFF;
-    
-}
-
-#new-name{
-    font-size: 5vh;
-}
-
-#new-name-description{
-    margin-top: 15.7vh;
-    margin-left: 2vw;
 }
 
 .buy{
@@ -125,6 +94,19 @@ main{
     border-radius: 2vh;
     height: 51.4vh;
     width: 30.3vw;
+    transition: all 0.9s;
+    transform:translateY(6vh);
+    opacity: 0;
+}
+
+.new-drones.visible{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.new-drones:hover, .catalog-product:hover{
+    transform: translateY(-2vh);
+    box-shadow: 0.1vh 0.07vh 1.3vh rgb(19, 19, 19, 0.3);
 }
 
 .new-buy-button{
@@ -146,25 +128,6 @@ main{
 .new-buy-button a{
     color: #FFFFFF;
     text-decoration: none;
-}
-
-#read-more {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 6vh;
-    width: 16.8vw;
-    height: 7vh;
-    margin-top: 2vh;
-    background-color: #FFFFFF;
-    border: 0.3vh solid #0C122A;
-    font-weight: bold;
-    font-size: 2vh;
-    gap: 1vw;
-}
-
-#read-more:hover{
-    background-color: #eaeaec;
 }
 
 .catalog{
@@ -190,9 +153,11 @@ main{
     flex-direction: column;
     gap: 3vh;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
     width: 22.3vw;
-    height: 42.7vh;
+    height: 45vh;
+    transition: transform 0.9s;
+    border-radius: 2vh;
 }
 
 .catalog-img{
@@ -205,6 +170,54 @@ main{
     flex-direction: column;
     margin-right: 12vw;
     gap: 5vh;
+}
+
+#new-img-container{
+    position: relative;
+    display: flex;
+    width: 94.5vw;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#new-1{
+    background-image: linear-gradient(to top, #F5BE4F 3%, transparent 90%);
+}
+
+#new-2{
+    background-image: linear-gradient(to top, #1A271B 3%, transparent 90%);
+}
+
+#new-3{
+    background-image: linear-gradient(to top, #4F94A4 3%, transparent 90%);
+}
+
+#new-name{
+    font-size: 5vh;
+}
+
+#new-name-description{
+    margin-top: 15.7vh;
+    margin-left: 2vw;
+}
+
+#read-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6vh;
+    width: 16.8vw;
+    height: 7vh;
+    margin-top: 2vh;
+    background-color: #FFFFFF;
+    border: 0.3vh solid #0C122A;
+    font-weight: bold;
+    font-size: 2vh;
+    gap: 1vw;
+}
+
+#read-more:hover{
+    background-color: #eaeaec;
 }
 
 #discount-container{

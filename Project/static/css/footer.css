@@ -17,6 +17,15 @@ hr{
     margin-bottom: 3vh;
 }
 
+footer a{
+    transition: transform 0.5s;
+}
+
+footer a:hover{
+    transform: scale(1.05);
+}
+
+
 .ellipse-footer{
     position: absolute;
     bottom: 60vh;
@@ -25,22 +34,6 @@ hr{
     border-radius: 50%;
     background-color: #FFFFFF;
     left: -95;
-}
-
-#logo-footer{
-    position: absolute;
-    top: 39vh;
-}
-
-#client-container{
-    position: absolute;
-    top: 15vh;
-    left: 20vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 55.5vw;
-    height: 13.6vh;
 }
 
 .client{
@@ -81,4 +74,18 @@ hr{
     margin-bottom: 5vh; 
 }
 
+#logo-footer{
+    position: absolute;
+    top: 39vh;
+}
 
+#client-container{
+    position: absolute;
+    top: 15vh;
+    left: 20vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 55.5vw;
+    height: 13.6vh;
+}

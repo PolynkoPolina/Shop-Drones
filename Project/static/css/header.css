@@ -12,6 +12,15 @@ header{
     overflow: hidden;
 }
 
+
+header a{
+    transition: transform 0.5s;
+}
+
+header a:hover{
+    transform: scale(1.05);
+}
+
 .nav-header{
     position: fixed;
     top: 3vh;

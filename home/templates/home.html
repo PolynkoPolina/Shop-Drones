@@ -41,7 +41,7 @@
     <div class="new">
         <h1>НОВЕ НА САЙТІ</h1>
         <div id="new-img-container">
-            <div class="new-drones" >    
+            <div class="new-drones" id="new-drone-1">    
                 <img class = "drone-new" src="{{ url_for('home.static', filename= 'media/images/drone_1.png') }}" alt="">
                 <img class = "background-new" src="{{ url_for('home.static', filename= 'media/images/river.png') }}" alt="">
                 <div class="new-text" id="new-1">
@@ -58,7 +58,7 @@
                 </div>
               
             </div>
-            <div class="new-drones">
+            <div class="new-drones" id="new-drone-2">
                 <img src="{{ url_for('home.static', filename= 'media/images/drone_2.png') }}" alt="" class="drone-new">
                 <div class = "background-new">
                     <div class="new-text" id="new-2">
@@ -75,7 +75,7 @@
                     </div>
                 </div>
             </div>
-            <div class="new-drones">
+            <div class="new-drones" id="new-drone-3">
                 <img class = "drone-new" src="{{ url_for('home.static', filename= 'media/images/drone_1.png') }}" alt="">
                 <div class = "background-new"></div>
                 <div class="new-text" id="new-3">
@@ -131,9 +131,11 @@
             </div>
 
         </div>
-        <button id = "view-all-button"><a href="/shop">ДИВИТИСЬ ВСІ</a><img id= "catalog-arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt=""></button>
+        <button id = "view-all-button" type="button"><a href="/shop">ДИВИТИСЬ ВСІ</a><img id= "catalog-arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt=""></button>
     </div>
 
 {% endblock %}
 
-
+{% block scripts %}
+    <script src="{{url_for('home.static', filename= 'js/new-drones-anim.js')}}"></script>
+{% endblock scripts %}

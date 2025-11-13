@@ -1,11 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-
-
 @font-face {
     font-family: GT Walsheim Pro UltraBold;
     src: url(fonts/GTWalsheimPro-UltraBold.ttf);
@@ -22,6 +14,12 @@
     src: url(fonts/GTWalsheimPro-Bold.ttf);
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
 
 body *{
     font-family: GT Walsheim Pro;
@@ -38,6 +36,19 @@ body{
     align-items: center;
     background-color: #FFFFFF;
     overflow-x: hidden;
+}
+
+button{
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+
+button:hover{
+    transform: scale(1.05);
+}
+
+img{
+    user-select: none;
 }
 
 ::selection {

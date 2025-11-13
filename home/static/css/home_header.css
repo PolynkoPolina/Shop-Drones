@@ -1,22 +1,21 @@
+
+:root{
+    --sizeImageDrone: 115vh;
+}
+
+
 body{
     overflow-x: hidden;
 }
-
-button{
-    cursor: pointer;
-}
-
 
 *{
     user-select: contain;
 }
 
-:root{
-    --sizeImageDrone: 115vh;
-}
 header{
     height: 100vh;
     background-color: #CDD5DD;
+    z-index: 100;
 }
 
 .ellipse{
@@ -74,7 +73,7 @@ header{
     align-items: center;
     justify-content: center;
     gap: 0.5vw;
-
+    z-index: 5;
 }
 
 #to-catalog-button:hover{
