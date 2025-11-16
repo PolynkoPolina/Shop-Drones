@@ -32,33 +32,55 @@
             {% endif %}
         </div>
     {% endif %}
-    <!-- Фільтрування по типу продукта -->
-    <!-- <form action="/shop?type=filter" method="post">
-        <select name="type_product" id="">
-            <option value="all">Всі</option>
-            {% for type in list_types %}
-                <option value="{{ type }}">{{ type }}</option>
-            {% endfor %}
-        </select>
-        <button type="submit">Фільтрувати</button>
-    </form>     -->
-    <!--<select name="type_product" id="select"> 
+
+     <!-- <form action="/shop?type=filter" method="post">
+        <form action="/shop?type=filter" method="post">
+        <button type="submit" value="all" name="type_product">Вcі</button>
+        <button type="submit" value="drone"  name="type_product">Тепловізори</button>
+        <button type="submit" value="camera"  name="type_product">Дрони</button>
+    </form>
+    </form> -->
+    <!-- <select name="type_product" id="select"> 
         <option value="all">Всі</option>
         {% for type in list_types %}
             <option value="{{ type }}">{{ type }}</option>
         {% endfor %}
     </select>
     <button id="filter" type="button">Фільтрувати</button>
-    <!-- Відображення продукту і його зображення  -->
+     Відображення продукту і його зображення  -->
     <div id="wrapper">
         <div id="products">
+            <!-- <form action="/shop?type=filter" method="post" name="type_product">
+                <button id="">
+                    <option value="all">Всі</option>
+                </button>
+                <img src="{{ url_for('shop.static', filename= 'images/products/DJI Mini 4k.png') }}" alt="">
+                <img src="{{ url_for('shop.static', filename= 'images/products/Тепловізор ATN OTS-XLT 160 2.5-10X.png') }}" alt="">
+                <button name="type_product" type = "button">
+                    <option value="drone">Drone</option>
+                </button>
+
+                <button type = "button">
+                <option value="camera"></option>
+                </button>
+            </form>  -->
+
+            <form action="/shop?type=filter" method="post">
+                <select name="filter" id="">
+                    <option value="all">All</option>
+                    <option value="drone">Drones</option>
+                    <option value="camera">Thermal Cameras</option>
+                </select>
+                <button type="submit">filter</button>
+            </form>
             {% if list_product %}
                 {% for product in list_product %}
                 <!--  <div id="product-1">  -->
                     <div id="product-{{product.id}}" class="product"> 
                         <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
                         <h3>{{product.product_name}}</h3>
-                        <p>{{product.price}}</p>
+                        
+                        <h3>{{product.formatted_price}} ₴</h3>
                         <!-- <a href="/buy?id={{product.id}}">BUY</a> -->
                         <button type="button" class="buy" id="{{product.id}}">Купити</button>
                     

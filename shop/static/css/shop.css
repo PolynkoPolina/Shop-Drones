@@ -23,6 +23,7 @@ body{
     align-items: center;
     width: 94.5vw;
     height: 199vh;
+    z-index: 3;
 }
 
 #products{

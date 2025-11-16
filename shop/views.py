@@ -18,9 +18,6 @@ def render_shop():
     list_products = Product.query.all()
     list_types = []
     # 
-    for product in list_products:
-        if product.type_product not in list_types:
-            list_types.append(product.type_product)
     # 
     if flask.request.method == 'POST':
         if type == 'add':
@@ -44,16 +41,13 @@ def render_shop():
                 message = "Продукт успішно додано"
             else:
                 message = "Продукт з такою назвою вже існує"
-        # elif type == 'filter':
-        #     type_product_form = flask.request.form['type_product']
-        #     if type_product_form != 'all':
-        #         list_products = Product.query.filter_by(type_product = type_product_form)
-        #     else:
-        #         list_products = Product.query.all()
+        elif type == 'filter':
+            filter = flask.request.form['filter']
+            if filter !='all':
+                list_products = Product.query.filter_by(type_product= filter)
     return {
         'message': message,
         'list_product': list_products,
-        'list_types': list_types
     }
     
 # @is_admin(redirect_url= '/shop')
