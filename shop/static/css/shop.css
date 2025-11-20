@@ -19,19 +19,20 @@ body{
 
 #wrapper{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     width: 94.5vw;
-    height: 199vh;
+    height: fit-content;
     z-index: 3;
 }
 
 #products{
     display: grid;
     grid-template-columns: repeat(4, 22.4vw);
-    grid-template-rows: repeat(4, 42.7vh);
+    grid-template-rows: repeat(auto, 42.7vh);
     width: 96vw;
-    height: 179.2vh;
+    height: fit-content;
     row-gap: 2.8vh;
     column-gap: 3vw;
 }
@@ -41,4 +42,57 @@ body{
     height: 42.7vh;
     overflow: hidden;
     color: var(--textColor);
+}
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8vw;
+    height: 8vh;
+    border-radius: 50%;
+    border: 1px solid #e7e7ea;   
+    cursor: pointer;
+    font-size: 3vh;
+    color: #0C122A;
+    transition: 0.2s ease;
+}
+
+
+.button img {
+    width: 2.7vw;
+    height: 2.7vw;
+    background: #FFFFFF;
+} 
+
+.filter_buttons{
+    display: flex;
+    gap: 1.2vw;       
+}
+.pagination{
+    margin-left: 65.3vw;
+    width: 29.1vw;
+    height: 4.7vh;
+    gap: 1vw;
+    margin-top: 5vh;
+}
+
+.pagination-page{
+    cursor:auto;
+    user-select: none;
+    width: 2.7vw;
+    height: 4.7vh;
+    border: none;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+}
+.pagination-page:hover{
+    transform: none;
+}
+
+#pagination1{
+    background-color: #F4F4F4;
+}
+
+#end-page{
+    transform: rotate(-180deg);
 }

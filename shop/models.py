@@ -1,6 +1,6 @@
 from Project.db import DATABASE
 
-class Product(DATABASE.Model):
+class Product(DATABASE.Model): 
     
     id = DATABASE.Column(DATABASE.Integer, primary_key = True)
     
@@ -10,10 +10,3 @@ class Product(DATABASE.Model):
     count = DATABASE.Column(DATABASE.Float, nullable = False)
     description = DATABASE.Column(DATABASE.String(450), nullable = False)
     type_product = DATABASE.Column(DATABASE.String(50), default = 'type')
-
-
-
-def formatted_price(self):
-        # 29000 → "29 000"
-    return f"{self.price:,}".replace(",", " ")
-

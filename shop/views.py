@@ -9,6 +9,7 @@ from flask_login import current_user
 
 from .admin import is_admin
 
+
 @config_page(template_name= 'shop.html')
 def render_shop():
     message = ''
@@ -34,7 +35,6 @@ def render_shop():
                 )
                 DATABASE.session.add(product)
                 DATABASE.session.commit()
-                
                 image = flask.request.files['image']
                 image.save(dst= abspath(join(__file__, "..", "static", "images", "products", f"{product_name_form}.png")))
                 
