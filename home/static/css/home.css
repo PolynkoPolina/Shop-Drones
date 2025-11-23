@@ -12,6 +12,7 @@ body{
 
 h1{
     font-size: 5vh;
+    font-family: GT Walsheim Pro UltraBold;
 }
 
 main{
@@ -55,8 +56,8 @@ main{
     position: absolute;
     width: 20.9vw;
     height: 45.8vh;
-    bottom: 260;
-    left: 100;
+    bottom: 230;
+    left: 65;
 }
 
 .background-new{

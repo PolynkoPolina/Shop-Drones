@@ -2,13 +2,17 @@
     --textColor: #0C122A;
 }
 
-
+main h1{
+    color: #CDD5DD;
+    margin-top: 10vh;
+    font-family: GT Walsheim Pro UltraBold;
+}
 
 main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20vh;
+    margin-top: 10vh;
     justify-content: center;
 }
 
@@ -38,36 +42,86 @@ body{
 }
 
 .product{
-    width: 22.4vw;
-    height: 42.7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    width: 20vw;
+    height: 43vh;
     overflow: hidden;
     color: var(--textColor);
+    transition: transform 0.9s;
+    border-radius: 1.2vh;
+    padding-left: 1vw;
+    padding-bottom: 2vh;
 }
+
+.product:hover{
+    transform: translateY(-2vh);
+    box-shadow: 0.1vh 0.07vh 1.3vh rgb(19, 19, 19, 0.3);
+}
+
+.product-img{
+    width: 15.5vw;
+    height: 29.7vh;
+    margin-left: 1.25vw;
+    object-fit: contain;
+}
+
+#price-product{
+    font-size: 1.5vh;
+}
+
+#product-dec{
+    width: 20vw;
+    height: 12vh;
+    display: grid;
+    grid-template-columns: 15vw 5vw;
+}
+
+#name-price{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    width: 14vw;
+    height: 12vh;
+}
+
+#name-container{
+    width: 14vw;
+    height: auto;
+    font-size: 3vh;
+}
+
 .button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 8vw;
+    width: 4vw;
     height: 8vh;
     border-radius: 50%;
     border: 1px solid #e7e7ea;   
     cursor: pointer;
     font-size: 3vh;
     color: #0C122A;
-    transition: 0.2s ease;
 }
 
-
 .button img {
-    width: 2.7vw;
-    height: 2.7vw;
+    width: 4vw;
+    height: 8vh;
     background: #FFFFFF;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 1px solid #e7e7ea;  
 } 
 
 .filter_buttons{
     display: flex;
-    gap: 1.2vw;       
+    gap: 1.2vw;      
+    margin-bottom: 5vh; 
 }
+
 .pagination{
     margin-left: 65.3vw;
     width: 29.1vw;
@@ -85,6 +139,7 @@ body{
     border-radius: 50%;
     background-color: #FFFFFF;
 }
+
 .pagination-page:hover{
     transform: none;
 }
@@ -95,4 +150,18 @@ body{
 
 #end-page{
     transform: rotate(-180deg);
+}
+
+.product:hover .buy{
+    opacity: 1;
+}
+
+.buy{
+    width: 3vw;
+    height: 6vh;
+    background: #FFFFFF;
+    border-radius: 50%;
+    border: 0.2vh solid #0C122A;  
+    opacity: 0;
+    margin-top: 3vh;
 }

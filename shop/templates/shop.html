@@ -10,7 +10,7 @@
 
 
 {% block content %}
-    <h1>Каталог</h1>
+    <h1>КАТАЛОГ</h1>
 
     <!-- Якщо користувач є адміном то він може додавати новий продукт до БД -->
     {% if current_user.is_admin %}
@@ -43,19 +43,22 @@
 
             {% if list_product %}
                 {% for product in list_product %}
-                <!--  <div id="product-1">  -->
+
                     <div id="product-{{product.id}}" class="product"> 
-                        <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
-                        <h3>{{product.product_name}}</h3>
-                        
-                        <h3>{{product.price|string| replace('000', ' 000')}}₴</h3>
-                        <!-- <a href="/buy?id={{product.id}}">BUY</a> -->
-                        <button type="button" class="buy" id="{{product.id}}">Купити</button>
-                    
-                        {% if current_user.is_admin %}  
-                            <!-- <a href="/delete_product?id={{product.id}}">DELETE</a> -->
-                            <button type="button" id="delete" value="{{product.id}}">Видалити</button>
-                        {% endif %}
+                        <img class="product-img" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}">
+                        <div id= 'product-dec'>
+                            <div id= "name-price">
+                                <div id="name-container">
+                                    <h3>{{product.product_name}}</h3>
+                                </div>
+                                <h3 id="price-product">{{product.price|string| replace('000', ' 000')}} ₴</h3>
+                            </div>
+                            <button type="button" class="buy" id="{{product.id}}"><a href="/"><img src="{{ url_for('shop.static', filename= 'icons/cart.svg') }}" alt=""></a></button>
+                        </div>
+
+                    {% if current_user.is_admin %} 
+                        <button type="button" id="delete" value="{{product.id}}">Видалити</button>
+                    {% endif %}
                     </div>
                 {% endfor %}
             {% endif %}
