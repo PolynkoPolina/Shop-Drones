@@ -22,6 +22,20 @@ header a:hover{
     transform: scale(1.05);
 }
 
+iframe{
+    width: 44vw;
+}
+#cart-modal{
+    height: 76vh;
+    z-index: 100;
+    position: fixed;
+    top: 12vh;
+    left: 50vw;
+    background-color: #FFFFFF;
+    border-radius: 2vh;
+    box-shadow: 0.1vh 0.07vh 1.3vh rgb(19, 19, 19, 0.3);
+}
+
 .nav-header{
     position: fixed;
     top: 3vh;
@@ -62,8 +76,16 @@ header a:hover{
     background-repeat: no-repeat;
     background-size: var(--sizeImageProfile);
 }
+
+.profile button{
+    border: none;
+    background-color: transparent;
+}
 .cart{
+    width: 1.5vw;
+    height: 3.2vh;
     background-image: url('/static/icon/cart.svg');
+    background-size: contain;
 }
 .img-profile{
     background-image: url('/static/icon/profile.svg');

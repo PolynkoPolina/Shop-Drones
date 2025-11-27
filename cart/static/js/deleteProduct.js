@@ -8,7 +8,7 @@ for (let button of listButtonDelete){
             document.cookie = `list_products = ${cookies.replaceAll(`|${button.id}|`, '')}; path = /`
             // let product = document.querySelector(`product-${button.id}`)
             // product.remove()
-            document.querySelector(`.product-${button.id}`).remove()
+            document.querySelector(`#product-${button.id}`).remove()
         }
     )
 }

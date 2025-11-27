@@ -1,36 +1,51 @@
-{% extends "base.html"%}
-
-{% block title %}
-    Cart
-{% endblock %}
-
-{% block links %}
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('cart.static', filename='css/cart.css' ) }}">
-{% endblock %}
+</head>
+<body>
+    <main>
+        <div id="modal-header">
+            <h1>КОШИК</h1>
+            <button onclick= "closeCart()" ><img src="" alt="X"></button>
+        </div>
+        <div id="modal-body">
+            {% if list_products %}
+                {% for product, count in list_products %}
+                
+                    <div id="product-{{product.id}}" class="product">
+                        <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
+                        <div>
+                            <div id="name-price">
+                                <h4>{{ product.product_name }}</h4>
+                                <p>{{product.price|string| replace('000', ' 000')}} ₴</p>
+                            </div>
+                            <!--  -->
+                            <!-- <form action="/delete_product_to_cart" method="post">
+                                <button type="submit" name="delete" value="{{product.id}}">DELETE</button>
+                            </form> -->
+                            <div id="buttons">
+                                <button type="button" class="minus" id="{{product.id}}">-</button>
+                                <span class="count-{{product.id}}">{{count}}</span>
+                                <button type="button" class="plus" id="{{product.id}}">+</button>
+                                <button type = "button" class="delete" id="{{product.id}}">DELETE</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                {% endfor %}
+            {% endif %}
+            <hr>
+        </div>
+        <div id="modal-footer"></div>
+    </main>
+</body>
+<script type="module" src="{{ url_for('cart.static', filename= 'js/addProduct.js') }}"></script>
+<script type="module" src="{{ url_for('cart.static', filename= 'js/removeProduct.js') }}"></script>
+<script src="{{ url_for('cart.static', filename= 'js/deleteProduct.js') }}"></script>
+</html>
 
-{% block content %}
-    <h1>Cart page</h1>
-    {% if list_products %}
-        {% for product, count in list_products %}
-            <div class="product-{{product.id}}">
-                <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
-                <h4>{{ product.product_name }}</h4>
-                <p>Кількість: <span class="count-{{product.id}}">{{ count }}</span></p>
-                <!--  -->
-                <!-- <form action="/delete_product_to_cart" method="post">
-                    <button type="submit" name="delete" value="{{product.id}}">DELETE</button>
-                </form> -->
-                <button type = "button" class="delete" id="{{product.id}}">DELETE</button>
-                <button type="button" class="plus" id="{{product.id}}">+</button>
-                <button type="button" class="minus" id="{{product.id}}">-</button>
-                <hr>
-            </div>
-        {% endfor %}
-    {% endif %}
-{% endblock %}
 
-{% block scripts %}
-    <script type="module" src="{{ url_for('cart.static', filename= 'js/addProduct.js') }}"></script>
-    <script type="module" src="{{ url_for('cart.static', filename= 'js/removeProduct.js') }}"></script>
-    <script src="{{ url_for('cart.static', filename= 'js/deleteProduct.js') }}"></script>
-{% endblock %}

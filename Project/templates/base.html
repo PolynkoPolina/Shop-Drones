@@ -28,9 +28,11 @@
                 </div>
 
                 <span class="profile">
-                    <a href="/cart"> 
+                    <button type="button" onclick="openCart()">
                         <div class="cart"></div>
-                    </a>
+                    </button>
+                        
+                    
                     {% if current_user.is_authenticated %}
                         <p>{{ current_user.username }}</p>
                         <!--logout username-->
@@ -44,13 +46,18 @@
                     {% endif %}
                 </span>
             </nav>
-            
+            <div id="cart-modal" style="display: none;">
+                <iframe src= "/cart" frameborder="0"></iframe>
+            </div>
         </header>
         <main>
-            {% block content %}  {% endblock %}
+        
+            {% block content %} 
+            {% endblock %}
         </main>
         {% block scripts %}
         {% endblock %}
+        <script src="{{ url_for('static', filename= 'js/cart.js') }}"></script>
         <footer>
             <div class="ellipse-footer"></div>
             <img id = 'logo-footer' src="{{ url_for('static', filename= 'icon/logo_footer.svg') }}" alt="">
