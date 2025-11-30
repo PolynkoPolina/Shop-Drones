@@ -1,5 +1,3 @@
-
-
 @font-face {
     font-family: GT Walsheim Pro;
     src: url(fonts/GTWalsheimPro-Regular.ttf);
@@ -17,6 +15,125 @@ body *{
     font-family: GT Walsheim Pro;
 }
 
+body{
+    overflow: hidden;
+}
+
+#modal-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#product-container{
+    height: 60vh;
+    width: 96vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 .product{
     display: flex;
+    width: 94vw;
+    height: 27.6vh;
+    padding: 2.1vh;
+}
+
+.product img{
+    width: 17.5vw;
+    height: 18vh;
+    background-color: #F4F4F4;
+    border-radius: 1.2vh;
+}
+
+.product hr{
+    width: 41vw;
+    background-color: #CED0D4;
+}
+
+#modal-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1vh 2vw 0vh 2vw;
+    font-size: 4vh;
+}
+
+#close-cart{
+    background-color: transparent;
+    border: none;
+    font-size: 2.2vw;
+}
+.modalContent-description{
+    display: flex;
+    justify-content: space-beetwen;
+}
+
+#global-price{
+    text-decoration: line-through;
+}
+
+#discount{
+    color: #9EA0AA;
+}
+
+#final_price{
+    color:#B62D11;
+    font-family: GT Walsheim Pro Bold;
+}
+
+#go-to-cart{
+    font-family: GT Walsheim Pro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6vh;
+    width: 30.8vw;
+    height: 6.9vh;
+    margin-top: 2vh;
+    background-color: #FFFFFF;
+    border: 0.3vh solid #0C122A;
+    font-weight: bold;
+    font-size: 3.7vh;
+    gap: 1vw; 
+    color: #0C122A;
+    padding-top: 2.7vh;
+    padding-bottom: 2.7vh;
+    padding-left: 3.8vw;
+    padding-right: 3.8vw;
+}
+
+#create-order{
+    font-family: GT Walsheim Pro;
+    width: 40.4vw;
+    height: 6.7vh;
+    border-radius: 6vh;
+    background-color: #0C122A;
+    margin-top: 3vh;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vw;
+    color: #FFFFFF;
+    font-size: 3.7vh;
+    padding-top: 2.7vh;
+    padding-bottom: 2.7vh;
+    padding-left: 1.8vw;
+    padding-right: 1.8vw;
+}
+
+#buy-buttons{
+    display: flex;
+    justify-content: end;
+    gap: 0.875rem;
+}
+
+.button-r{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

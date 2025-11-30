@@ -28,11 +28,8 @@ body *{
 
 body{
     display: flex;
-    /* головнв вісь */
     flex-direction: column;
-    /* позиціонування по головній вісі */
     justify-content: start;
-    /* позиціонування по другорядній вісі */
     align-items: center;
     background-color: #FFFFFF;
     overflow-x: hidden;

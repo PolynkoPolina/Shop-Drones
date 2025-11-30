@@ -9,36 +9,58 @@
 <body>
     <main>
         <div id="modal-header">
-            <h1>КОШИК</h1>
-            <button onclick= "closeCart()" ><img src="" alt="X"></button>
+            <h3>Кошик</h3>
+            <button id= "close-cart" onclick= "closeCart()" ><img src="{{ url_for('cart.static', filename= 'icons/close.svg') }}" alt="x"></button>
         </div>
         <div id="modal-body">
             {% if list_products %}
-                {% for product, count in list_products %}
-                
-                    <div id="product-{{product.id}}" class="product">
-                        <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
-                        <div>
-                            <div id="name-price">
-                                <h4>{{ product.product_name }}</h4>
-                                <p>{{product.price|string| replace('000', ' 000')}} ₴</p>
-                            </div>
-                            <!--  -->
-                            <!-- <form action="/delete_product_to_cart" method="post">
-                                <button type="submit" name="delete" value="{{product.id}}">DELETE</button>
-                            </form> -->
-                            <div id="buttons">
-                                <button type="button" class="minus" id="{{product.id}}">-</button>
-                                <span class="count-{{product.id}}">{{count}}</span>
-                                <button type="button" class="plus" id="{{product.id}}">+</button>
-                                <button type = "button" class="delete" id="{{product.id}}">DELETE</button>
+                <div id="product-container">
+                    {% for product, count in list_products %}
+                    
+                        <div id="product-{{product.id}}" class="product">
+                            <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
+                            <div>
+                                <div id="name-price">
+                                    <h4>{{ product.product_name }}</h4>
+                                    <p>{{product.price|string| replace('000', ' 000')}} ₴</p>
+                                </div>
+                                <!--  -->
+                                <!-- <form action="/delete_product_to_cart" method="post">
+                                    <button type="submit" name="delete" value="{{product.id}}">DELETE</button>
+                                </form> -->
+                                <div id="buttons">
+                                    <button type="button" class="minus" id="{{product.id}}">-</button>
+                                    <span class="count-{{product.id}}">{{count}}</span>
+                                    <button type="button" class="plus" id="{{product.id}}">+</button>
+                                    <button type = "button" class="delete" id="{{product.id}}">DELETE</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <hr>
-                {% endfor %}
-            {% endif %}
+                        <hr>
+                        {% endfor %}
+                </div>  
+                
+            <div>
+                <div class = modalContent-description>Загальна сумма <p id = "global-price">29 900₴</p></div>
+                <div class = modalContent-description>Заощаджено <p id = "dicount">-1 005₴</p></div>
+                <div class = modalContent-description>Зі знижкою <p id = "final-price">28 985₴</p></div>
+            </div>
+
             <hr>
+            <div id = "buy-buttons">
+                <button id = "go-to-cart" type = "button">Перейти до кошика</button>
+                <button id = "create-order">Оформити замовлення <img src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt=""></button>
+            </div>  
+            {% else %}
+                    <div class="cart-text">
+                        <p>Ваш кошик порожній.
+                        <p>Почніть вибирати товари, щоб вони з’явилися тут</p>
+                    </div>
+                    <div id="buttons-r">
+                        <button type="button" id="empty-cart-button">Продовжити Покупки</button>
+                    </div>
+            {% endif %}
+            
         </div>
         <div id="modal-footer"></div>
     </main>

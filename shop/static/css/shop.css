@@ -144,8 +144,9 @@ body{
     transform: none;
 }
 
-#pagination1{
-    background-color: #F4F4F4;
+.pagination-page.active {
+    background: #F4F4F4;
+    font-weight: bold;
 }
 
 #end-page{
