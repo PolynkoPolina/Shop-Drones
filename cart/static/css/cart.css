@@ -3,12 +3,26 @@
     src: url(fonts/GTWalsheimPro-Regular.ttf);
 }
 
+:root{
+    --darkblue: #0C122A;
+    --darkbluehover: #080417;
+}
+
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+}
+
+button{
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+
+button:hover{
+    transform: scale(1.05);
 }
 
 body *{
@@ -26,6 +40,7 @@ body{
     align-items: space-between;
     height: 100vh;
     overflow: hidden;
+    padding: 2vw;
 }
 
 #product-container{
@@ -61,18 +76,22 @@ body{
     font-size: 4vh;
 }
 
-#close-cart{
-    background-color: transparent;
-    border: none;
-    font-size: 2.2vw;
-}
 .modalContent-description{
     display: flex;
     justify-content: space-beetwen;
 }
 
-#global-price{
-    text-decoration: line-through;
+.plus, .minus{
+
+}
+
+.delete{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: transparent;
+    border:none;
+    background-image: url('/cart/static/icons/trash.svg');
+    background-size: contain;
 }
 
 #discount{
@@ -94,11 +113,11 @@ body{
     height: 6.9vh;
     margin-top: 2vh;
     background-color: #FFFFFF;
-    border: 0.3vh solid #0C122A;
+    border: 0.3vh solid var(--darkblue);
     font-weight: bold;
     font-size: 3.7vh;
     gap: 1vw; 
-    color: #0C122A;
+    color: var(--darkblue);
     padding-top: 2.7vh;
     padding-bottom: 2.7vh;
     padding-left: 3.8vw;
@@ -110,7 +129,7 @@ body{
     width: 40.4vw;
     height: 6.7vh;
     border-radius: 6vh;
-    background-color: #0C122A;
+    background-color: var(--darkblue);
     margin-top: 3vh;
     border: none;
     display: flex;
@@ -136,4 +155,33 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+
+
+
+#product-container::selection {
+  background-color: rgb(197, 209, 211); 
+  color: var(--darkblue); 
+}
+
+#product-container::-webkit-scrollbar {
+    background-color: none;
+    height: 30%;
+    width: 1vw;
+}
+
+#product-container::-webkit-scrollbar-track {
+    background-color: #9EA0AA;
+    border-radius: 2vh;
+}
+
+#product-container::-webkit-scrollbar-thumb {
+    background: var(--darkblue);
+    border-radius: 2vh;
+}
+
+#product-container::-webkit-scrollbar-thumb:hover {
+    opacity: 70%;
+    background: var(--darkbluehover);
 }

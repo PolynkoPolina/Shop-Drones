@@ -122,14 +122,11 @@ main{
     border: 0.1vh solid #FFFFFF;
     font-size: 2vh;
     gap: 1vw;
-    
+    color: #FFFFFF;
+    text-decoration: none;
     margin-bottom: 2vh;
 }
 
-.new-buy-button a{
-    color: #FFFFFF;
-    text-decoration: none;
-}
 
 .catalog{
     display: flex;

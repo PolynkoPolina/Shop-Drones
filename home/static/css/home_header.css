@@ -80,7 +80,7 @@ header{
     background-color: #02040c;
 }
 
-#to-catalog-button a, #view-all-button a{
+#to-catalog-button a, #view-all-button{
     color: #FFFFFF;
     font-size: 1.8vh;
     font-family: GT Walsheim Pro Bold;

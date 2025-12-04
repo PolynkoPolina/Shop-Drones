@@ -10,14 +10,13 @@
     <main>
         <div id="modal-header">
             <h3>Кошик</h3>
-            <button id= "close-cart" onclick= "closeCart()" ><img src="{{ url_for('cart.static', filename= 'icons/close.svg') }}" alt="x"></button>
         </div>
         <div id="modal-body">
             {% if list_products %}
                 <div id="product-container">
                     {% for product, count in list_products %}
-                    
-                        <div id="product-{{product.id}}" class="product">
+                    <div id="product-{{product.id}}">
+                        <div  class="product">
                             <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
                             <div>
                                 <div id="name-price">
@@ -32,18 +31,21 @@
                                     <button type="button" class="minus" id="{{product.id}}">-</button>
                                     <span class="count-{{product.id}}">{{count}}</span>
                                     <button type="button" class="plus" id="{{product.id}}">+</button>
-                                    <button type = "button" class="delete" id="{{product.id}}">DELETE</button>
+                                    <button type = "button" class="delete" id="{{product.id}}"></button>
                                 </div>
                             </div>
                         </div>
                         <hr>
+                    </div>
+                        
                         {% endfor %}
                 </div>  
                 
             <div>
-                <div class = modalContent-description>Загальна сумма <p id = "global-price">29 900₴</p></div>
-                <div class = modalContent-description>Заощаджено <p id = "dicount">-1 005₴</p></div>
-                <div class = modalContent-description>Зі знижкою <p id = "final-price">28 985₴</p></div>
+
+                <div class = modalContent-description>Загальна сумма <p id = "global-price">{{products_price|string| replace('000', ' 000')}} ₴</p></div>
+                <div class = modalContent-description>Заощаджено <p id = "dicount">{{products_discount|string| replace('000', ' 000')}} ₴</p></div>
+                <div class = modalContent-description>Зі знижкою <p id = "final-price">{{general_products_price|string| replace('000', ' 000')}} ₴</p></div>
             </div>
 
             <hr>
@@ -68,6 +70,7 @@
 <script type="module" src="{{ url_for('cart.static', filename= 'js/addProduct.js') }}"></script>
 <script type="module" src="{{ url_for('cart.static', filename= 'js/removeProduct.js') }}"></script>
 <script src="{{ url_for('cart.static', filename= 'js/deleteProduct.js') }}"></script>
+<script src="{{ url_for('cart.static', filename= 'js/closeCart.js') }}"></script>
 </html>
 
 

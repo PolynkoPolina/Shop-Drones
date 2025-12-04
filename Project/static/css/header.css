@@ -40,6 +40,14 @@ iframe{
     box-shadow: 0.1vh 0.07vh 1.3vh rgb(19, 19, 19, 0.3);
 }
 
+#close-cart{
+    position: absolute;
+    top: 3vh;
+    right: 2vw;
+    background-color: transparent;
+    border: none;
+    font-size: 2.2vw;
+}
 .nav-header{
     position: fixed;
     top: 3vh;

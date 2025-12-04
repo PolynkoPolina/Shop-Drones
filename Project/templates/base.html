@@ -48,6 +48,7 @@
             </nav>
             <div id="cart-modal" style="display: none;">
                 <iframe src= "/cart" frameborder="0"></iframe>
+                 <button id= "close-cart" onclick="closeCart()"><img src="{{ url_for('cart.static', filename= 'icons/close.svg') }}" alt="x"></button>
             </div>
         </header>
         <main>
