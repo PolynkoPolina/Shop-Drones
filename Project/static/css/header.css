@@ -13,10 +13,6 @@ header{
     z-index: 100;
 }
 
-
-
-
-
 header a{
     transition: transform 0.5s;
 }
@@ -30,7 +26,8 @@ iframe{
 }
 
 #cart-modal{
-    height: 76vh;
+    height: 83vh;
+    width: 44vw;
     z-index: 100;
     position: fixed;
     top: 12vh;
@@ -48,6 +45,7 @@ iframe{
     border: none;
     font-size: 2.2vw;
 }
+
 .nav-header{
     position: fixed;
     top: 3vh;

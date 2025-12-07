@@ -6,6 +6,10 @@
 :root{
     --darkblue: #0C122A;
     --darkbluehover: #080417;
+    --grey: #9EA0AA;
+    --lightgrey: #E7E7EA;
+    --red: #B62D11;
+    --bluegrey: #3D4155;
 }
 
 
@@ -40,11 +44,19 @@ body{
     align-items: space-between;
     height: 100vh;
     overflow: hidden;
-    padding: 2vw;
+}
+
+#modal-body-empty{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 80vh;
+    padding: 2vh;
 }
 
 #product-container{
-    height: 60vh;
+    height: 56vh;
     width: 96vw;
     overflow-y: auto;
     overflow-x: hidden;
@@ -69,6 +81,26 @@ body{
     background-color: #CED0D4;
 }
 
+#product-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+#name-price{
+    display: flex;
+    flex-direction: column;
+    gap: 4.5vh;
+    padding-left: 3vw;
+}
+
+#name-price h4{
+    font-size: 4.5vh;
+}
+
+#name-price p{
+    font-weight: 600;
+}
+
 #modal-header{
     display: flex;
     justify-content: space-between;
@@ -76,13 +108,30 @@ body{
     font-size: 4vh;
 }
 
-.modalContent-description{
-    display: flex;
-    justify-content: space-beetwen;
+#price{
+    width: 50vw;
+    height: 10.4vh;
 }
 
 .plus, .minus{
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #FFFFFF;
+    border: 0.1vh solid var(--lightgrey);
+    font-size: 4vh;
+    color: var(--bluegrey);
+}
 
+#buttons{
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 1.5vw;
+}
+
+#buttons span{
+    font-size: 4vh;
 }
 
 .delete{
@@ -92,73 +141,79 @@ body{
     border:none;
     background-image: url('/cart/static/icons/trash.svg');
     background-size: contain;
+
+}
+
+#global-price{
+    text-decoration: line-through;
+    font-weight: 600;
 }
 
 #discount{
-    color: #9EA0AA;
+    color: var(--grey);
+    font-weight: 600;
 }
 
-#final_price{
-    color:#B62D11;
-    font-family: GT Walsheim Pro Bold;
+#final-price{
+    color: var(--red);
+    font-weight: 600;
+    font-size: 3vw;
 }
 
-#go-to-cart{
+#go-to-cart, #create-order, #empty-cart-button{
     font-family: GT Walsheim Pro;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 6vh;
-    width: 30.8vw;
+    font-weight: 500;
+    letter-spacing: 0.3vw;
+    text-transform: uppercase;
+    gap: 1vw;
+    font-size: 2.4vh;
+}
+
+#go-to-cart, #empty-cart-button{
+    width: 33.3vw;
     height: 6.9vh;
-    margin-top: 2vh;
     background-color: #FFFFFF;
     border: 0.3vh solid var(--darkblue);
     font-weight: bold;
-    font-size: 3.7vh;
-    gap: 1vw; 
     color: var(--darkblue);
-    padding-top: 2.7vh;
-    padding-bottom: 2.7vh;
-    padding-left: 3.8vw;
-    padding-right: 3.8vw;
 }
 
 #create-order{
-    font-family: GT Walsheim Pro;
-    width: 40.4vw;
+    width: 40.3vw;
     height: 6.7vh;
-    border-radius: 6vh;
     background-color: var(--darkblue);
-    margin-top: 3vh;
     border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5vw;
     color: #FFFFFF;
-    font-size: 3.7vh;
-    padding-top: 2.7vh;
-    padding-bottom: 2.7vh;
-    padding-left: 1.8vw;
-    padding-right: 1.8vw;
 }
 
 #buy-buttons{
     display: flex;
     justify-content: end;
-    gap: 0.875rem;
+    margin-top: 3vh;
+    gap: 8px;
 }
 
-.button-r{
+#prices{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: 1vw;
 }
 
+.modalContent-description{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 92.5vw;
+    gap: 1vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;    
+    padding-left: 1vw;
 
-
+}
 
 #product-container::selection {
   background-color: rgb(197, 209, 211); 
@@ -185,3 +240,17 @@ body{
     opacity: 70%;
     background: var(--darkbluehover);
 }
+
+.cart-text{
+    display: flex;
+    justify-content: center;
+}
+
+#buttons-r{
+    position: absolute;
+    bottom: 4vh;
+    width: 92.5vw;
+    display: flex;
+    justify-content: end;
+}
+

@@ -18,9 +18,11 @@
                     <div id="product-{{product.id}}">
                         <div  class="product">
                             <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
-                            <div>
+                            <div id="product-content">
                                 <div id="name-price">
-                                    <h4>{{ product.product_name }}</h4>
+                                    <div id="price">
+                                        <h4>{{ product.product_name }}</h4>
+                                    </div>
                                     <p>{{product.price|string| replace('000', ' 000')}} ₴</p>
                                 </div>
                                 <!--  -->
@@ -40,29 +42,30 @@
                         
                         {% endfor %}
                 </div>  
-                
-            <div>
-
-                <div class = modalContent-description>Загальна сумма <p id = "global-price">{{products_price|string| replace('000', ' 000')}} ₴</p></div>
-                <div class = modalContent-description>Заощаджено <p id = "dicount">{{products_discount|string| replace('000', ' 000')}} ₴</p></div>
-                <div class = modalContent-description>Зі знижкою <p id = "final-price">{{general_products_price|string| replace('000', ' 000')}} ₴</p></div>
+            <hr>
+            <div id = "prices">
+                <div class = "modalContent-description"><p>Загальна сумма</p> <p id = "global-price">{{products_price|string| replace('000', ' 000')}} ₴</p></div>
+                <div class = "modalContent-description"><p>Заощаджено</p> <p id = "discount">{{products_discount|string| replace('000', ' 000')}} ₴</p></div>
+                <div class = "modalContent-description"><p>Зі знижкою</p> <p id = "final-price">{{general_products_price|string| replace('000', ' 000')}} ₴</p></div>
             </div>
-
             <hr>
             <div id = "buy-buttons">
                 <button id = "go-to-cart" type = "button">Перейти до кошика</button>
                 <button id = "create-order">Оформити замовлення <img src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt=""></button>
             </div>  
             {% else %}
+                <div id="modal-body-empty">
+                    <hr id="hr-1">
                     <div class="cart-text">
-                        <p>Ваш кошик порожній.
+                        <p>Ваш кошик порожній.</p>
                         <p>Почніть вибирати товари, щоб вони з’явилися тут</p>
                     </div>
+                    <hr id="hr-2">
                     <div id="buttons-r">
                         <button type="button" id="empty-cart-button">Продовжити Покупки</button>
                     </div>
+                </div>
             {% endif %}
-            
         </div>
         <div id="modal-footer"></div>
     </main>

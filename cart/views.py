@@ -7,7 +7,7 @@ def render_cart():
     # 
     list_products = [] #
     cookies = flask.request.cookies.get(key= 'list_products')
-    products_price = 1
+    products_price = 0
     products_discount = 0
     general_products_price = 0
     if cookies:
@@ -20,7 +20,7 @@ def render_cart():
                 # 
                 product: Product = Product.query.get(ident= id)
                 #  
-                products_price = 0
+                
                 products_price += product.price * count_id
                 products_discount += int(product.discount * count_id)
                 general_products_price = int(products_price - products_discount)
