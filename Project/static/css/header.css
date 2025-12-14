@@ -1,5 +1,6 @@
 :root{
     --sizeImageProfile: 2.75vh;
+    --red: #B62D11;
 }
 
 header{
@@ -106,4 +107,18 @@ iframe{
 }
 .img-profile:hover{
     background-image: url('/static/icon/profile_black.svg');
+}
+
+.full-cart{
+    position: absolute;
+    background-color: var(--red);
+    width: 2vh;
+    height: 2vh;
+    margin-left: 0.7vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: smaller;
 }
