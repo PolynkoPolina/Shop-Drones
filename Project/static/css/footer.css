@@ -34,7 +34,8 @@ footer a:hover{
     height: 90vh;
     border-radius: 50%;
     background-color: #FFFFFF;
-    left: -95;
+    left: 50vw;
+    transform: translateX(-50%);
 }
 
 .client{
@@ -69,18 +70,18 @@ footer a:hover{
     letter-spacing: 0.1vw;
 }
 
-#drones-footer{
+.drones-footer{
     color: #9EA0AA;
     height: 2.1vh;
     margin-bottom: 5vh; 
 }
 
-#logo-footer{
+.logo-footer{
     position: absolute;
     top: 39vh;
 }
 
-#client-container{
+.client-container{
     position: absolute;
     top: 15vh;
     left: 20vw;

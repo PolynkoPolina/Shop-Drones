@@ -9,6 +9,7 @@ for (let button of arrayButtonsPlus){
             let listIdProduct = document.cookie.split('=')[1]
             document.cookie = `list_products = ${listIdProduct}|${button.id}|; path = /`
             countProduct(button.id)
+            document.location.reload()
         }
     )
 }

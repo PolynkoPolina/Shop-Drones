@@ -62,7 +62,7 @@ header{
 
 
 
-#to-catalog-button, #view-all-button{
+.to-catalog-button, .view-all-button{
     width: 13vw;
     height: 6.1vh;
     border-radius: 6vh;
@@ -76,11 +76,11 @@ header{
     z-index: 5;
 }
 
-#to-catalog-button:hover{
+.to-catalog-button:hover{
     background-color: #02040c;
 }
 
-#to-catalog-button a, #view-all-button{
+.to-catalog-button a, .view-all-button{
     color: #FFFFFF;
     font-size: 1.8vh;
     font-family: GT Walsheim Pro Bold;

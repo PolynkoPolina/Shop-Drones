@@ -9,6 +9,7 @@ for (let button of listButtonDelete){
             // let product = document.querySelector(`product-${button.id}`)
             // product.remove()
             document.querySelector(`#product-${button.id}`).remove()
+            document.location.reload()
         }
     )
 }

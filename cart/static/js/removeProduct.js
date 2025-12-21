@@ -13,6 +13,7 @@ for (let button of listButtonMinus){
                 document.cookie = `list_products = ${cookies}; path = /`
             }
             countProduct(button.id)
+            document.location.reload()
         }
     )
 }

@@ -71,6 +71,7 @@ for (let count= 0; count < listButton.length; count++){
             }else{
                 document.cookie = `list_products = ${listIdProduct}|${button.id}|; path = /`
             }
+            document.location.reload()
         }
     )
 }

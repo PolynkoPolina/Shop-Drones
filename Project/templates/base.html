@@ -38,20 +38,23 @@
                     
                     {% if current_user.is_authenticated %}
                         <p>{{ current_user.username }}</p>
-                        <!--logout username-->
-                        <a href = "/logout">Logout</a>
-                        <!-- -->
+                        <div class="img-profile"></div>
                     {% else %}
-                        <a href="/profile">
+                        <button type="button" onclick="openLogIn()">
                             <div class="img-profile"></div>
-                        </a>
-                        
+                        </button>
                     {% endif %}
                 </span>
             </nav>
+
             <div id="cart-modal" style="display: none;">
-                <iframe src= "/cart" frameborder="0"></iframe>
-                 <button id= "close-cart" onclick="closeCart()"><img src="{{ url_for('cart.static', filename= 'icons/close.svg') }}" alt="x"></button>
+                <iframe src= "/cart" frameborder="0" class="iframe-cart"></iframe>
+                <button id= "close-cart" onclick="closeCart()"><img src="{{ url_for('cart.static', filename= 'icons/close.svg') }}" alt="x"></button>
+            </div>
+
+            <div id="login-modal" style="display: none;">
+                <iframe src= "/authorization" frameborder="0"></iframe>
+                <button id= "close-login" onclick="closeLogIn()"><img src="{{ url_for('cart.static', filename= 'icons/close.svg') }}" alt="x"></button>
             </div>
         </header>
         <main>
@@ -59,13 +62,10 @@
             {% block content %} 
             {% endblock %}
         </main>
-        {% block scripts %}
-        {% endblock %}
-        <script src="{{ url_for('static', filename= 'js/cart.js') }}"></script>
         <footer>
             <div class="ellipse-footer"></div>
-            <img id = 'logo-footer' src="{{ url_for('static', filename= 'icon/logo_footer.svg') }}" alt="">
-            <div id="client-container">
+            <img class = 'logo-footer' src="{{ url_for('static', filename= 'icon/logo_footer.svg') }}" alt="">
+            <div class="client-container">
                 
                 <div class="client">
                     <span>1K+</span>
@@ -88,7 +88,12 @@
                 <a href="/profile">КАБІНЕТ</a>
             </div>
             <hr>
-            <p id="drones-footer">© 2025 Drones Всі права захищені.</p>
+            <p class="drones-footer">© 2025 Drones Всі права захищені.</p>
         </footer>
+
+        {% block scripts %}
+        {% endblock %}
+        <script src="{{ url_for('static', filename= 'js/cart.js') }}"></script>
+        <script src="{{ url_for('static', filename= 'js/login.js') }}"></script>
     </body>
 </html>

@@ -1,25 +1,31 @@
-{% extends "base.html" %}
-
-{% block title %}
-    Authorization
-{% endblock %}
-
-{% block links %}
-    <link rel = "stylesheet" href = "{{ url_for('user.static', filename='css/login.css' ) }}">
-{% endblock %}
-
-{% block content %}
-
-    <h1> Authorization page</h1>
-
-    <div class = "authorization">
-        <h2> Форма авторизації користувача </h2>
-        <form action = "" method = "post">
-
-            <input type = "text" name = "username" placeholder = "Задайте ваше ім'я">
-            <input type = "password" name = "password" placeholder = "Створіть ваш пароль">
-
-            <button type = "submit">Авторизуватися</button>
-        </form>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="modal-header">
+        <a href="/authorization">Авторизація</a>
+        <a href="/registration">Реєсрація</a>
     </div>
-{% endblock %}
+    <div class = 'modal-body'>
+        <div class="inputs-container">
+            <div class="email">
+                <p><label for="email">Email</label></p>
+                <input type="email" id="email" placeholder="Введіть ваш email">
+            </div>
+            <div class="password">
+                <p><label for="password">Пароль</label></p>
+                <input type="password" id="password" placeholder="Введіть ваш пароль">
+            </div>
+            <a href="/restorationpassword">Забули пароль?</a>
+        </div>
+
+        <div class="buttons-container">
+            <button type="button">Cкасувати</button>
+            <button>Увійти</button>
+        </div>
+    </div>
+</body>
+</html>

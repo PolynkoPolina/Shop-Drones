@@ -1,5 +1,5 @@
 :root{
-    --textColor: #0C122A;
+    --textColor: .0C122A;
 }
 
 main h1{
@@ -21,7 +21,7 @@ body{
     justify-content: center;
 }
 
-#wrapper{
+.wrapper{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,7 +31,7 @@ body{
     z-index: 3;
 }
 
-#products{
+.products{
     display: grid;
     grid-template-columns: repeat(4, 22.4vw);
     grid-template-rows: repeat(auto, 42.7vh);
@@ -68,18 +68,18 @@ body{
     object-fit: contain;
 }
 
-#price-product{
+.price-product{
     font-size: 1.5vh;
 }
 
-#product-dec{
+.product-dec{
     width: 20vw;
     height: 12vh;
     display: grid;
     grid-template-columns: 15vw 5vw;
 }
 
-#name-price{
+.name-price{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -88,7 +88,7 @@ body{
     height: 12vh;
 }
 
-#name-container{
+.name-container{
     width: 14vw;
     height: auto;
     font-size: 3vh;
@@ -149,7 +149,7 @@ body{
     font-weight: bold;
 }
 
-#end-page{
+.end-page{
     transform: rotate(-180deg);
 }
 
@@ -162,7 +162,7 @@ body{
     height: 6vh;
     background: #FFFFFF;
     border-radius: 50%;
-    border: 0.2vh solid #0C122A;  
+    border: 0.2vh solid .0C122A;  
     opacity: 0;
     margin-top: 3vh;
 }

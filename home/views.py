@@ -8,14 +8,8 @@ from shop.models import Product
 
 @config_page(template_name= 'home.html')
 def render_home():
-    model_list_products = Product.query.all()
-    list_products = []
-    for i in range(3):
-        product = model_list_products[i]
-        list_products.append(product)
-    print(list_products)
+    list_products = Product.query.limit(4).all()
     return {
-        'list_product': model_list_products
+        'list_products': list_products
     }
-
     

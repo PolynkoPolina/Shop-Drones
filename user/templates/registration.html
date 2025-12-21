@@ -1,22 +1,47 @@
-{% extends 'base.html' %}
-
-{% block title %}
-    Registration 
-{% endblock %}
-
-{% block content %}
-    <div class="registration">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div class="modal-header">
+        <a href="/authorization">Авторизація</a>
+        <a href="/registration">Реєсрація</a>
+    </div>
+    <div class="modal-body">
             <form action="" method="post">
+                <div>
+                    <p><label for="username">Ім'я</label></p>
+                    <input type="text" name="username" placeholder="Введіть ім'я" id="username">
+                </div>
 
-                <input type="text" name="username" placeholder="Enter your username">
-                <input type="email" name="email" placeholder="Enter your email">
-                <input type="password" name="password" placeholder="Enter your password">
-                <input type="password" name="confirm_password" placeholder="Confirm your password">
+                <div>
+                    <p><label for="email"></label></p>
+                    <input type="email" name="email" placeholder="Ввудіть email" id="email">
+                </div>
 
-                <button type="submit">Send</button>
+                <div>
+                    <p><label for="password">Пароль</label></p>
+                    <input type="password" name="password" placeholder="Введіть пароль" id="password">
+                </div>
+
+                <div>
+                    <p><label for="confirm-password">Підтвердження пароля</label></p>
+                    <input type="password" name="confirm_password" placeholder="Повторіть пароль" id="confirm-password">
+                </div>
+                <span>Вже є акаунт?</span><a href="/authorization">Увійти</a>
+                <div class="button-licence">
+                    <div class="buttons-container">
+                        <button type="button">Cкасувати</button>
+                        <button type="submit">Зареєструватися</button>
+                    </div>
+                    <p>При вході або реєстрації, я підтверджую згоду з умовами публічного договору</p>
+                </div>
             </form>
             {% if message %}
                 <p>{{message}}</p>
             {% endif %}
     </div>
-{% endblock %}
+</body>
+</html>

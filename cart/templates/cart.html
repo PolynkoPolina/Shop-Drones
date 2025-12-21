@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="html">
+<html lang="en" class="html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +8,19 @@
 </head>
 <body>
     <main>
-        <div id="modal-header">
+        <div class="modal-header">
             <h3>Кошик</h3>
         </div>
-        <div id="modal-body">
+        <div class="modal-body">
             {% if list_products %}
-                <div id="product-container">
+                <div class="product-container">
                     {% for product, count in list_products %}
                     <div id="product-{{product.id}}">
                         <div  class="product">
                             <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
-                            <div id="product-content">
-                                <div id="name-price">
-                                    <div id="price">
+                            <div class="product-content">
+                                <div class="name-price">
+                                    <div class="price">
                                         <h4>{{ product.product_name }}</h4>
                                     </div>
                                     <p>{{product.price|string| replace('000', ' 000')}} ₴</p>
@@ -29,7 +29,7 @@
                                 <!-- <form action="/delete_product_to_cart" method="post">
                                     <button type="submit" name="delete" value="{{product.id}}">DELETE</button>
                                 </form> -->
-                                <div id="buttons">
+                                <div class="buttons">
                                     <button type="button" class="minus" id="{{product.id}}">-</button>
                                     <span class="count-{{product.id}}">{{count}}</span>
                                     <button type="button" class="plus" id="{{product.id}}">+</button>
@@ -43,31 +43,31 @@
                         {% endfor %}
                 </div>  
             <hr>
-            <div id = "prices">
-                <div class = "modalContent-description"><p>Загальна сумма</p> <p id = "global-price">{{products_price|string| replace('000', ' 000')}} ₴</p></div>
-                <div class = "modalContent-description"><p>Заощаджено</p> <p id = "discount">{{products_discount|string| replace('000', ' 000')}} ₴</p></div>
-                <div class = "modalContent-description"><p>Зі знижкою</p> <p id = "final-price">{{general_products_price|string| replace('000', ' 000')}} ₴</p></div>
+            <div class = "prices">
+                <div class = "modalContent-description"><p>Загальна сумма</p> <p class = "global-price">{{products_price|string| replace('000', ' 000')}} ₴</p></div>
+                <div class = "modalContent-description"><p>Заощаджено</p> <p class = "discount">{{products_discount|string| replace('000', ' 000')}} ₴</p></div>
+                <div class = "modalContent-description"><p>Зі знижкою</p> <p class = "final-price">{{general_products_price|string| replace('000', ' 000')}} ₴</p></div>
             </div>
             <hr>
-            <div id = "buy-buttons">
-                <button id = "go-to-cart" type = "button">Перейти до кошика</button>
-                <button id = "create-order">Оформити замовлення <img src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt=""></button>
+            <div class = "buy-buttons">
+                <button class = "go-to-cart" type = "button">Перейти до кошика</button>
+                <button class = "create-order">Оформити замовлення <img src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt=""></button>
             </div>  
             {% else %}
-                <div id="modal-body-empty">
-                    <hr id="hr-1">
+                <div class="modal-body-empty">
+                    <hr class="hr-1">
                     <div class="cart-text">
                         <p>Ваш кошик порожній.</p>
                         <p>Почніть вибирати товари, щоб вони з’явилися тут</p>
                     </div>
-                    <hr id="hr-2">
-                    <div id="buttons-r">
-                        <button type="button" id="empty-cart-button">Продовжити Покупки</button>
+                    <hr class="hr-2">
+                    <div class="buttons-r">
+                        <button type="button" class="empty-cart-button">Продовжити Покупки</button>
                     </div>
                 </div>
             {% endif %}
         </div>
-        <div id="modal-footer"></div>
+        <div class="modal-footer"></div>
     </main>
 </body>
 <script type="module" src="{{ url_for('cart.static', filename= 'js/addProduct.js') }}"></script>

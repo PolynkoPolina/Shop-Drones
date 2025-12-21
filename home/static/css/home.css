@@ -127,13 +127,27 @@ main{
     margin-bottom: 2vh;
 }
 
+.buy-icon{
+    position: absolute;
+    width: 3vw;
+    height: 6vh;
+    background: #FFFFFF;
+    border-radius: 50%;
+    border: 0.2vh solid .0C122A;  
+    opacity: 0;
+    right: 3vw
+}
+
+.catalog:hover .buy-icon{
+    opacity: 1;
+}
 
 .catalog{
     display: flex;
     gap: 1.6vw;
 }
 
-.catalog-container h1{
+.catalog-h1{
     color: #CDD5DD;
     margin-top: 10vh;
     font-family: GT Walsheim Pro UltraBold;
@@ -141,10 +155,10 @@ main{
 
 .catalog-container{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
     gap: 5vh;
 }
+
 
 .catalog-product{
     display: flex;
@@ -170,7 +184,7 @@ main{
     gap: 5vh;
 }
 
-#new-img-container{
+.new-img-container{
     position: relative;
     display: flex;
     width: 94.5vw;
@@ -190,16 +204,16 @@ main{
     background-image: linear-gradient(to top, #4F94A4 3%, transparent 90%);
 }
 
-#new-name{
+.new-name{
     font-size: 5vh;
 }
 
-#new-name-description{
+.new-name-description{
     margin-top: 15.7vh;
     margin-left: 2vw;
 }
 
-#read-more {
+.read-more {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -214,30 +228,32 @@ main{
     gap: 1vw;
 }
 
-#read-more:hover{
+.read-more:hover{
     background-color: #eaeaec;
 }
 
-#discount-container{
+.discount-container{
     display: flex;
     gap: 1vw;
 }
 
-#catalog-3{
+.catalog-3{
     width: 11.4vw;
     height: 25.2vh;
     margin-top: 4vh;
 }
 
-#discount{
+.discount{
     text-decoration: line-through;
 }
 
-#price-with-discount{
+.price-with-discount{
     color: #B62D11;
 }
 
-#catalog-arrow{
+.catalog-arrow{
     width: 1.6vw;
     height: 2.8vh;
 }
+
+

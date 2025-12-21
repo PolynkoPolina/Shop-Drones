@@ -20,7 +20,7 @@
     <div class="to-catalog">
         <p>Передові технології в новому місці.</p>
         <p>Обирай найкраще для найважливішого.</p>
-        <button id="to-catalog-button" type="button"><a href="/shop">ДО КАТАЛОГУ</a></button>
+        <button class="to-catalog-button" type="button"><a href="/shop">ДО КАТАЛОГУ</a></button>
     </div>
 {% endblock %}
 
@@ -33,21 +33,21 @@
         <p>Пропонуємо дрони й тепловізори, перевірені у найскладніших умовах.</p>
         <p>Обираємо тільки те, чому довіряємо самі.</p>
         
-        <button id="read-more" type="button">ЧИТАТИ БІЛЬШЕ<img src="{{ url_for('home.static', filename= 'icon/arrow.svg') }}" alt=""></button>
+        <button class="read-more" type="button">ЧИТАТИ БІЛЬШЕ<img src="{{ url_for('home.static', filename= 'icon/arrow.svg') }}" alt=""></button>
     </div>
 
 
 
     <div class="new">
         <h1>НОВЕ НА САЙТІ</h1>
-        <div id="new-img-container">
-            <div class="new-drones" id="new-drone-1">    
+        <div class="new-img-container">
+            <div class="new-drones" class="new-drone-1">    
                 <img class = "drone-new" src="{{ url_for('home.static', filename= 'media/images/drone_1.png') }}" alt="">
                 <img class = "background-new" src="{{ url_for('home.static', filename= 'media/images/river.png') }}" alt="">
                 <div class="new-text" id="new-1">
                     
-                    <div id="new-name-description">
-                    <p id="new-name">DJI Mini 4k</p>
+                    <div class="new-name-description">
+                    <p class="new-name">DJI Mini 4k</p>
                     <span>Easy-to Use Mini Camera Drone</span>
                     </div>
                     
@@ -58,14 +58,14 @@
                 </div>
               
             </div>
-            <div class="new-drones" id="new-drone-2">
+            <div class="new-drones" class="new-drone-2">
                 <img src="{{ url_for('home.static', filename= 'media/images/drone_2.png') }}" alt="" class="drone-new">
                 <img class = "background-new" src="{{ url_for('home.static', filename= 'media/images/forest.jpg') }}" alt="">
                 <div class = "background-new">
                     <div class="new-text" id="new-2">
                     
-                        <div id="new-name-description">
-                        <p id="new-name">DJI Mini 4k Pro</p>
+                        <div class="new-name-description">
+                        <p class="new-name">DJI Mini 4k Pro</p>
                         <span>Easy-to Use Mini Camera Drone</span>
                         </div>
                         
@@ -76,13 +76,13 @@
                     </div>
                 </div>
             </div>
-            <div class="new-drones" id="new-drone-3">
+            <div class="new-drones" class="new-drone-3">
                 <img class = "drone-new" src="{{ url_for('home.static', filename= 'media/images/drone_1.png') }}" alt="">
                 <img class = "background-new" src="{{ url_for('home.static', filename= 'media/images/lake.jpg') }}" alt="">
                 <div class="new-text" id="new-3">
                     
-                    <div id="new-name-description">
-                    <p id="new-name">DJI Mini 4k</p>
+                    <div class="new-name-description">
+                    <p class="new-name">DJI Mini 4k</p>
                     <span>Easy-to Use Mini Camera Drone</span>
                     </div>
                     
@@ -96,26 +96,28 @@
     </div>
 
 
+    <h1 class = "catalog-h1">КАТАЛОГ</h1>
     <div class="catalog-container">
-        <h1>КАТАЛОГ</h1>
+      
         {% if list_products %}
-            {% for product in list_products %}
+            {% for product in list_products[:4] %}
                 <div class="catalog">
                     <div class = "catalog-product">
                         <img class = "catalog-img" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}">             
                         <div class = "catalog-price">
                             <h2>{{product.product_name}}</h2>
-                            <div id="discount-container">
-                                <p id = "discount">{{product.price}}$</p>
-                                <p id="price-with-discount">{{product.price}}$</p>
+                            <div class="discount-container">
+                                <p class = "discount">{{product.price}}$</p>
+                                <p class="price-with-discount">{{product.price}}$</p>
                             </div>
+                            <button type="button" class="buy-icon" id="{{product.id}}"><img src="{{ url_for('shop.static', filename= 'icons/cart.svg') }}" alt=""></button>
                         </div>
                     </div>
                 </div>
             {% endfor %}
         {% endif %}        
-       <a href="/shop"><button id = "view-all-button" type="button">ДИВИТИСЬ ВСІ<img id= "catalog-arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt=""></button></a> 
-    </div>
+       </div>
+    <a href="/shop"><button class = "view-all-button" type="button">ДИВИТИСЬ ВСІ<img class= "catalog-arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt=""></button></a> 
 
 {% endblock %}
 

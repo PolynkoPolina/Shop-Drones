@@ -22,7 +22,7 @@
                 <input type="number" name="discount" placeholder="">
                 <input type="number" name="count" placeholder="">
 
-                <textarea name="description" id="" placeholder=""></textarea>
+                <textarea name="description" placeholder=""></textarea>
                 <input type="file" name="image" accept="image/*">
 
                 <button type="submit">SEND</button>
@@ -33,31 +33,31 @@
         </div>
     {% endif %}
 
-    <div id="wrapper">
+    <div class="wrapper">
         <form action="/shop?type=filter" method="post" class = "filter_buttons">
             <button class = "button" type="submit" name="filter" value="all">Всі</button>
             <button class = "button" type="submit" name="filter" value="drone"><img src="{{ url_for('shop.static', filename= 'images/products/DJI Mini 4k.png') }}" alt=""></button>
             <button class = "button" type="submit" name="filter" value="camera"><img src="{{ url_for('shop.static', filename= 'images/products/Тепловізор ATN OTS-XLT 160 2.5-10X.png') }}" alt=""></button>
         </form>
-        <div id="products">
+        <div class="products">
 
             {% if list_product %}
                 {% for product in list_product %}
 
                     <div id="product-{{product.id}}" class="product"> 
                         <img class="product-img" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}">
-                        <div id= 'product-dec'>
-                            <div id= "name-price">
-                                <div id="name-container">
+                        <div class= 'product-dec'>
+                            <div class= "name-price">
+                                <div class="name-container">
                                     <h3>{{product.product_name}}</h3>
                                 </div>
-                                <h3 id="price-product">{{product.price|string| replace('000', ' 000')}} ₴</h3>
+                                <h3 class="price-product">{{product.price|string| replace('000', ' 000')}} ₴</h3>
                             </div>
                             <button type="button" class="buy" id="{{product.id}}"><img src="{{ url_for('shop.static', filename= 'icons/cart.svg') }}" alt=""></button>
                         </div>
 
                     {% if current_user.is_admin %} 
-                        <button type="button" id="delete" value="{{product.id}}">Видалити</button>
+                        <button type="button" class="delete" value="{{product.id}}">Видалити</button>
                     {% endif %}
                     </div>
                 {% endfor %}
@@ -65,14 +65,14 @@
         </div>
         <div class = "pagination">
             <img src="{{ url_for('shop.static', filename= 'icons/pagination.svg') }}" alt="">
-            <button class="pagination-page" type="button" id="pagination1">1</button>
+            <button class="pagination-page" type="button" class="pagination1">1</button>
             <button class="pagination-page" type="button">2</button>
             <button class="pagination-page" type="button">3</button>
             <button class="pagination-page" type="button">4</button>
             <button class="pagination-page" type="button">5</button>
             <button class="pagination-page" type="button">6</button>
             <button class="pagination-page" type="button">7</button>
-            <img src="{{ url_for('shop.static', filename= 'icons/pagination.svg') }}" alt="" id="end-page">
+            <img src="{{ url_for('shop.static', filename= 'icons/pagination.svg') }}" alt="" class="end-page">
         </div>
     </div> 
 {% endblock %}

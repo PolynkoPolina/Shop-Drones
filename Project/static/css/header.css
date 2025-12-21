@@ -22,7 +22,7 @@ header a:hover{
     transform: scale(1.05);
 }
 
-iframe{
+.iframe-cart{
     width: 44vw;
 }
 
@@ -36,6 +36,17 @@ iframe{
     background-color: #FFFFFF;
     border-radius: 2vh;
     box-shadow: 0.1vh 0.07vh 1.3vh rgb(19, 19, 19, 0.3);
+}
+
+#login-modal{
+    position: fixed;
+    bottom: 30vh;
+    left: 50vw;
+    transform: translate(-50%);
+    background-color: #FFFFFF;
+    width: 31vw;
+    height: 41.5vh;
+    border-radius: 1.2vh;
 }
 
 #close-cart{
@@ -99,9 +110,13 @@ iframe{
     background-image: url('/static/icon/cart.svg');
     background-size: contain;
 }
+
 .img-profile{
+    width: 1.5vw;
+    height: 3.2vh;
     background-image: url('/static/icon/profile.svg');
 }
+
 .cart:hover{
     background-image: url('/static/icon/cart_black.svg');
 }
