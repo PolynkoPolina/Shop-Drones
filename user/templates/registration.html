@@ -2,46 +2,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registration</title>
+    <link rel="stylesheet" href="{{ url_for('user.static', filename= 'css/auth-registr.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/base.css') }}">
 </head>
 <body>
-     <div class="modal-header">
-        <a href="/authorization">Авторизація</a>
-        <a href="/registration">Реєсрація</a>
-    </div>
-    <div class="modal-body">
-            <form action="" method="post">
-                <div>
-                    <p><label for="username">Ім'я</label></p>
-                    <input type="text" name="username" placeholder="Введіть ім'я" id="username">
-                </div>
+        <div class="modal-header">
+            <div>
+                <a href="/authorization" id="auth-link" style="color: var(--grey);"  onclick="changeMosalSize()">Авторизація</a>
+                <span>/</span>
+                <a href="/registration" id="registr-link" style="color: var(--darkblue);"  onclick="changeMosalSize()">Реєсрація</a>
+            </div>
+            <button id ="close-auth-registr" onclick="closeAuthRegistr()"></button>
+       </div>
+       <div class="modal-body">
+               <form action="" method="post">
+                    <div class="inputs-container">
 
-                <div>
-                    <p><label for="email"></label></p>
-                    <input type="email" name="email" placeholder="Ввудіть email" id="email">
-                </div>
+                        <div>
+                            <p><label for="username">Ім'я</label></p>
+                            <input type="text" name="username" placeholder="Введіть ім'я" id="username">
+                        </div>
+                        <div>
+                            <p><label for="email">Email</label></p>
+                            <input type="email" name="email" placeholder="Ввудіть email" id="email">
+                        </div>
+                        <div>
+                            <p><label for="password">Пароль</label></p>
+                            <input type="password" name="password" placeholder="Введіть пароль" id="password">
+                            <button class="password-eye" type="button"></button>
+                        </div>
+                        <div>
+                            <p><label for="confirm-password">Підтвердження пароля</label></p>
+                            <input type="password" name="confirm_password" placeholder="Повторіть пароль" id="confirm-password">
+                            <button class="password-eye" type="button"></button>
+                        </div>
 
-                <div>
-                    <p><label for="password">Пароль</label></p>
-                    <input type="password" name="password" placeholder="Введіть пароль" id="password">
-                </div>
-
-                <div>
-                    <p><label for="confirm-password">Підтвердження пароля</label></p>
-                    <input type="password" name="confirm_password" placeholder="Повторіть пароль" id="confirm-password">
-                </div>
-                <span>Вже є акаунт?</span><a href="/authorization">Увійти</a>
-                <div class="button-licence">
-                    <div class="buttons-container">
-                        <button type="button">Cкасувати</button>
-                        <button type="submit">Зареєструватися</button>
+                        <span>Вже є акаунт?<a href="/authorization" id='log-in-link'  onclick="changeMosalSize()">Увійти</a></span>
                     </div>
-                    <p>При вході або реєстрації, я підтверджую згоду з умовами публічного договору</p>
-                </div>
-            </form>
-            {% if message %}
-                <p>{{message}}</p>
-            {% endif %}
-    </div>
+                        <div class="button-licence">
+                            <div class="buttons-container">
+                                <button type="button" onclick="closeAuthRegistr()" >Cкасувати</button>
+                                <button type="submit">Зареєструватися</button>
+                            </div>
+                            <p>При вході або реєстрації, я підтверджую згоду з умовами публічного договору</p>
+                        </div>
+                    
+               </form>
+               {% if message %}
+                   <p>{{message}}</p>
+               {% endif %}
+       </div>
 </body>
+<script src="{{ url_for('user.static', filename= 'js/auth-registr.js') }}"></script>
 </html>

@@ -131,7 +131,6 @@ body{
 }
 
 .pagination-page{
-    cursor:auto;
     user-select: none;
     width: 2.7vw;
     height: 4.7vh;

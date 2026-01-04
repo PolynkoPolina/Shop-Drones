@@ -1,6 +1,5 @@
 :root{
     --sizeImageProfile: 2.75vh;
-    --red: #B62D11;
 }
 
 header{
@@ -11,7 +10,7 @@ header{
     align-items: center;
     width: 100vw;
     overflow: hidden;
-    z-index: 100;
+    z-index: 1;
 }
 
 header a{
@@ -22,14 +21,17 @@ header a:hover{
     transform: scale(1.05);
 }
 
-.iframe-cart{
-    width: 44vw;
+.iframe-cart, .iframe-auth-registr{
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    position: relative;
 }
 
 #cart-modal{
     height: 83vh;
     width: 44vw;
-    z-index: 100;
+    z-index: 3;
     position: fixed;
     top: 12vh;
     left: 50vw;
@@ -38,24 +40,25 @@ header a:hover{
     box-shadow: 0.1vh 0.07vh 1.3vh rgb(19, 19, 19, 0.3);
 }
 
-#login-modal{
+#auth-registr-modal{
     position: fixed;
     bottom: 30vh;
     left: 50vw;
     transform: translate(-50%);
     background-color: #FFFFFF;
     width: 31vw;
-    height: 41.5vh;
+    height: 22rem;
     border-radius: 1.2vh;
+    z-index: 3;
 }
 
-#close-cart{
-    position: absolute;
-    top: 3vh;
-    right: 2vw;
-    background-color: transparent;
-    border: none;
-    font-size: 2.2vw;
+.background-blur-div{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(12, 18, 42, 70%);
+    backdrop-filter: blur(10px);
+    z-index: 2;
 }
 
 .nav-header{
@@ -79,13 +82,16 @@ header a:hover{
     align-items: center;
     width: 15vw;
 }
+
 .links a{
     font-size: 1.75vh;
     color: #9EA0AA;
 }
+
 .links a:hover{
     color: #0C122A;
 }
+
 .profile{
     display: flex;
     justify-content: end;
@@ -93,6 +99,7 @@ header a:hover{
     gap: 2vw;
     width: 15vw;
 }
+
 .profile a div{
     width: var(--sizeImageProfile);
     height: var(--sizeImageProfile);
@@ -104,22 +111,27 @@ header a:hover{
     border: none;
     background-color: transparent;
 }
+
 .cart{
     width: 1.5vw;
     height: 3.2vh;
     background-image: url('/static/icon/cart.svg');
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .img-profile{
     width: 1.5vw;
     height: 3.2vh;
     background-image: url('/static/icon/profile.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .cart:hover{
     background-image: url('/static/icon/cart_black.svg');
 }
+
 .img-profile:hover{
     background-image: url('/static/icon/profile_black.svg');
 }

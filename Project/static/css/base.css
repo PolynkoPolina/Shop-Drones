@@ -14,6 +14,16 @@
     src: url(fonts/GTWalsheimPro-Bold.ttf);
 }
 
+:root{
+    --darkblue: #0C122A;
+    --darkbluehover: #080417;
+    --grey: #9EA0AA;
+    --lightgrey: #E7E7EA;
+    --red: #B62D11;
+    --bluegrey: #3D4155;
+    --inputgrey: #CED0D4;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -54,12 +64,8 @@ img{
 }
 
 ::-webkit-scrollbar {
-    background-color: none;
-    height: 0.1vh;
-}
 
-::-webkit-scrollbar-track {
-    background-color: none;
+    height: 0.1vh;
 }
 
 ::-webkit-scrollbar-thumb {

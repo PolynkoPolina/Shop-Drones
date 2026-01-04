@@ -1,0 +1,97 @@
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+input{
+    width: 89vw;
+    height: 2.5rem;
+    color: var(--grey);
+    border: 1px solid var(--inputgrey);
+    padding: 0rem 3.5vw 0rem 3.5vw;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+}
+
+input::selection{
+    border: 1px solid var(--grey);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 17vh;
+    padding: 1rem 5.3vw 1rem 5.3vw;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.modal-header a{
+    font-size: 1.75rem;
+    font-weight: 500;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.75rem;
+    margin-top: 1rem;
+    height: auto;
+    width: 100%;
+    padding: 1rem 5.3vw 1rem 5.3vw;
+}
+
+.inputs-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 89vw;
+}
+
+.inputs-container div{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 89vw;
+    height: 4rem;
+}
+
+.password-eye{
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background-image: url(../icon/eye-not-show.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    top: 2.25rem;
+    right: 3.6vw;
+}
+
+.forget-password{
+    color: var(--grey);
+    text-decoration: underline;
+}
+
+.buttons-container, .button-licence{
+    color: var(--darkblue);
+}
+
+#close-auth-registr{
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: transparent;
+    border: none;
+    background-image: url(/cart/static/icon/close.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+

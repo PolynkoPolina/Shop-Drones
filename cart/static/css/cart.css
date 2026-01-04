@@ -1,38 +1,3 @@
-@font-face {
-    font-family: GT Walsheim Pro;
-    src: url(fonts/GTWalsheimPro-Regular.ttf);
-}
-
-:root{
-    --darkblue: #0C122A;
-    --darkbluehover: #080417;
-    --grey: #9EA0AA;
-    --lightgrey: #E7E7EA;
-    --red: #B62D11;
-    --bluegrey: #3D4155;
-}
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-
-button{
-    transition: transform 0.5s;
-    cursor: pointer;
-}
-
-button:hover{
-    transform: scale(1.05);
-}
-
-body *{
-    font-family: GT Walsheim Pro;
-}
-
 body{
     overflow: hidden;
 }
@@ -76,9 +41,15 @@ body{
     border-radius: 1.2vh;
 }
 
-.product hr{
-    width: 41vw;
-    background-color: #CED0D4;
+.product-id{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-id hr{
+    width: 92%;
+    border: 1px solid #CED0D4;
 }
 
 .product-content{
@@ -102,8 +73,11 @@ body{
 }
 
 .modal-header{
+    width: 100%;
+    height: fit-content;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1vh 2vw 0vh 2vw;
     font-size: 4vh;
 }
@@ -139,7 +113,7 @@ body{
     height: 1.5rem;
     background-color: transparent;
     border:none;
-    background-image: url('/cart/static/icons/trash.svg');
+    background-image: url('/cart/static/icon/trash.svg');
     background-size: contain;
 
 }
@@ -194,7 +168,8 @@ body{
     display: flex;
     justify-content: end;
     margin-top: 3vh;
-    gap: 8px;
+    gap: 1vw;
+    padding-right: 2vw;
 }
 
 .prices{
@@ -254,3 +229,12 @@ body{
     justify-content: end;
 }
 
+#close-cart{
+    width: 2vw;
+    height: 2vw;
+    background-color: transparent;
+    border: none;
+    background-image: url(/cart/static/icon/close.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}

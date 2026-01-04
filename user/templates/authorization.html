@@ -2,30 +2,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Authorization</title>
+    <link rel="stylesheet" href="{{ url_for('user.static', filename= 'css/auth-registr.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/base.css') }}">
+</head>
 </head>
 <body>
-    <div class="modal-header">
-        <a href="/authorization">Авторизація</a>
-        <a href="/registration">Реєсрація</a>
-    </div>
-    <div class = 'modal-body'>
-        <div class="inputs-container">
-            <div class="email">
-                <p><label for="email">Email</label></p>
-                <input type="email" id="email" placeholder="Введіть ваш email">
+        <div class="modal-header">
+            <div>
+                <a href="/authorization" id = 'auth-link'  style="color: var(--darkblue);" onclick="changeMosalSize()">Авторизація</a>
+                <span>/</span>
+                <a href="/registration" id = 'registr-link' style="color: var(--grey);" onclick="changeMosalSize()">Реєстрація</a>
             </div>
-            <div class="password">
-                <p><label for="password">Пароль</label></p>
-                <input type="password" id="password" placeholder="Введіть ваш пароль">
-            </div>
-            <a href="/restorationpassword">Забули пароль?</a>
+            <button id= "close-auth-registr" onclick="closeAuthRegistr()"></button>
+        </div>
+    
+        <div class="modal-body">
+            <form action="" method="post">
+                <div class="inputs-container">
+                    
+                    <div class="email">
+                        <p><label for="email" class = "label">Email</label></p>
+                        <input type="email" id= "email" name="email" placeholder="Введіть email">
+                    </div>
+                
+                    <div class="password">
+                        <p><label for="password" class = "label">Пароль</label></p>
+                        <input type="password" id="password" name="password" placeholder="Введіть пароль">
+                        <button class="password-eye" type="button"></button>
+                    </div>
+                
+                    <a href="/restorationpassword" class = "forget-password">Забули пароль?</a>
+                </div>
+                <div class="buttons-container">
+                    <button type="button" onclick="closeAuthRegistr()">Скасувати</button>
+                    <button>Увійти</button>
+                </div>
+            </form>
         </div>
 
-        <div class="buttons-container">
-            <button type="button">Cкасувати</button>
-            <button>Увійти</button>
-        </div>
-    </div>
 </body>
+<script src="{{ url_for('user.static', filename= 'js/auth-registr.js') }}"></script>
 </html>

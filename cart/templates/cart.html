@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('cart.static', filename='css/cart.css' ) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/base.css') }}">
 </head>
 <body>
     <main>
         <div class="modal-header">
             <h3>Кошик</h3>
+            <button id= "close-cart" onclick="closeCart()"></button>
         </div>
         <div class="modal-body">
             {% if list_products %}
                 <div class="product-container">
                     {% for product, count in list_products %}
-                    <div id="product-{{product.id}}">
+                    <div id="product-{{product.id}}" class="product-id">
                         <div  class="product">
                             <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
                             <div class="product-content">
@@ -73,6 +75,7 @@
 <script type="module" src="{{ url_for('cart.static', filename= 'js/addProduct.js') }}"></script>
 <script type="module" src="{{ url_for('cart.static', filename= 'js/removeProduct.js') }}"></script>
 <script src="{{ url_for('cart.static', filename= 'js/deleteProduct.js') }}"></script>
+<script src="{{ url_for('cart.static', filename= 'js/openCloseCart.js') }}"></script>
 </html>
 
 
