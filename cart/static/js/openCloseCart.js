@@ -30,6 +30,6 @@ if (listIdProduct){
     cartCircle.style.display = 'none';
 };
 
-if(listIdProduct.length <= 0){
+if(listIdProduct == undefined || listIdProduct.length <= 0){
     cart.style.height = '47.6vh';
 }

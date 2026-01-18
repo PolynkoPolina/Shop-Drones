@@ -23,7 +23,7 @@ input::selection{
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 17vh;
+    height: 3.75rem;
     padding: 1rem 5.3vw 1rem 5.3vw;
     font-size: 1.75rem;
     font-weight: 600;
@@ -41,10 +41,10 @@ input::selection{
     flex-direction: column;
     align-items: center;
     gap: 2.75rem;
-    margin-top: 1rem;
     height: auto;
     width: 100%;
     padding: 1rem 5.3vw 1rem 5.3vw;
+    overflow: hidden;
 }
 
 .inputs-container{
@@ -76,9 +76,56 @@ input::selection{
     right: 3.6vw;
 }
 
-.forget-password{
+.forget-password, #log-in-link{
     color: var(--grey);
     text-decoration: underline;
+}
+
+.buttons-container{
+    display: flex;
+    gap: 1vw;
+    margin-top: 2.7rem;
+}
+
+.cancel-button, .login-button, .reg-button{
+    text-transform: uppercase;
+    border-radius: 6vh;
+    letter-spacing: 9%; 
+    letter-spacing: 0.1rem;
+}
+
+.cancel-button{
+    border-radius: 6.25rem;
+    width: 7.5rem;
+    height: 2.5rem;
+    background-color: #FFFFFF;
+    border: 0.15rem solid #0C122A;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.reg-button, .login-button{
+    height: 2.5rem;
+    background-color: #0C122A;
+    border: none;
+    color: #FFFFFF;
+}
+
+.reg-button{
+    width: 11rem;
+    margin-bottom: 1rem;
+}
+
+.login-button{
+    width: 5.3rem;
+}
+
+.reg-licension{
+    color: var(--grey);
+}
+
+.public{
+    color: var(--red);
 }
 
 .buttons-container, .button-licence{

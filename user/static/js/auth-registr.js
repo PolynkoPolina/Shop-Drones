@@ -6,6 +6,8 @@ let authLink = document.getElementById('auth-link');
 let regisrtLink = document.getElementById('registr-link');
 let logInLink = document.getElementById('log-in-link');
 let arrayPasswordEyes = document.querySelectorAll(".password-eye")
+// const form = document.querySelector('form');
+
 
 openButton.addEventListener(
     'click',
@@ -51,3 +53,16 @@ for(let i=0; i < arrayPasswordEyes.length; i++){
         }
     )
 }
+
+
+// fetch("/authorization", {
+//     method: "POST",
+//     body: new FormData(form)
+// })
+
+// .then(r => r.json())
+// .then(data => {
+//     if (data.message == 'is_authenticated'){
+//         console.log(data.message);
+//     }
+// })

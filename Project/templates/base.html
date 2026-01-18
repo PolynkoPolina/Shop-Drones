@@ -38,7 +38,6 @@
                     
                     {% if current_user.is_authenticated %}
                         <p>{{ current_user.username }}</p>
-                        <div class="img-profile"></div>
                     {% else %}
                         <button type="button" id="auth-registr-button">
                             <div class="img-profile"></div>
@@ -51,10 +50,13 @@
                 <iframe src= "/cart" frameborder="0" class="iframe-cart"></iframe>
             </div>
 
-            <div id="auth-registr-modal" style="display: none;">
-                <iframe src= "/authorization" frameborder="0" class="iframe-auth-registr"></iframe>
-            </div>
-            <div class="background-blur-div" style="display: none;"></div>
+            
+                <div id="auth-registr-modal" style="display: none;">
+                    <iframe src= "/authorization" frameborder="0" class="iframe-auth-registr"></iframe>
+                </div>
+                <div class="background-blur-div" style="display: none;"></div>
+            
+
         </header>
         <main>
         

@@ -4,6 +4,8 @@ import flask_login
 from Project.db import DATABASE
 from Project.config_page import config_page
 
+# from flask import Blueprint
+# app = Blueprint("user_app", __name__)
 
 from .models import User
 
@@ -26,29 +28,29 @@ def render_registration() -> dict:
                 )
                 DATABASE.session.add(user)
                 DATABASE.session.commit()
-                message = "Успешная регистрация"
+                message = "successful registration"
             else:
-                message = "Пароли не совпадают"
+                message = "Паролі не співпадають"
         else:
-            message = "Пользователь с такой почтой уже зарегистрирован"
+            message = "Користувач з таким email вже існує"
     
     return {'message': message}
 
+# @app.route("/authorization", methods=["POST"])
 def render_authorization():
     
     if flask.request.method == "POST":
-        username_form = flask.request.form["username"]
+        email_form = flask.request.form["email"]
         password_form = flask.request.form["password"]
 
         list_users = User.query.all()
         for user in list_users:
-            if user.username == username_form and user.password == password_form:
+            if user.email == email_form and user.password == password_form:
                 flask_login.login_user(user)
     if not flask_login.current_user.is_authenticated:
         return flask.render_template("authorization.html")
     else:
-        return flask.redirect("/")
-
+        return flask.jsonify({'message': 'is_authenticated'})
 def logout():
     flask.session.clear()
     return flask.redirect("/")    

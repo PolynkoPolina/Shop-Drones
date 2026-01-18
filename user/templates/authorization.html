@@ -35,12 +35,11 @@
                     <a href="/restorationpassword" class = "forget-password">Забули пароль?</a>
                 </div>
                 <div class="buttons-container">
-                    <button type="button" onclick="closeAuthRegistr()">Скасувати</button>
-                    <button>Увійти</button>
+                    <button type="button" onclick="closeAuthRegistr()" class = "cancel-button">Скасувати</button>
+                    <button class = "login-button">Увійти</button>
                 </div>
             </form>
         </div>
-
 </body>
 <script src="{{ url_for('user.static', filename= 'js/auth-registr.js') }}"></script>
 </html>
