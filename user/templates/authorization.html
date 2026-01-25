@@ -10,9 +10,9 @@
 <body>
         <div class="modal-header">
             <div>
-                <a href="/authorization" id = 'auth-link'  style="color: var(--darkblue);" onclick="changeMosalSize()">Авторизація</a>
+                <a href="/authorization" id = 'auth-link'  style="color: var(--darkblue);">Авторизація</a>
                 <span>/</span>
-                <a href="/registration" id = 'registr-link' style="color: var(--grey);" onclick="changeMosalSize()">Реєстрація</a>
+                <a href="/registration" id = 'registr-link' style="color: var(--grey);">Реєстрація</a>
             </div>
             <button id= "close-auth-registr" onclick="closeAuthRegistr()"></button>
         </div>
@@ -37,6 +37,9 @@
                 <div class="buttons-container">
                     <button type="button" onclick="closeAuthRegistr()" class = "cancel-button">Скасувати</button>
                     <button class = "login-button">Увійти</button>
+                    {% if is_authenticated %} 
+                    <button class = "login-button" onclick="document.location.reload()">Увійти</button>
+                     {% endif %}
                 </div>
             </form>
         </div>

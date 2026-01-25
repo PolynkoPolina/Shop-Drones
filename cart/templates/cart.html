@@ -13,8 +13,8 @@
             <h3>Кошик</h3>
             <button id= "close-cart" onclick="closeCart()"></button>
         </div>
-        <div class="modal-body">
             {% if list_products %}
+             <div class="modal-body">
                 <div class="product-container">
                     {% for product, count in list_products %}
                     <div id="product-{{product.id}}" class="product-id">
@@ -42,7 +42,7 @@
                         <hr>
                     </div>
                         
-                        {% endfor %}
+                    {% endfor %}
                 </div>  
             <hr>
             <div class = "prices">
@@ -55,20 +55,21 @@
                 <button class = "go-to-cart" type = "button">Перейти до кошика</button>
                 <button class = "create-order">Оформити замовлення <img src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt=""></button>
             </div>  
-            {% else %}
-                <div class="modal-body-empty">
-                    <hr class="hr-1">
+            </div>
+        {% else %}
+            <div class="modal-body-empty">
+                    <hr class="hr">
                     <div class="cart-text">
                         <p>Ваш кошик порожній.</p>
                         <p>Почніть вибирати товари, щоб вони з’явилися тут</p>
                     </div>
-                    <hr class="hr-2">
+                    <hr class="hr">
                     <div class="buttons-r">
-                        <button type="button" class="empty-cart-button">Продовжити Покупки</button>
+                        <button type="button" class="empty-cart-button" onclick="closeCart()" >Продовжити Покупки</button>
                     </div>
-                </div>
-            {% endif %}
-        </div>
+            </div>
+        {% endif %}
+        
         <div class="modal-footer"></div>
     </main>
 </body>

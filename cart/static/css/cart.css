@@ -2,12 +2,16 @@ body{
     overflow: hidden;
 }
 
+main{
+    width: 100%;
+}
+
 .modal-body{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: space-between;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -16,8 +20,10 @@ body{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 80vh;
-    padding: 2vh;
+    height: 21.6rem;
+    padding: 1re;
+    width: 100%;
+    gap: 1rem;
 }
 
 .product-container{
@@ -74,12 +80,12 @@ body{
 
 .modal-header{
     width: 100%;
-    height: fit-content;
+    height: 3.75rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1vh 2vw 0vh 2vw;
-    font-size: 4vh;
+    font-size: 1.75rem;
 }
 
 .price{
@@ -139,17 +145,17 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 6vh;
+    border-radius: 6.25rem;
     font-weight: 500;
     letter-spacing: 0.3vw;
     text-transform: uppercase;
     gap: 1vw;
-    font-size: 2.4vh;
+    font-size: 0.8rem;
 }
 
 .go-to-cart, .empty-cart-button{
     width: 33.3vw;
-    height: 6.9vh;
+    height: 2.6rem;
     background-color: #FFFFFF;
     border: 0.3vh solid var(--darkblue);
     font-weight: bold;
@@ -218,15 +224,18 @@ body{
 
 .cart-text{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    height: 14rem;
+    align-items: center;
+    font-size: 1.25rem;
+    color: #6D717F;
 }
 
 .buttons-r{
-    position: absolute;
-    bottom: 4vh;
-    width: 92.5vw;
     display: flex;
     justify-content: end;
+    width: 92.5vw;
 }
 
 #close-cart{
@@ -237,4 +246,10 @@ body{
     background-image: url(/cart/static/icon/close.svg);
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.hr{
+    height: 2px;
+    width: 92.5vw;
+    background-color: var(--lightgrey);
 }

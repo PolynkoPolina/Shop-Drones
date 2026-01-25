@@ -5,8 +5,8 @@ let backgroundBlurDiv = window.parent.document.querySelector('.background-blur-d
 let authLink = document.getElementById('auth-link');
 let regisrtLink = document.getElementById('registr-link');
 let logInLink = document.getElementById('log-in-link');
-let arrayPasswordEyes = document.querySelectorAll(".password-eye")
-// const form = document.querySelector('form');
+let arrayPasswordEyes = document.querySelectorAll(".password-eye");
+let arrayModalHeaderButtons = [document.getElementById('auth-link'), document.getElementById('registr-link')];
 
 
 openButton.addEventListener(
@@ -23,15 +23,20 @@ openButton.addEventListener(
     }
 );
 
+for (let i=0; i < arrayModalHeaderButtons.length; i++){ 
+    let button = arrayModalHeaderButtons[i];
 
-function changeMosalSize(){
-    if(authRegistrModal.style.height === '35rem'){
-        authRegistrModal.style.height = '22rem';
-    } else{
-        authRegistrModal.style.height = '35rem';
-    }
-}
-
+    button.addEventListener(
+        'click',
+        (event) =>{
+            if(button.id == "auth-link"){
+                authRegistrModal.style.height = '22rem';
+            } else if ( button.id == 'registr-link'){
+                authRegistrModal.style.height = '35rem';
+            }
+        }
+    )
+};
 
 function closeAuthRegistr(){
     authRegistrModal.style.display= 'none';
@@ -53,16 +58,3 @@ for(let i=0; i < arrayPasswordEyes.length; i++){
         }
     )
 }
-
-
-// fetch("/authorization", {
-//     method: "POST",
-//     body: new FormData(form)
-// })
-
-// .then(r => r.json())
-// .then(data => {
-//     if (data.message == 'is_authenticated'){
-//         console.log(data.message);
-//     }
-// })

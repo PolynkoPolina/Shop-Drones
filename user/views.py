@@ -4,8 +4,7 @@ import flask_login
 from Project.db import DATABASE
 from Project.config_page import config_page
 
-# from flask import Blueprint
-# app = Blueprint("user_app", __name__)
+from .apps import user
 
 from .models import User
 
@@ -36,7 +35,7 @@ def render_registration() -> dict:
     
     return {'message': message}
 
-# @app.route("/authorization", methods=["POST"])
+@user.route("/authorization", methods=["POST"])
 def render_authorization():
     
     if flask.request.method == "POST":
@@ -50,7 +49,7 @@ def render_authorization():
     if not flask_login.current_user.is_authenticated:
         return flask.render_template("authorization.html")
     else:
-        return flask.jsonify({'message': 'is_authenticated'})
+        return flask.render_template("authorization.html", context={"is_authenticated": True})
 def logout():
     flask.session.clear()
     return flask.redirect("/")    
