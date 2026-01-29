@@ -23,6 +23,12 @@ user.user.add_url_rule(
 
 )
 
+user.user.add_url_rule(
+    rule= '/restore-password',
+    view_func= user.render_restore_password,
+    methods = ['GET','POST']
+)
+
 shop.shop.add_url_rule(
     rule ="/shop",
     view_func = shop.render_shop,
@@ -47,4 +53,5 @@ shop.shop.add_url_rule(
     view_func = shop.delete,
     methods = ["GET", "POST"]
 )
+
 

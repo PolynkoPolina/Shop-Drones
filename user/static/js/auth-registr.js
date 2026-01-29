@@ -6,7 +6,7 @@ let authLink = document.getElementById('auth-link');
 let regisrtLink = document.getElementById('registr-link');
 let logInLink = document.getElementById('log-in-link');
 let arrayPasswordEyes = document.querySelectorAll(".password-eye");
-let arrayModalHeaderButtons = [document.getElementById('auth-link'), document.getElementById('registr-link')];
+let arrayModalHeaderButtons = [ document.getElementById('auth-link'), document.getElementById('registr-link'), document.getElementById("restore-password")];
 
 
 openButton.addEventListener(
@@ -33,6 +33,8 @@ for (let i=0; i < arrayModalHeaderButtons.length; i++){
                 authRegistrModal.style.height = '22rem';
             } else if ( button.id == 'registr-link'){
                 authRegistrModal.style.height = '35rem';
+            } else if (button.id == "restore-password"){
+                authRegistrModal.style.height = '15rem';
             }
         }
     )

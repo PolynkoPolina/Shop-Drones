@@ -1,7 +1,7 @@
-
 body{
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 }
 
 input{
@@ -29,12 +29,13 @@ input::selection{
     font-weight: 600;
 }
 
-.modal-header a{
+.modal-header a, h2{
     font-size: 1.75rem;
     font-weight: 500;
     text-decoration: none;
     font-weight: 600;
 }
+
 
 .modal-body {
     display: flex;
@@ -87,14 +88,14 @@ input::selection{
     margin-top: 2.7rem;
 }
 
-.cancel-button, .login-button, .reg-button{
+.cancel-button, .cancel-button-rest-pass, .login-button, .reg-button, .send-button{
     text-transform: uppercase;
     border-radius: 6vh;
     letter-spacing: 9%; 
     letter-spacing: 0.1rem;
 }
 
-.cancel-button{
+.cancel-button-rest-pass, .cancel-button{
     border-radius: 6.25rem;
     width: 7.5rem;
     height: 2.5rem;
@@ -104,7 +105,11 @@ input::selection{
     font-size: 1rem;
 }
 
-.reg-button, .login-button{
+.cancel-button-rest-pass a{
+    color: #0C122A;
+}
+
+.reg-button, .login-button, .send-button{
     height: 2.5rem;
     background-color: #0C122A;
     border: none;
@@ -142,3 +147,7 @@ input::selection{
     background-repeat: no-repeat;
 }
 
+.send-button{
+    width: 10rem;
+    border-radius: 6.25rem;
+}

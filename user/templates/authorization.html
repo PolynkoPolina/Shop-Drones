@@ -23,23 +23,23 @@
                     
                     <div class="email">
                         <p><label for="email" class = "label">Email</label></p>
-                        <input type="email" id= "email" name="email" placeholder="Введіть email">
+                        <input type="email" id= "email" name="email" placeholder="Введіть email" required>
                     </div>
                 
                     <div class="password">
                         <p><label for="password" class = "label">Пароль</label></p>
-                        <input type="password" id="password" name="password" placeholder="Введіть пароль">
+                        <input type="password" id="password" name="password" placeholder="Введіть пароль" required>
                         <button class="password-eye" type="button"></button>
                     </div>
                 
-                    <a href="/restorationpassword" class = "forget-password">Забули пароль?</a>
+                    <a href="/restore-password" id="restore-password" class = "forget-password">Забули пароль?</a>
                 </div>
                 <div class="buttons-container">
                     <button type="button" onclick="closeAuthRegistr()" class = "cancel-button">Скасувати</button>
                     <button class = "login-button">Увійти</button>
                     {% if is_authenticated %} 
-                    <button class = "login-button" onclick="document.location.reload()">Увійти</button>
-                     {% endif %}
+
+                    {% endif %}
                 </div>
             </form>
         </div>

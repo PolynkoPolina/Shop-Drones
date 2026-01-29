@@ -53,3 +53,12 @@ def render_authorization():
 def logout():
     flask.session.clear()
     return flask.redirect("/")    
+
+def render_restore_password():
+    if flask.request.method == "POST":
+        email_form = flask.request.form["email"]
+        list_users = User.query.all()
+        for user in list_users:
+            if user.email == email_form:
+                flask.render_template("restore_password.html", context={"step": ""})
+    return flask.render_template("restore_password.html")
