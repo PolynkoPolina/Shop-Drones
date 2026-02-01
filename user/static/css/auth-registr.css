@@ -88,7 +88,7 @@ input::selection{
     margin-top: 2.7rem;
 }
 
-.cancel-button, .cancel-button-rest-pass, .login-button, .reg-button, .send-button{
+.cancel-button, .cancel-button-rest-pass, .login-button, .reg-button, .send-button, .come-button{
     text-transform: uppercase;
     border-radius: 6vh;
     letter-spacing: 9%; 
@@ -150,4 +150,44 @@ input::selection{
 .send-button{
     width: 10rem;
     border-radius: 6.25rem;
+}
+
+.successful-registration{
+    color: var(--grey);
+    font-size: 1.2rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.4rem;
+}
+
+.success-header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+    height: 3.75rem;
+    padding: 1.5rem 5.3vw 0.6rem 5.3vw;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.success-body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2.75rem;
+    height: auto;
+    width: 100%;
+    padding: 1rem 5.3vw 1rem 5.3vw;
+    margin-top: 5vh;
+    overflow: hidden;
+}
+
+.come-button {
+    height: 3rem;  
+    width: 15rem;
+    background-color: #0C122A;
+    border: none;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
 }

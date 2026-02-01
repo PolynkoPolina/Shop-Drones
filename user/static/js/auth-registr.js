@@ -6,7 +6,8 @@ let authLink = document.getElementById('auth-link');
 let regisrtLink = document.getElementById('registr-link');
 let logInLink = document.getElementById('log-in-link');
 let arrayPasswordEyes = document.querySelectorAll(".password-eye");
-let arrayModalHeaderButtons = [ document.getElementById('auth-link'), document.getElementById('registr-link'), document.getElementById("restore-password")];
+const changeSizeLinks = [ document.getElementById('auth-link'), document.getElementById('registr-link'), document.querySelector("#restore-password"), document.querySelectorAll(".cancel-button-rest-pass")[0], document.getElementById("log-in-link"), document.getElementsByClassName("reg-button")[0]];
+let modalStatus = 'authorization';
 
 
 openButton.addEventListener(
@@ -22,23 +23,46 @@ openButton.addEventListener(
         }
     }
 );
+changeSizeLinks.forEach((button) => {
+    if (button){
+        button.addEventListener(
+            'click',
+            (event) => {
+                let successBody = document.querySelectorAll(".success-body")[0];
+                
+                if(button.id == "auth-link" || button.className == 'cancel-button-rest-pass' || button.id == "log-in-link"){
+                    modalStatus = 'authorization';
+                } else if ( button.id == 'registr-link'){
+                    modalStatus = 'registration';
+                } else if (button.id == "restore-password"){
+                    modalStatus = 'restore-password';
+                } else if ( button.className == "reg-button" && successBody != undefined){
+                    modalStatus = 'succesRegisrt';
+                } else{
+                    modalStatus = 'registration';
+                }
 
-for (let i=0; i < arrayModalHeaderButtons.length; i++){ 
-    let button = arrayModalHeaderButtons[i];
-
-    button.addEventListener(
-        'click',
-        (event) =>{
-            if(button.id == "auth-link"){
-                authRegistrModal.style.height = '22rem';
-            } else if ( button.id == 'registr-link'){
-                authRegistrModal.style.height = '35rem';
-            } else if (button.id == "restore-password"){
-                authRegistrModal.style.height = '15rem';
+                if(modalStatus == 'authorization'){
+                    authRegistrModal.style.height = '22rem';
+                    console.log(modalStatus)
+                } else if( modalStatus == 'registration'){
+                    authRegistrModal.style.height = '35rem';
+                    console.log(modalStatus)
+                    console.log(successBody)
+                } else if (modalStatus == 'restore-password'){
+                    authRegistrModal.style.height = '15rem';
+                    console.log(modalStatus)
+                } else if (  modalStatus == 'succesRegisrt'){
+                    authRegistrModal.style.height = '12rem';
+                    console.log(modalStatus)
+                }
             }
-        }
-    )
-};
+        )
+    }
+
+});
+
+
 
 function closeAuthRegistr(){
     authRegistrModal.style.display= 'none';
