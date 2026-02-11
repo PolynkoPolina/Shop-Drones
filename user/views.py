@@ -6,6 +6,7 @@ from Project.config_page import config_page
 
 from .apps import user
 
+user.secret_key = "secret"
 from .models import User
 
 @config_page(template_name= 'registration.html')
@@ -35,9 +36,8 @@ def render_registration() -> dict:
     
     return {'message': message}
 
-@user.route("/authorization", methods=["POST"])
+
 def render_authorization():
-    
     if flask.request.method == "POST":
         email_form = flask.request.form["email"]
         password_form = flask.request.form["password"]
@@ -54,11 +54,21 @@ def logout():
     flask.session.clear()
     return flask.redirect("/")    
 
+
 def render_restore_password():
+    if 'step' not in flask.session:
+        flask.session['step'] = 1
+
     if flask.request.method == "POST":
-        email_form = flask.request.form["email"]
-        list_users = User.query.all()
-        for user in list_users:
-            if user.email == email_form:
-                flask.render_template("restore_password.html", context={"step": ""})
-    return flask.render_template("restore_password.html")
+        if flask.session['step']  == 1:
+            email_form = flask.request.form["email"]
+            list_users = User.query.all()
+            for user in list_users:
+                if user.email == email_form:
+                    flask.session['step']  = 2
+        elif flask.session['step']  == 2:
+            ...
+        else:
+            ...
+                 
+    return flask.render_template('restore_password.html', step=flask.session['step'])

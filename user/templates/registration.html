@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/base.css') }}">
 </head>
 <body>
+    <span id = 'message'>{{message}}</span>
     {% if message == 'successful registration' %}
-                    <div class= "success-header">
-                        <p style="color: var(--darkblue);">Реєстрація</p>
-                        <button id ="close-auth-registr" onclick="closeAuthRegistr()"></button>
-                    </div>
-                    <div class="success-body">
-                        <p class = "successful-registration">Акаунт успішно створено!</p>
-                        <button type="button" onclick="closeAuthRegistr()" class = "come-button">Перейти на сайт</button>
-                    </div>
+        <div class= "success-header">
+             <p style="color: var(--darkblue);">Реєстрація</p>
+            <button id ="close-auth-registr" onclick="closeAuthRegistr()"></button>
+        </div>
+        <div class="success-body">
+            <p class = "successful-registration">Акаунт успішно створено!</p>
+            <button type="button" onclick="closeAuthRegistr()" class = "come-button">Перейти на сайт</button>
+        </div>
     {% else %}    
         {% if massage %}
             <p>{{message}}</p>

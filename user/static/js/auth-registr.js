@@ -9,7 +9,6 @@ let arrayPasswordEyes = document.querySelectorAll(".password-eye");
 const changeSizeLinks = [ document.getElementById('auth-link'), document.getElementById('registr-link'), document.querySelector("#restore-password"), document.querySelectorAll(".cancel-button-rest-pass")[0], document.getElementById("log-in-link"), document.getElementsByClassName("reg-button")[0]];
 let modalStatus = 'authorization';
 
-
 openButton.addEventListener(
     'click',
     (event) =>{
@@ -28,7 +27,7 @@ changeSizeLinks.forEach((button) => {
         button.addEventListener(
             'click',
             (event) => {
-                let successBody = document.querySelectorAll(".success-body")[0];
+                
                 
                 if(button.id == "auth-link" || button.className == 'cancel-button-rest-pass' || button.id == "log-in-link"){
                     modalStatus = 'authorization';
@@ -36,7 +35,7 @@ changeSizeLinks.forEach((button) => {
                     modalStatus = 'registration';
                 } else if (button.id == "restore-password"){
                     modalStatus = 'restore-password';
-                } else if ( button.className == "reg-button" && successBody != undefined){
+                } else if ( button.className == "reg-button"){
                     modalStatus = 'succesRegisrt';
                 } else{
                     modalStatus = 'registration';
@@ -48,7 +47,6 @@ changeSizeLinks.forEach((button) => {
                 } else if( modalStatus == 'registration'){
                     authRegistrModal.style.height = '35rem';
                     console.log(modalStatus)
-                    console.log(successBody)
                 } else if (modalStatus == 'restore-password'){
                     authRegistrModal.style.height = '15rem';
                     console.log(modalStatus)
