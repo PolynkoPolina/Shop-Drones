@@ -35,6 +35,8 @@ changeSizeLinks.forEach((button) => {
                     modalStatus = 'registration';
                 } else if (button.id == "restore-password"){
                     modalStatus = 'restore-password';
+                } else if (button.id == "restore-password-step-two"){ 
+                    modalStatus = 'restore-password-step-two';
                 } else if ( button.className == "reg-button"){
                     modalStatus = 'succesRegisrt';
                 } else{
@@ -49,6 +51,9 @@ changeSizeLinks.forEach((button) => {
                     console.log(modalStatus)
                 } else if (modalStatus == 'restore-password'){
                     authRegistrModal.style.height = '15rem';
+                    console.log(modalStatus)
+                } else if (modalStatus == 'restore-password-step-two'){
+                    authRegistrModal.style.height = '20rem';
                     console.log(modalStatus)
                 } else if (  modalStatus == 'succesRegisrt'){
                     authRegistrModal.style.height = '12rem';

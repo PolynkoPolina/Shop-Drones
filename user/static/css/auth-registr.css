@@ -88,14 +88,14 @@ input::selection{
     margin-top: 2.7rem;
 }
 
-.cancel-button, .cancel-button-rest-pass, .login-button, .reg-button, .send-button, .come-button{
+.cancel-button, .cancel-button-rest-pass, .login-button, .reg-button, .come-button, .send-button{
     text-transform: uppercase;
     border-radius: 6vh;
     letter-spacing: 9%; 
     letter-spacing: 0.1rem;
 }
 
-.cancel-button-rest-pass, .cancel-button{
+.cancel-button-rest-pass, .cancel-button, .btn-secondary{
     border-radius: 6.25rem;
     width: 7.5rem;
     height: 2.5rem;
@@ -109,8 +109,9 @@ input::selection{
     color: #0C122A;
 }
 
-.reg-button, .login-button, .send-button{
+.reg-button, .login-button, .send-button, .btn-primary{
     height: 2.5rem;
+    border-radius: 6.25rem;
     background-color: #0C122A;
     border: none;
     color: #FFFFFF;
@@ -192,7 +193,7 @@ input::selection{
     font-size: 1.1rem;
 }
 
-/* .modal-overlay {
+.modal-overlay {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
@@ -216,4 +217,12 @@ input {
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
+}
+
+.send-button p{
+    color: #FFFFFF;
+}
+
+/* .btn-primary p{
+    size: 3vh;
 } */
