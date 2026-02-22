@@ -13,6 +13,11 @@ header{
     z-index: 1;
 }
 
+body{
+    position: relative;
+    z-index: 1;
+}
+
 header a{
     transition: transform 0.5s;
 }
@@ -31,7 +36,7 @@ header a:hover{
 #cart-modal{
     height: 83vh;
     width: 44vw;
-    z-index: 3;
+    z-index: 300;
     position: fixed;
     top: 12vh;
     left: 50vw;
@@ -49,7 +54,7 @@ header a:hover{
     width: 31vw;
     height: 22rem;
     border-radius: 1.2vh;
-    z-index: 3;
+    z-index: 300;
 }
 
 .background-blur-div{
@@ -58,7 +63,8 @@ header a:hover{
     height: 100%;
     background-color: rgb(12, 18, 42, 70%);
     backdrop-filter: blur(10px);
-    z-index: 2;
+    z-index: 250;
+
 }
 
 .nav-header{

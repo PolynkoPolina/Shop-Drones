@@ -56,24 +56,25 @@ def logout():
 
 
 def render_restore_password():
+
     if 'step' not in flask.session:
         flask.session['step'] = 1
     if flask.request.method == "POST":
         if flask.session['step']  == 1:
             email_form = flask.request.form["email"]
-            list_users = User.query.all()
-            for user in list_users:
-                if user.email == email_form:
-                    flask.session['step']  = 2
+            user = User.query.filter_by(email = email_form).first()
+            if user:
+                flask.session['email'] = email_form
+                flask.session['step']  = 2
+
         elif flask.session['step']  == 2:
-            password = flask.request.form['password']
-            conf_password = flask.request.form['confirm_password']
-            if password == conf_password:
-                flask.session['step'] == 3
-            else:
-                message = 'Паролі не співпадають!'
-        else:
-            pass
+            password_form = flask.request.form['password']
+            conf_password_form = flask.request.form['confirm_password']
+            if password_form == conf_password_form:
+                user = User.query.filter_by(email = flask.session['email']).first()
+                user.password = password_form
+                DATABASE.session.commit()
+                flask.session['step'] = 3 
                  
     return flask.render_template('restore_password.html', step=flask.session['step'])
 

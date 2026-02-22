@@ -20,10 +20,10 @@ def render_cart():
                 # 
                 product: Product = Product.query.get(ident= id)
                 #  
-                
-                products_price += product.price * count_id
-                products_discount += int(product.discount * count_id)
-                general_products_price = int(products_price - products_discount)
+                if product:
+                    products_price += product.price * count_id
+                    products_discount += int(product.discount * count_id)
+                    general_products_price = int(products_price - products_discount)
 
                 if [product, count_id] not in list_products:
                     # 

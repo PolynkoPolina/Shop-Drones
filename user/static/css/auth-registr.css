@@ -40,7 +40,6 @@ input::selection{
 .modal-body {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 2.75rem;
     height: auto;
     width: 100%;
@@ -59,7 +58,6 @@ input::selection{
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
     width: 89vw;
     height: 4rem;
 }
@@ -73,7 +71,7 @@ input::selection{
     background-repeat: no-repeat;
     background-color: transparent;
     border: none;
-    top: 2.25rem;
+    top: 2.5rem;
     right: 3.6vw;
 }
 
@@ -85,10 +83,11 @@ input::selection{
 .buttons-container{
     display: flex;
     gap: 1vw;
-    margin-top: 2.7rem;
+    margin-top: 2rem;
 }
 
-.cancel-button, .cancel-button-rest-pass, .login-button, .reg-button, .come-button, .send-button{
+
+.cancel-button, .cancel-button-rest-pass, .login-button, .reg-button, .come-button, .send-button, .btn-primary{
     text-transform: uppercase;
     border-radius: 6vh;
     letter-spacing: 9%; 
@@ -148,16 +147,15 @@ input::selection{
     background-repeat: no-repeat;
 }
 
-.send-button{
+.send-button, .send-letter{
     width: 10rem;
     border-radius: 6.25rem;
 }
 
+
 .successful-registration{
     color: var(--grey);
     font-size: 1.2rem;
-    padding-top: 0.3rem;
-    padding-bottom: 0.4rem;
 }
 
 .success-header {
@@ -175,32 +173,26 @@ input::selection{
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 2.75rem;
-    height: auto;
+    gap: 1.25rem;
+    height: 100%;
     width: 100%;
     padding: 1rem 5.3vw 1rem 5.3vw;
-    margin-top: 5vh;
+    margin-top: 3vh;
     overflow: hidden;
 }
 
-.come-button {
-    height: 3rem;  
-    width: 15rem;
+.success-body button{
+    height: 3.5rem;  
+    width: 37.8vw;
     background-color: #0C122A;
     border: none;
     color: #FFFFFF;
-    margin-bottom: 1rem;
     font-size: 1.1rem;
-}
-
-.modal-overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-transform: uppercase;
+    border-radius: 6.25rem;
+    letter-spacing: 9%; 
+    letter-spacing: 0.1rem;
+    margin-top: 1rem;
 }
 
 
@@ -219,10 +211,21 @@ input {
     border: 1px solid #ccc;
 }
 
-.send-button p{
-    color: #FFFFFF;
+.success-form{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: start;
+    gap: 3px;
 }
 
-/* .btn-primary p{
-    size: 3vh;
-} */
+.success-button{
+    margin-top: 15vh;
+}
+
+.success-text{
+    margin-top: 5vh;
+}
+
+.btn-primary{
+    width: 35vw
+}

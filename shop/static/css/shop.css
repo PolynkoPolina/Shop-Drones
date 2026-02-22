@@ -22,13 +22,14 @@ body{
 }
 
 .wrapper{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
     width: 94.5vw;
     height: fit-content;
-    z-index: 3;
+    z-index: 1;
 }
 
 .products{

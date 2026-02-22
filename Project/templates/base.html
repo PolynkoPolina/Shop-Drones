@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/footer.css') }}">
     </head>
     <body>
+        
         <header>
             {% block header %}
                 
@@ -45,19 +46,15 @@
                     {% endif %}
                 </span>
             </nav>
-
-            <div id="cart-modal" style="display: none;">
-                <iframe src= "/cart" frameborder="0" class="iframe-cart"></iframe>
-            </div>
-
-            
-                <div id="auth-registr-modal" style="display: none;">
-                    <iframe src= "/authorization" frameborder="0" class="iframe-auth-registr"></iframe>
-                </div>
-                <div class="background-blur-div" style="display: none;"></div>
-            
-
         </header>
+
+        <div id="cart-modal" style="display: none;">
+                <iframe src= "/cart" frameborder="0" class="iframe-cart"></iframe>
+        </div>
+        <div id="auth-registr-modal" style="display: none;">
+                <iframe src= "/authorization" frameborder="0" class="iframe-auth-registr"></iframe>    
+            </div>
+         <div class="background-blur-div" style="display: none;"></div>
         <main>
         
             {% block content %} 

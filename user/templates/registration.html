@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/base.css') }}">
 </head>
 <body>
-    <span id = 'message'>{{message}}</span>
+    
     {% if message == 'successful registration' %}
         <div class= "success-header">
              <p style="color: var(--darkblue);">Реєстрація</p>
@@ -15,7 +15,7 @@
         </div>
         <div class="success-body">
             <p class = "successful-registration">Акаунт успішно створено!</p>
-            <button type="button" onclick="closeAuthRegistr()" class = "come-button">Перейти на сайт</button>
+            <button type="button" onclick="closeAuthRegistr()">Перейти на сайт</button>
         </div>
     {% else %}    
         {% if massage %}
@@ -25,6 +25,7 @@
 
 
     {% if message != 'successful registration' %}
+        <span id = 'message'>{{message}}</span>
         <div class="modal-header">
             <div>
                 <a href="/authorization" id="auth-link" style="color: var(--grey);">Авторизація</a>
