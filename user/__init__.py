@@ -1,2 +1,2 @@
 from .apps import user
-from .views import render_authorization, render_registration, logout, render_restore_password
+from .views import render_authorization, render_registration, logout, render_restore_password, render_account

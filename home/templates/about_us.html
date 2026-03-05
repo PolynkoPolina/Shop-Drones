@@ -1,0 +1,61 @@
+{% extends "base.html"%}
+
+{% block title %}
+    About us
+{% endblock %}
+
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('home.static', filename= 'css/about.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/base.css')}}">
+{% endblock %}
+
+{% block content %}
+
+    <div class = "about_us">
+        <div class = "about_us_text"> 
+            <h1>Про НАС</h1>
+            <div>
+                <p>Ми — команда, яка об'єднана спільною метою: зробити передові технології доступними для</p>
+                <p>кожного, хто потребує точності, безпеки та інновацій.</p>
+                <p>З 2022 року ми спеціалізуємось на постачанні дронів і тепловізорів для професійного,</p>
+                <p>цивільного та волонтерського використання.</p>
+            </div>
+        </div>
+        <div>
+            <img src="{{ url_for('home.static', filename= 'media/images/about_building.png')}}" alt="">
+        </div>
+    </div>  
+
+    <div class = "our_mission">
+        <div class = "our_mission_text">
+            <h3 class = "title">Наша місія</h3>
+            <div>
+                <p>Допомагати тим, хто стоїть на передовій — у прямому й переносному сенсі.</p>
+                <p>Ми обираємо тільки надійну техніку, яку перевіряємо самі. Наша мета — якість,</p>
+                <p>простота, і підтримка на кожному етапі: від покупки до використання.</p>
+            </div>
+            
+        </div>
+        <div>
+            <img src="{{ url_for('home.static', filename= 'media/images/about_office.png')}}" alt="">
+        </div>
+    </div>
+
+    <div class = "team">
+        <div>
+            <img src="{{ url_for('home.static', filename= 'media/images/about_window.png')}}" alt="">
+        </div>
+        <div class="team_text">
+            <h3>Команда, якій можна</h3>
+            <h3>довіряти</h3>
+            <div>
+                
+                <p>Ми — не просто магазин. Ми — фахівці, які самі працюють із цією технікою й</p>
+                <p>консультують з досвіду. Засновники проєкту — волонтери, військові та IT-</p>
+                <p>спеціалісти, які об'єднали зусилля задля важливої справи.</p>
+            </div>
+        </div>
+    </div>
+        
+
+{% endblock %}

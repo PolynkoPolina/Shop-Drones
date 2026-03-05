@@ -52,6 +52,7 @@ if (modalStatus == 'restore-password-step-1'){
     console.log(modalStatus)
 }
 
+
 changeSizeButtons.forEach((button) => {
     if (button){
         button.addEventListener(
@@ -59,12 +60,16 @@ changeSizeButtons.forEach((button) => {
             (event) => {
                 
                 
-                if(button.id == "auth-link" || button.className == 'cancel-button-rest-pass' || button.id == "log-in-link" || button.className == 'login-button'){
+                if(button.id == "auth-link" || button.className == 'cancel-button-rest-pass' || button.id == "log-in-link"){
                     modalStatus = 'authorization';
                 } else if ( button.id == 'registr-link'){
                     modalStatus = 'registration';
                 } else if ( button.className == "reg-button"){
                     modalStatus = 'succesRegisrt';
+                } else if (button.className == 'login-button'){
+                    modalStatus = 'authorization';
+                    closeAuthRegistr();
+                    window.location.reload();
                 }
 
                 if(modalStatus == 'authorization'){

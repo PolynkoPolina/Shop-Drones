@@ -79,3 +79,9 @@ def render_restore_password():
     return flask.render_template('restore_password.html', step=flask.session['step'])
 
 
+def render_account():
+    if flask_login.current_user.is_authenticated:
+        page = flask.request.args.get('page')
+        return flask.render_template(f'{page}.html')
+    else:
+        return {"error":"is_not_authenticated"}

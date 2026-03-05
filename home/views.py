@@ -13,3 +13,10 @@ def render_home():
         'list_products': list_products
     }
     
+
+
+def render_about_us():
+    return flask.render_template('about_us.html')
+
+def render_contacts():
+    return flask.render_template('contact.html')

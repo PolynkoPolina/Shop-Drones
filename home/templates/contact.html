@@ -1,0 +1,57 @@
+{% extends 'base.html' %} 
+
+{% block title %}
+    Contacts
+{% endblock %}
+
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('home.static', filename='css/contact.css' ) }}">
+{% endblock %}
+
+
+{% block content %}
+<div class="contacts">
+    <h1>КОНТАКТИ</h1>
+
+    <div class="contacts-container">
+
+        <div class="contacts-info">
+            <h2>Наші контакти</h2>
+
+            <p><img src="{{ url_for('home.static', filename= 'icon/phone.svg') }}" alt=""> +38 (067) 123-45-67</p>
+            <p><img src="{{ url_for('home.static', filename= 'icon/mail.svg') }}" alt=""> info@dronex.com.ua</p>
+            <p><img src="{{ url_for('home.static', filename= 'icon/point.svg') }}" alt=""> вул. Університетська, 22, м. Дніпро, 49000, Україна</p>
+            <p><img src="{{ url_for('home.static', filename= 'icon/calendar.svg') }}" alt=""> Пн–Пт: 10:00 — 18:00, Сб–Нд: вихідні</p>
+
+            <h3>Ми в соцмережах:</h3>
+
+            <div class="social">
+                <a href="https://www.facebook.com"><img src="{{ url_for('home.static', filename= 'icon/facebook.svg') }}" alt=""></a>
+                <a href="https://web.telegram.org"><img src="{{ url_for('home.static', filename= 'icon/telegram.svg') }}" alt=""></a>
+                <a href="https://www.instagram.com"><img src="{{ url_for('home.static', filename= 'icon/instagram.svg') }}" alt=""></a>
+            </div>
+        </div>
+
+        <div class="contacts-form">
+            <h2>Зв’язатися з нами</h2>
+
+            <form>
+                <p>Ім'я</p>
+                <input placeholder="Ваше ім'я">
+
+                <p>Телефон</p>
+                <input type="tel" placeholder="+38 0">
+
+                <p>E-mail</p>
+                <input type="email" placeholder="Ваш E-mail">
+
+                <p>Повідомлення</p>
+                <textarea placeholder="Ваше повідомлення"></textarea>
+                
+                <button type="submit">НАДІСЛАТИ</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
