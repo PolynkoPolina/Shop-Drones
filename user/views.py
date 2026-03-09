@@ -81,6 +81,8 @@ def render_restore_password():
 
 def render_account():
     if flask_login.current_user.is_authenticated:
+        if flask.request.method == "POST":
+            ...
         page = flask.request.args.get('page')
         return flask.render_template(f'{page}.html')
     else:

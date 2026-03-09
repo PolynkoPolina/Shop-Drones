@@ -1,0 +1,81 @@
+{% extends 'base.html' %} 
+
+{% block title %}
+    My orders
+{% endblock %}
+
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('user.static', filename='css/account.css' ) }}">
+    <link rel="stylesheet" href="{{ url_for('user.static', filename='css/my-orders.css' ) }}">
+{% endblock %}
+
+
+{% block content %}
+<div class="content">
+        <div class="account">
+            <h2>ОСОБИСТИЙ КАБІНЕТ</h2>
+
+            <a href="/account?page=contacts_data">Контактні дані</a>  
+
+            <a href="/account?page=my_orders" class="chosen" >Мої замовлення</a>
+
+            <a href="/account?page=delivery_address">Адреса доставки</a>
+           
+            <hr>
+            
+            <a href="/logout" class="logout">Вийти</a>
+        </div>
+        <div>
+            <h2>Мої замовлення</h2>
+            <div class = "orders">
+              <div class="order">
+                    <div class = "order_info">
+                        <div class = "ellipse"></div>
+                        <div class = "block">
+                            <p class = "grey">№30349 від 20.04.2023</p>
+                            <p>Оформлення</p>
+                        </div>
+                        <div class = "block">
+                            <p class = "grey">Номер відправлення</p>
+                            <p>20030040050000</p>
+                        </div>
+                        <div class = "block">
+                            <p class = "grey">Сума замовлення</p>
+                            <p>25 830.00 ₴ </p>
+                        </div>
+                    </div>
+                    <div class="order_images">
+                        <img src="{{ url_for('shop.static', filename= 'images/products/DJI Mini 4k.png') }}" alt="" class = "drone">
+                        <img src="{{ url_for('user.static', filename= 'icon/arrow_top.svg') }}" alt="" class="arrow">
+                    </div> 
+
+                </div>
+
+                <div>
+                    <div class = "departure_number">
+                        <p class = "grey">Номер відправлення:</p>
+                        <p>20030040050000</p>
+                        <img src="{{ url_for('user.static', filename= 'icon/copy.svg') }}" alt="">
+                    </div>
+                    <div class = "progress">
+                        <div class = "progress_line">
+                            <div class = "track"><img src="" alt=""></div>
+                            <div class = "step"></div>
+                            <div class = "step"></div>
+                            <div class = "step"></div>
+                            <div class = "step"></div>
+                        </div>
+                        
+                        <div class = "done_progress"></div>
+                        
+                    </div>
+                    <div></div>
+                </div>  
+            </div>
+                
+
+        </div>
+
+        
+</div>
+{% endblock %}

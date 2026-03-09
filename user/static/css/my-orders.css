@@ -1,0 +1,86 @@
+.ellipse{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #CED0D4;
+}
+
+.orders{
+    width: 37vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid #CED0D4;
+}
+
+.order{
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.order_info{
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.grey{
+    color:#9EA0AA
+}
+
+.order_images{
+    display: flex;
+    align-items: start;
+    gap: 0.5rem;
+}
+
+.drone{
+    width: 3rem;
+    height: 3rem;
+}
+
+.arrow{
+    padding-top: 1vh;
+}
+
+.departure_number{
+    display: flex;
+    gap: 0.5rem;
+    padding-left: 0.7vw;
+}
+
+.progress{
+    padding-top: 2.5vh;
+    display: flex;
+    gap: vw
+}
+
+.progress_line{
+    display: flex;
+    height: 1vh;
+    width: 35.6vw;
+    background-color: #CDD5DD;
+    border-radius: 0.5rem;
+    margin-left: 0.7vw;
+}
+
+.track{
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid #0C122A; 
+    border-radius: 50%;
+}
+
+.step{
+    display: flex;
+    top: 2vh;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    border: 1px solid #CDD5DD; 
+    padding-bottom: 1vh;
+}

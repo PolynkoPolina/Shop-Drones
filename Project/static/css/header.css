@@ -18,9 +18,7 @@ body{
     z-index: 1;
 }
 
-header a{
-    transition: transform 0.5s;
-}
+
 
 header a:hover{
     transform: scale(1.05);

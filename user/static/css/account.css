@@ -1,82 +1,43 @@
-body{
-    margin:0;
-    font-family: GT Walsheim Pro;
-    background:#f5f6f8;
+hr{
+    height: 2px;
+    width: 321px;
+    border: 2px solid #CDD5DD;
 }
 
-.contacts{
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
     width: 100%;
     height: 100%;
-    padding:6vw;
+    gap: 14vw;
+    padding: 10rem 14vw 0rem 2vw;
+    color: var(--darkblue);
+    margin-bottom: 3rem;
 }
 
-.contacts h1{
-    text-align:center;
-    color:#c7cdd6;
-    font-size:3vh;
-    margin-bottom:4vh;
-    font-family: GT Walsheim Pro UltraBold;
+.account{
+    display: flex;
+    flex-direction: column;
+    width: 22vw;
+    height: 20rem;
+    gap: 2.75rem;
+    text-transform: uppercase;
 }
 
-.contacts-container{
-    display:flex;
-    width: 10vw;
+.account h2, .contacts-form h2{
+    font-size: 1.8rem;
+    font-weight: 200;
 }
 
-.contacts-info{
-    flex:1;
+a{
+    color: var(--grey);
 }
-
-.contacts-info h2{
-    margin-bottom:5vh;
-}
-
-.contacts-info p{
-    margin-bottom: 3vh;
-    color:#9EA0AA;
-}
-
-.social{
-    margin-top:3vh;
-}
-
-.social a{
-    display:inline-block;
-    width:2.5vw;
-    margin-right:10px;
+.account a:hover, .chosen{
+     color: var(--darkblue);
 }
 
 .contacts-form{
-    flex:1;
-}
-
-.contacts-form form{
-    display:flex;
-    flex-direction:column;
-}
-
-.contacts-form p{
-    margin-top:2vh;
-    margin-bottom:1vh;
-}
-
-.contacts-form input{
-    padding:1rem;
-    border:1vh solid #ddd;
-    border-radius:6px;
-    font-size:14px;
-}
-
-
-
-.contacts-form button{
-    width:10vw;
-    margin-top:4vh;
-    padding:1rem;
-    border:none;
-    border-radius:2rem;
-    background:#0c1b3a;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
+    width: 46vw;
+    height: 36rem;
 }

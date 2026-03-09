@@ -1,0 +1,47 @@
+{% extends 'base.html' %} 
+
+{% block title %}
+    Delivery address
+{% endblock %}
+
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('user.static', filename='css/account.css' ) }}">
+    <link rel="stylesheet" href="{{ url_for('user.static', filename='css/delivery-address.css' ) }}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="content">
+        <div class="account">
+            <h2>ОСОБИСТИЙ КАБІНЕТ</h2>
+
+            <a href="/account?page=contacts_data">Контактні дані</a>  
+
+            <a href="/account?page=my_orders">Мої замовлення</a>
+
+            <a href="/account?page=delivery_address" class="chosen">Адреса доставки</a>
+           
+            <hr>
+            
+            <a href="/logout" class="logout">Вийти</a>
+        </div>
+        
+        <div class="address">
+            <h2>Адреса доставки</h2>
+            <div class="address-container">
+                <form action=""  id="address-form"  class="address-form">
+                    {% if list_address %}
+                        {% for address in list_address %}
+                            
+                        {% endfor %}
+                    {% endif %}
+                </form>
+                <button type="button" class="add-address" id="add-address">+ ДОДАТИ АДРЕСУ</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('user.static', filename='js/delivery-address.js' )}}"></script>
+{% endblock scripts %}

@@ -18,15 +18,6 @@ hr{
     margin-bottom: 3vh;
 }
 
-footer a{
-    transition: transform 0.5s;
-}
-
-footer a:hover{
-    transform: scale(1.05);
-}
-
-
 .ellipse-footer{
     position: absolute;
     bottom: 60vh;
