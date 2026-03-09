@@ -32,7 +32,47 @@
                 <form action=""  id="address-form"  class="address-form">
                     {% if list_address %}
                         {% for address in list_address %}
-                            
+                            <div class = 'closed-div'>
+                                <div>
+                                    <input type="radio" name = "address">
+                                    <span>м. {{address.city}}, Відділення №1: вул. {{address.street}}, {{address.house}}</span>
+                                </div>
+                                <button type="button" class = "change-address-btn"></button>
+                            </div>
+
+                            <div class = 'inputs-container'>
+                                <form action = "/account?page=delivery_address" name = 'add-address' method = "post">
+                                    <div class = "city-div">
+                                        <p><label for="city">Місто</label></p>
+                                        <input type="text" name = 'city' placeholder="Назва міста" required>
+                                        <span class="default-cities"> 
+                                            <a>Вінниця</a> 
+                                            <a>Одеса</a> 
+                                            <a>Харків</a> 
+                                            <a>Дніпро</a> 
+                                            <a>Київ</a> 
+                                            <a>Львів</a> 
+                                        </span>
+                                    </div>
+                                    <div class = "address-input-div">
+                                        <p><label for="street">Вулиця</label></p>
+                                        <input type="text" name = 'street' placeholder="Назва вулиці" required> 
+                                    </div>
+                                    <div class = "address-input-div">
+                                        <p><label for="house">Будинок</label></p>
+                                        <input type="number" name = 'house' placeholder="Номер будинку" required>
+                                    </div>
+                                    <div class = "address-input-div">
+                                        <p><label for="appartment">Квартира</label></p>
+                                        <input type="number" name = 'appartment' placeholder="Номер квартири">
+                                    </div>
+                                    <div class = "address-input-div">
+                                        <p><label for="entrance">Під'їзд</label></p>
+                                        <input type="number" name="entrance" placeholder="Номер під'їзду">
+                                    </div>
+                                    <button class = "save-changes">Зберегти зміни</button>
+                                </form>
+                            </div>
                         {% endfor %}
                     {% endif %}
                 </form>

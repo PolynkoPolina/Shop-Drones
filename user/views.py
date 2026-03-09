@@ -7,7 +7,7 @@ from Project.config_page import config_page
 from .apps import user
 
 user.secret_key = "secret"
-from .models import User
+from .models import User, Address
 
 @config_page(template_name= 'registration.html')
 def render_registration() -> dict:
@@ -50,6 +50,8 @@ def render_authorization():
         return flask.render_template("authorization.html")
     else:
         return flask.render_template("authorization.html", context={"is_authenticated": True})
+    
+
 def logout():
     flask.session.clear()
     return flask.redirect("/")    
@@ -82,8 +84,25 @@ def render_restore_password():
 def render_account():
     if flask_login.current_user.is_authenticated:
         if flask.request.method == "POST":
-            ...
+            city_form = flask.request.form['city']
+            street_form = flask.request.form['street']
+            house_form = flask.request.form['house']
+            appartment_form = flask.request.form['appartment']
+            entrance_form = flask.request.form['entrance']
+
+            new_address = Address(
+                    city = city_form,
+                    street = street_form,
+                    house = house_form,
+                    appartment = appartment_form,
+                    entrance = entrance_form,
+                    user_id = flask_login.current_user.id
+                )
+            DATABASE.session.add(new_address)
+            DATABASE.session.commit()
+            return flask.redirect('/account?page=delivery_address')
+        list_address = Address.query.filter_by(user_id = flask_login.current_user.id)
         page = flask.request.args.get('page')
-        return flask.render_template(f'{page}.html')
+        return flask.render_template(f'{page}.html', context={'list_address': list_address})
     else:
         return {"error":"is_not_authenticated"}

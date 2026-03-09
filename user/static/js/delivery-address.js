@@ -2,6 +2,7 @@ const addressForm = document.querySelector("#address-form");
 const addAddressBtn = document.querySelector("#add-address");
 let addressCount = -1;
 
+
 addAddressBtn.addEventListener(
     'click',
     (event)=>{
@@ -21,23 +22,31 @@ addAddressBtn.addEventListener(
 
             <div class = 'inputs-container'>
             <form action = "/account?page=delivery_address" name = 'add-address' method = "post">
-                <div>
+                <div class = "city-div">
                     <p><label for="city">Місто</label></p>
                     <input type="text" name = 'city' placeholder="Назва міста" required>
+                    <span class="default-cities"> 
+                        <a>Вінниця</a> 
+                        <a>Одеса</a> 
+                        <a>Харків</a> 
+                        <a>Дніпро</a> 
+                        <a>Київ</a> 
+                        <a>Львів</a> 
+                    </span>
                 </div>
-                <div>
+                <div class = "address-input-div">
                     <p><label for="street">Вулиця</label></p>
                     <input type="text" name = 'street' placeholder="Назва вулиці" required> 
                 </div>
-                <div>
+                <div class = "address-input-div">
                     <p><label for="house">Будинок</label></p>
                     <input type="number" name = 'house' placeholder="Номер будинку" required>
                 </div>
-                <div>
+                <div class = "address-input-div">
                     <p><label for="appartment">Квартира</label></p>
                     <input type="number" name = 'appartment' placeholder="Номер квартири">
                 </div>
-                <div>
+                <div class = "address-input-div">
                     <p><label for="entrance">Під'їзд</label></p>
                     <input type="number" name="entrance" placeholder="Номер під'їзду">
                 </div>
@@ -57,6 +66,18 @@ addAddressBtn.addEventListener(
                 newAddressDiv.classList.toggle('closed');
             }
         )
+
+        const defaultCitiesSpan = document.querySelectorAll(".default-cities")[addressCount]
+        const defaultCitiesArray = Array.from(defaultCitiesSpan.children);
+        const cityDiv = document.querySelectorAll(".city-div")[addressCount];
+        const cityInput = cityDiv.children[1]
+        defaultCitiesArray.forEach(city => {
+            city.addEventListener(
+                'click',
+                (event)=>{
+                    cityInput.value = city.textContent;
+                }
+            )
+        });
     }
 )
-
