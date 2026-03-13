@@ -121,3 +121,7 @@ def delete():
     return {
         'success': True
     }
+
+def render_product_page():
+    product = flask.request.args.get('product')
+    return flask.render_template('product.html', product = product)

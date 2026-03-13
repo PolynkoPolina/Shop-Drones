@@ -6,7 +6,7 @@
 }
 
 .orders{
-    width: 37vw;
+    width: 45vw;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -55,32 +55,244 @@
 .progress{
     padding-top: 2.5vh;
     display: flex;
-    gap: vw
 }
 
 .progress_line{
+    position: relative;
     display: flex;
     height: 1vh;
-    width: 35.6vw;
+    width: 50vw;
     background-color: #CDD5DD;
     border-radius: 0.5rem;
     margin-left: 0.7vw;
 }
 
 .track{
+    position: absolute;
     width: 2rem;
     height: 2rem;
     border: 1px solid #0C122A; 
     border-radius: 50%;
+    background-color: #FFFFFF;
+    top: -1vh;
+    left: 2vw;
+    z-index: 10;
 }
 
 .step{
+    position: absolute;
     display: flex;
-    top: 2vh;
+    top: -0.4vh;
+    left: 9vw;
     width: 1.2rem;
     height: 1.2rem;
     border-radius: 50%;
     background-color: #FFFFFF;
     border: 1px solid #CDD5DD; 
-    padding-bottom: 1vh;
+}
+
+.step:nth-child(2){ 
+    left:17vw; 
+}
+
+.step:nth-child(3){
+    left:27vw; 
+}
+
+.step:nth-child(4){ 
+    left:37vw;
+ }
+
+.done_progress{
+    position: relative;
+    display: flex;
+    width: 4vw;
+    height: 1vh;
+    background-color: #0C122A;
+    border-radius: 0.5rem;
+    margin-left: 0.7vw;
+    right: 41vw;
+}
+
+.progress_description{
+    display: flex;
+    gap: 7vh;
+    margin-left: 1vw;
+    margin-top: 3vh;
+}
+
+.progress_description span{
+    color: #9EA0AA;
+}
+
+.progress_description p{
+    color: #0C122A;
+}
+
+.info{
+    margin-top: 3vh;
+    margin-left: 0.7vw;
+    font-size: 0.8rem;
+}
+
+.info_left{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.4vh;
+}
+
+.post{
+    margin-top: 0.7vh;
+}
+
+.adress{
+    margin-top: 0.7vh;
+}
+
+.adressat{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.info_description{
+    display: flex;
+    gap: 3vw;
+}
+
+.info_description hr{
+    width: 0.2vw;
+    height:23vh;
+    background-color: #CED0D4;
+    margin-top: 1.7vh;
+}
+
+.info span{
+    font-size: 1rem;
+}
+
+.btn-secondary{
+    border-radius: 6.25rem;
+    width: 7.5rem;
+    height: 2.5rem;
+    background-color: #FFFFFF;
+    border: 0.15rem solid #0C122A;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.info_right{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info_right img{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.purchase_info{
+    display: flex;
+    gap: 3.5rem;
+    margin-right: 3rem;
+}
+
+.purchase_photo{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 0.5rem;
+}
+
+.margin{
+    margin-left: 2rem;
+}
+
+.price{
+    text-decoration: line-through;
+    font-size: 1rem;
+}
+
+.discounted-price{
+    font-size: 1rem;
+    text-decoration: line-through;
+    color: #B62D1180;
+    margin-left: 0.4vw;
+}
+
+.purchase_photo h3{
+    font-weight: 500;
+    margin-left: 3rem;
+}
+
+.margin_1{
+    margin-left: 3rem
+}
+
+.purchase_description{
+    display: flex;
+    gap: 1rem;
+}
+
+.blocks{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.prices{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.purchase_description p{
+    font-size: 1rem;
+}
+
+.ellipse_green{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #4DBC4B;
+}
+
+.additional{
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid #CED0D4;
+    margin-top: 3vh;
+}
+
+.additional_info{
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.additional_info .ellipse_green{
+    margin-top: 1vh;
+}
+
+.order_image{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-left: 7vw;
+}
+
+.night_vision{
+    width: 3rem;
+    height: 3rem;
+}
+
+.arrow{
+    rotate: 180deg;
+    margin-top: 1vh;
 }

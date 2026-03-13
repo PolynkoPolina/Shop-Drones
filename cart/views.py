@@ -46,3 +46,28 @@ def delete_product_to_cart():
         
         return response
         
+
+def render_order_processing():
+    # 
+    list_products = [] #
+    cookies = flask.request.cookies.get(key= 'list_products')
+    products_price = 0
+    products_discount = 0
+    general_products_price = 0
+    if cookies:
+        list_id_product = cookies.split('|')
+       
+        for id in list_id_product:
+            # 
+            if id != '':
+                count_id = list_id_product.count(id)
+                # 
+                product: Product = Product.query.get(ident= id)
+                #  
+                if product:
+                    products_price += product.price * count_id
+                    products_discount += int(product.discount * count_id)
+                    general_products_price = int(products_price - products_discount)
+
+        
+    return flask.render_template('order_processing.html', list_products= list_products, products_price= products_price, products_discount= products_discount, general_products_price= general_products_price)

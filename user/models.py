@@ -10,7 +10,7 @@ class User(DATABASE.Model, UserMixin):
     username = DATABASE.Column(DATABASE.String(50), nullable = False)
     email = DATABASE.Column(DATABASE.String(50), nullable = False)
     password = DATABASE.Column(DATABASE.String(25), nullable = False)
-    user = DATABASE.relationship('Address', backref= 'user', lazy= 'dynamic')
+    addresses = DATABASE.relationship('Address', backref= 'user', lazy= 'dynamic')
 
     is_admin = DATABASE.Column(DATABASE.Boolean, default = False)
     

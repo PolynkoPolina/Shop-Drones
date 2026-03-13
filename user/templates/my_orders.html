@@ -28,7 +28,7 @@
         <div>
             <h2>Мої замовлення</h2>
             <div class = "orders">
-              <div class="order">
+                <div class="order">
                     <div class = "order_info">
                         <div class = "ellipse"></div>
                         <div class = "block">
@@ -64,14 +64,104 @@
                             <div class = "step"></div>
                             <div class = "step"></div>
                             <div class = "step"></div>
-                        </div>
-                        
-                        <div class = "done_progress"></div>
-                        
+                        </div> 
+                        <div class = "done_progress"></div>         
                     </div>
-                    <div></div>
-                </div>  
+                    <div class = "progress_description">
+                        <p>Оформлено</p>
+                        <span>Збирається</span>
+                        <span>У дорозі</span>
+                        <span class = "margin_1">Доставлено</span>
+                        <span class = "margin_1">Отримано</span>
+                    </div>
+                    
+                    <div class = "info">
+                        <span class = "grey">Інформація про замовлення</span>
+                        <div class = "info_description">
+                            <div class = "info_left">
+                                <div>
+                                    <p class = "grey">Адреса доставки</p>
+                                    <p class = "post">Нова Пошта до відділення</p>
+                                    <p class = "adress">Дніпро, Відділення №1: вул. Маршала </p>
+                                    <p>Малиновського, 114</p>
+                                </div>
+                                <div class = "adressat">
+                                    <p class = "grey">Отримувач</p>
+                                    <p>Анастасія Павленко</p>
+                                    <p>+380 99 123 45 68</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class = "info_right">
+                                <div>
+                                    <div class = "purchase_info">
+                                        <span>Фото</span>
+                                        <span>Назва</span>
+                                        <span>Ціна</span>
+                                        <span>Кількість</span>
+                                        <span>Сума</span>
+                                    </div>
+                                    <div class = "purchase_photo">
+                                        <img src="{{ url_for('shop.static', filename= 'images/products/DJI Mini 4k.png') }}" alt="">
+                                        <span>DJI Mini 4K</span>
+                                        <div>
+                                            <p class = "price">29990 ₴</p>
+                                            <p class = "discounted-price">28985 ₴</p>
+                                        </div>
+                                        <span class = "margin">1</span>
+                                        <h3>28985 ₴</h3>
+                                    </div>
+                                </div>
+                                <div class = "purchase_description">
+                                    <div class = "blocks">
+                                        <p class = "grey">Оплата</p> 
+                                        <p class = "grey">Доставка</p>
+                                        <p class = "grey">Загальна сума</p>
+                                        <p class = "grey">Заощаджено</p> 
+                                        <p class = "grey">Разом</p>
+                                    </div>
+                                    <div class = "prices">
+                                        <span>Накладений платіж</span>
+                                        <span>За тарифами перевізника</span>
+                                        <span>29990 ₴</span> 
+                                        <span>1005 ₴</span>  
+                                        <span>28985 ₴</span>
+                                    </div>   
+                                </div>
+                                <button class = "btn-secondary">Скасувати</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <div class="additional">
+                <div class = "additional_info">
+                    <div class = "order_info">
+                        <div class = "ellipse_green"></div>
+                        <div class = "block">
+                            <p class = "grey">№30349 від 20.04.2023</p>
+                            <p>Виконано</p>
+                        </div>
+                        <div class = "block">
+                            <p class = "grey">Номер відправлення</p>
+                            <p>20030040050000</p>
+                        </div>
+                        <div class = "block">
+                            <p class = "grey">Сума замовлення</p>
+                            <p>25 830.00 ₴ </p>
+                        </div>
+                        <div class = "order_image">
+                            <img class = "night_vision" src="{{ url_for('shop.static', filename= 'images/products/Тепловізор Pulsar Telos LRF XQ35.png') }}" alt="">
+                            <img class = "night_vision" src="{{ url_for('shop.static', filename= 'images/products/Тепловізор Pulsar Telos LRF XQ35.png') }}" alt="">
+                            <img class = "arrow" src="{{ url_for('user.static', filename= 'icon/arrow_top.svg') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+                 
+            
                 
 
         </div>

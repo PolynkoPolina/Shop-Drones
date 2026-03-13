@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Order 
+{% endblock title %}
+
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('cart.static', filename= 'css/order-processing.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/base.css') }}">
+{% endblock links %}
+
+{% block content %}
+    
+{% endblock content %}
+
+{% block scripts %}
+    <script src="../cart/static/js/orderProcessing.js"></script>
+{% endblock scripts %}

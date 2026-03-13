@@ -1,6 +1,15 @@
 :root{
     --textColor: .0C122A;
 }
+a{
+    color: var(--darkblue);
+    font-weight: 600;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
 
 main h1{
     color: #CDD5DD;
@@ -50,9 +59,8 @@ body{
     width: 20vw;
     height: 43vh;
     overflow: hidden;
-    color: var(--textColor);
     transition: transform 0.9s;
-    border-radius: 1.2vh;
+    border-radius: 1rem;
     padding-left: 1vw;
     padding-bottom: 2vh;
 }
@@ -87,6 +95,7 @@ body{
     align-items: start;
     width: 14vw;
     height: 12vh;
+    color: var(--textColor);
 }
 
 .name-container{

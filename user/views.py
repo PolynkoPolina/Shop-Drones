@@ -101,8 +101,8 @@ def render_account():
             DATABASE.session.add(new_address)
             DATABASE.session.commit()
             return flask.redirect('/account?page=delivery_address')
-        list_address = Address.query.filter_by(user_id = flask_login.current_user.id)
+        list_address = Address.query.filter_by(user_id= flask_login.current_user.id).all()
         page = flask.request.args.get('page')
-        return flask.render_template(f'{page}.html', context={'list_address': list_address})
+        return flask.render_template(f'{page}.html', list_address= list_address)
     else:
         return {"error":"is_not_authenticated"}

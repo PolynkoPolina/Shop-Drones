@@ -4,6 +4,7 @@ let uniqueListProducts = new Set(listIdProduct);
 let cartCircle = window.parent.document.getElementById('full-cart');
 let cartCircleText = window.parent.document.getElementById('full-cart').getElementsByTagName('span')[0]
 let cartButton = window.parent.document.getElementById('cart-button');
+const button = document.querySelector('#create-order');
 
 cartButton.addEventListener(
     'click',
@@ -31,5 +32,15 @@ if (listIdProduct){
 };
 
 if(listIdProduct == undefined || listIdProduct.length <= 0){
-    cart.style.height = '47.6vh';
+    cart.style.height = '25.3rem';
 }
+
+
+
+button.addEventListener(
+    'click',
+    (event)=>{
+        closeCart();
+        window.parent.window.location.replace("/order-processing")
+    }
+)

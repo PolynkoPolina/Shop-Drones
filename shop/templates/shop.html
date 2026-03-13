@@ -44,22 +44,23 @@
             {% if list_product %}
                 {% for product in list_product %}
 
-                    <div id="product-{{product.id}}" class="product"> 
-                        <img class="product-img" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}">
-                        <div class= 'product-dec'>
-                            <div class= "name-price">
-                                <div class="name-container">
-                                    <h3>{{product.product_name}}</h3>
+                        <div id="product-{{product.id}}" class="product"> 
+                            <img class="product-img" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}">
+                            <div class= 'product-dec'>
+                                <div class= "name-price">
+                                    <div class="name-container">
+                                        <a href="shop/product?product={{product.product_name}}">{{product.product_name}}</a>
+                                    </div>
+                                    <h3 class="price-product">{{product.price|string| replace('000', ' 000')}} ₴</h3>
                                 </div>
-                                <h3 class="price-product">{{product.price|string| replace('000', ' 000')}} ₴</h3>
+                                <button type="button" class="buy" id="{{product.id}}"><img src="{{ url_for('shop.static', filename= 'icons/cart.svg') }}" alt=""></button>
                             </div>
-                            <button type="button" class="buy" id="{{product.id}}"><img src="{{ url_for('shop.static', filename= 'icons/cart.svg') }}" alt=""></button>
+                    
+                        {% if current_user.is_admin %} 
+                            <button type="button" class="delete" value="{{product.id}}">Видалити</button>
+                        {% endif %}
                         </div>
 
-                    {% if current_user.is_admin %} 
-                        <button type="button" class="delete" value="{{product.id}}">Видалити</button>
-                    {% endif %}
-                    </div>
                 {% endfor %}
             {% endif %}
         </div>

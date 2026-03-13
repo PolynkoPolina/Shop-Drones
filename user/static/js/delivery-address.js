@@ -1,6 +1,6 @@
 const addressForm = document.querySelector("#address-form");
 const addAddressBtn = document.querySelector("#add-address");
-let addressCount = -1;
+let addressCount = 0;
 
 
 addAddressBtn.addEventListener(
@@ -58,26 +58,27 @@ addAddressBtn.addEventListener(
             )
         addressForm.insertAdjacentElement('beforeend',newAddressDiv);
 
-        let changeAddressBtn = document.querySelectorAll(".change-address-btn")[addressCount];
-        changeAddressBtn.addEventListener(
-            'click',
-            (event) =>{
-                newAddressDiv.classList.toggle('openned');
-                newAddressDiv.classList.toggle('closed');
-            }
-        )
-
-        const defaultCitiesSpan = document.querySelectorAll(".default-cities")[addressCount]
-        const defaultCitiesArray = Array.from(defaultCitiesSpan.children);
-        const cityDiv = document.querySelectorAll(".city-div")[addressCount];
-        const cityInput = cityDiv.children[1]
-        defaultCitiesArray.forEach(city => {
-            city.addEventListener(
-                'click',
-                (event)=>{
-                    cityInput.value = city.textContent;
-                }
-            )
-        });
     }
 )
+
+let changeAddressBtn = document.querySelectorAll(".change-address-btn")[addressCount];
+changeAddressBtn.addEventListener(
+    'click',
+    (event) =>{
+        newAddressDiv.classList.toggle('openned');
+        newAddressDiv.classList.toggle('closed');
+    }
+)
+
+const defaultCitiesSpan = document.querySelectorAll(".default-cities")[addressCount]
+const defaultCitiesArray = Array.from(defaultCitiesSpan.children);
+const cityDiv = document.querySelectorAll(".city-div")[addressCount];
+const cityInput = cityDiv.children[1]
+defaultCitiesArray.forEach(city => {
+    city.addEventListener(
+        'click',
+        (event)=>{
+            cityInput.value = city.textContent;
+        }
+    )
+});

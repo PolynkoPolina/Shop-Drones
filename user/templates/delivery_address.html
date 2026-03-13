@@ -32,6 +32,7 @@
                 <form action=""  id="address-form"  class="address-form">
                     {% if list_address %}
                         {% for address in list_address %}
+                        <div class="address-div closed">
                             <div class = 'closed-div'>
                                 <div>
                                     <input type="radio" name = "address">
@@ -73,6 +74,7 @@
                                     <button class = "save-changes">Зберегти зміни</button>
                                 </form>
                             </div>
+                        </div>
                         {% endfor %}
                     {% endif %}
                 </form>

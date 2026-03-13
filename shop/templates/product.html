@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{product.product_name}}
+{% endblock title %}
+
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('shop.static', filename='css/product.css' ) }}">
+{% endblock links %}
+
+
+{% block content %}
+    <h1>{{product}}</h1>
+{% endblock content %}
+

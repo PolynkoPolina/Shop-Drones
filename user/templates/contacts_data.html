@@ -6,7 +6,7 @@
 
 {% block links %}
     <link rel="stylesheet" href="{{ url_for('user.static', filename='css/account.css' )  }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/contacts-data.css' )  }}">
+    <link rel="stylesheet" href="{{ url_for('user.static', filename='css/contacts-data.css' )  }}">
 {% endblock %}
 
 
@@ -28,26 +28,34 @@
         <div class="contacts-form">
             <h2>Контактні дані</h2>
 
-            <form class="inputs">
-                <p>Прізвище</p>
-                <input placeholder="Ваше Прізвище">
+            <form class="inputs" method="post" >
+                <div>
+                    <label for="lastname">Прізвище</label>
+                    <input placeholder="Ваше Прізвище" name="lastname" id="lastname">
+                </div>
 
-                <p>Ім'я</p>
-                <input type="text" placeholder="Ваше Ім'я">
+                <div>
+                    <label for="username">Ім'я</label>
+                    <input type="text" placeholder="Ваше Ім'я" name="username" id="username">
+                </div>
+                <div>
+                    <label for="middlename">По батькові</label>
+                    <input type="text" placeholder="По батькові" name="middlename" id="middlename">
+                </div>
+                <div>
+                    <label for="dateofbirth">Дата народження</label>
+                    <input type="date" placeholder="DD/MM/YYYY" name="dateofbirth" id="dateofbirth">
+                </div>
+                <div>
+                    <label for="phone">Телефон</label>
+                    <input type="tel" placeholder="+38 0" name="phone" id="phone">
+                </div>
+                <div>
+                    <label for="email">E-mail</label>
+                    <input type="email" placeholder="Ваш E-mail" name="email" id="email">
+                </div>
 
-                <p>По батькові</p>
-                <input type="text" placeholder="По батькові">
-
-                <p>День народженння</p>
-                <input type="date" placeholder="DD/MM/YYYY">
-
-                <p>Телефон</p>
-                <input type="tel" placeholder="+38 0">
-
-                <p>E-mail</p>
-                <input type="email" placeholder="Ваш E-mail">
-
-                <button type="submit">НАДІСЛАТИ</button>
+                <button type="submit" class="save-changes">Зберегти зміни</button>
             </form>
         </div>
 

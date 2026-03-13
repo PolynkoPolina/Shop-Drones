@@ -1,11 +1,52 @@
 .contacts-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     width: 46vw;
-    height: 36rem;
-    font-family: Arial, sans-serif;
+    height: 36.3rem;
+}
+
+.contacts-form h2{
+    height: 1.6rem;
+    font-size: 1.8rem;
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;;
+}
+
+.inputs label {
+    font-size: 1rem;
+}
+
+.inputs input {
+    padding: 0rem 1rem 0rem 1rem;
+    border: 0.1vw solid var(--grey);
+    border-radius: 0.4rem;
+    width: 100%;
+    height: 2.5rem;
+}
+
+.inputs div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 4rem;
+}
+
+.save-changes {
+    background: none;
+    text-transform: uppercase;
+    width: 12vw;
+    border: 2px solid var(--grey);
+    color: var(--grey);
+    border-radius: 6.25rem;
+    height: 2.5rem;
+    font-size: 1rem;
 }
 
 .contacts-form h2{
     font-size: 1.8rem;
     font-weight: 200;
 }
-
