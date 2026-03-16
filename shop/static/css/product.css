@@ -1,0 +1,83 @@
+header{
+    padding-top: 20vh;
+    height:100vh;
+    background-color: #CDD5DD;
+    z-index: 100;
+}
+
+.ellipse{
+    position: absolute;
+    top: 50vh;
+    width: 110%;
+    height: 90vh;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    margin-top: 10vh;
+}
+
+main{
+    height: 100vh;
+}
+
+header h1{
+    font-family: GT Walsheim Pro Bold;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 4rem;
+
+}
+
+.description{
+    text-align: center;
+    width: 45vw;
+    gap: 2vh;
+    color: #3D4155;
+    margin-bottom: 50vh;
+}
+
+.product-img{
+    position: absolute;
+    top: 30vh;
+    height: 45rem;
+    width: auto;
+    object-fit: contain;
+}
+
+.product:hover .buy{
+    opacity: 1;
+}
+
+.buy{
+    width: 3vw;
+    height: 6vh;
+    background: #FFFFFF;
+    border-radius: 50%;
+    border: 0.2vh solid .0C122A;  
+    opacity: 0;
+    margin-top: 3vh;
+}
+
+.product{
+    position: absolute;
+    background-color: white;
+    right: 3vw;
+    bottom: 25vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.product img{
+    width: 3vw;
+    height:6vh;
+    margin-top: 1vh;
+    margin-left: 1vh;
+}
+
+.upper{
+    display: flex;
+}
+
+.price{
+    margin-top: 1vh;
+    margin-left: 1vh;
+}

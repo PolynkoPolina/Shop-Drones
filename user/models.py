@@ -12,6 +12,10 @@ class User(DATABASE.Model, UserMixin):
     password = DATABASE.Column(DATABASE.String(25), nullable = False)
     addresses = DATABASE.relationship('Address', backref= 'user', lazy= 'dynamic')
 
+    lastname= DATABASE.Column(DATABASE.String(50), nullable =True)
+    middlename= DATABASE.Column(DATABASE.String(50), nullable =True)
+    phone= DATABASE.Column(DATABASE.String(15), nullable =True)
+    date_of_birth= DATABASE.Column(DATABASE.DateTime, nullable =True)
     is_admin = DATABASE.Column(DATABASE.Boolean, default = False)
     
 

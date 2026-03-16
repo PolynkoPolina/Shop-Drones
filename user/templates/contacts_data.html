@@ -31,28 +31,28 @@
             <form class="inputs" method="post" >
                 <div>
                     <label for="lastname">Прізвище</label>
-                    <input placeholder="Ваше Прізвище" name="lastname" id="lastname">
+                    <input placeholder="Ваше Прізвище" name="lastname" id="lastname" value = '{{current_user.lastname}}'>
                 </div>
 
                 <div>
                     <label for="username">Ім'я</label>
-                    <input type="text" placeholder="Ваше Ім'я" name="username" id="username">
+                    <input type="text" placeholder="Ваше Ім'я" name="username" id="username" value = '{{current_user.username}}'>
                 </div>
                 <div>
                     <label for="middlename">По батькові</label>
-                    <input type="text" placeholder="По батькові" name="middlename" id="middlename">
+                    <input type="text" placeholder="По батькові" name="middlename" id="middlename" value = '{{current_user.middlename}}'>
                 </div>
                 <div>
                     <label for="dateofbirth">Дата народження</label>
-                    <input type="date" placeholder="DD/MM/YYYY" name="dateofbirth" id="dateofbirth">
+                    <input type="date" placeholder="DD/MM/YYYY" name="dateofbirth" id="dateofbirth" value = '{{current_user.date_of_birth}}'>
                 </div>
                 <div>
                     <label for="phone">Телефон</label>
-                    <input type="tel" placeholder="+38 0" name="phone" id="phone">
+                    <input type="tel" placeholder="+38 0" name="phone" id="phone" value = '{{current_user.phone}}'>
                 </div>
                 <div>
                     <label for="email">E-mail</label>
-                    <input type="email" placeholder="Ваш E-mail" name="email" id="email">
+                    <input type="email" placeholder="Ваш E-mail" name="email" id="email" value = '{{current_user.email}}'>
                 </div>
 
                 <button type="submit" class="save-changes">Зберегти зміни</button>

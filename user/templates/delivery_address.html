@@ -29,55 +29,57 @@
         <div class="address">
             <h2>Адреса доставки</h2>
             <div class="address-container">
-                <form action=""  id="address-form"  class="address-form">
+                <div  id="address-form"  class="address-form">
                     {% if list_address %}
                         {% for address in list_address %}
-                        <div class="address-div closed">
-                            <div class = 'closed-div'>
-                                <div>
-                                    <input type="radio" name = "address">
-                                    <span>м. {{address.city}}, Відділення №1: вул. {{address.street}}, {{address.house}}</span>
+                            
+                            <div class="address-div closed">
+                                <div class = 'closed-div'>
+                                    <div>
+                                        <input type="radio" name = "address">
+                                        <span>м. {{address.city}}, Відділення №1: вул. {{address.street}}, {{address.house}}</span>
+                                    </div>
+                                    <button type="button" class = "change-address-btn"></button>
                                 </div>
-                                <button type="button" class = "change-address-btn"></button>
-                            </div>
 
-                            <div class = 'inputs-container'>
-                                <form action = "/account?page=delivery_address" name = 'add-address' method = "post">
-                                    <div class = "city-div">
-                                        <p><label for="city">Місто</label></p>
-                                        <input type="text" name = 'city' placeholder="Назва міста" required>
-                                        <span class="default-cities"> 
-                                            <a>Вінниця</a> 
-                                            <a>Одеса</a> 
-                                            <a>Харків</a> 
-                                            <a>Дніпро</a> 
-                                            <a>Київ</a> 
-                                            <a>Львів</a> 
-                                        </span>
-                                    </div>
-                                    <div class = "address-input-div">
-                                        <p><label for="street">Вулиця</label></p>
-                                        <input type="text" name = 'street' placeholder="Назва вулиці" required> 
-                                    </div>
-                                    <div class = "address-input-div">
-                                        <p><label for="house">Будинок</label></p>
-                                        <input type="number" name = 'house' placeholder="Номер будинку" required>
-                                    </div>
-                                    <div class = "address-input-div">
-                                        <p><label for="appartment">Квартира</label></p>
-                                        <input type="number" name = 'appartment' placeholder="Номер квартири">
-                                    </div>
-                                    <div class = "address-input-div">
-                                        <p><label for="entrance">Під'їзд</label></p>
-                                        <input type="number" name="entrance" placeholder="Номер під'їзду">
-                                    </div>
-                                    <button class = "save-changes">Зберегти зміни</button>
-                                </form>
+                                <div class = 'inputs-container'>
+                                    <form action = "/account?page=delivery_address" name = 'change-address' method = "post">
+                                        <input type="hidden" name="address_id" value="{{ address.id }}">
+                                        <div class = "city-div">
+                                            <p><label for="city">Місто</label></p>
+                                            <input type="text" name = 'city' placeholder="Назва міста" required value="{{address.city}}">
+                                            <span class="default-cities"> 
+                                                <a>Вінниця</a> 
+                                                <a>Одеса</a> 
+                                                <a>Харків</a> 
+                                                <a>Дніпро</a> 
+                                                <a>Київ</a> 
+                                                <a>Львів</a> 
+                                            </span>
+                                        </div>
+                                        <div class = "address-input-div">
+                                            <p><label for="street">Вулиця</label></p>
+                                            <input type="text" name = 'street' placeholder="Назва вулиці" required value="{{address.street}}"> 
+                                        </div>
+                                        <div class = "address-input-div">
+                                            <p><label for="house">Будинок</label></p>
+                                            <input type="number" name = 'house' placeholder="Номер будинку" required value="{{address.house}}">
+                                        </div>
+                                        <div class = "address-input-div">
+                                            <p><label for="appartment">Квартира</label></p>
+                                            <input type="number" name = 'appartment' placeholder="Номер квартири" value="{{address.appartment}}">
+                                        </div>
+                                        <div class = "address-input-div">
+                                            <p><label for="entrance">Під'їзд</label></p>
+                                            <input type="number" name="entrance" placeholder="Номер під'їзду" value="{{address.entrance}}">
+                                        </div>
+                                        <button class = "save-changes">Зберегти зміни</button>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
                         {% endfor %}
                     {% endif %}
-                </form>
+                </div>
                 <button type="button" class="add-address" id="add-address">+ ДОДАТИ АДРЕСУ</button>
             </div>
         </div>

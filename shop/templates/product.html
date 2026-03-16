@@ -9,7 +9,41 @@
 {% endblock links %}
 
 
-{% block content %}
-    <h1>{{product}}</h1>
-{% endblock content %}
+{% block header %}
+    <img src="{{ url_for('shop.static', filename = 'images/Ellipse.png') }}" alt="" class = "ellipse">
+    <div class = "description">
+        <h1>{{product.product_name}}</h1>
+        {% if product.product_name == "Тепловізор Pulsar Telos LRF XQ35" %}            
+            <p>Pulsar Telos LRF XQ35 – тепловізійний монокуляр з лазерним далекоміром. Перед вами наймолодший представник інноваційної лінійки продуктів від світового гіганта індустрії Yukon Advanced Optics Worldwide із заявленою дальністю виявлення в 1300 метрів.</p>
+        {% else %}
+        <P>100-мегапіксельна основна камера Hasselblad, великі CMOS-телекамери, нескінченний карданний шарнір з можливістю обертання на 360°, всеспрямоване зондування перешкод 0,1-Lux Nightscape, передача відео O4+.</P>
+                
+        {% endif %}
+    </div>
+    <img class="product-img" src="{{ url_for('shop.static', filename= 'images/for_products_pages/' + product.product_name. replace(' ', '_') + '.png') }}" alt="{{product.product_name}}">
+    <div class="product">
+        <div class = "upper">
+            <img src="{{ url_for('shop.static', filename= 'images/for_products_pages/' + product.product_name. replace(' ', '_') + '.png') }}" alt="{{product.product_name}}">
+            <div class = "price">
+                <p>{{product.product_name}}</p>
+                <p>{{product.price}}</p>
+            </div>
+        </div>
+        <div class = "product-buy">
+            <button type="button" class="buy" id="{{product.id}}"><img src="{{ url_for('shop.static', filename= 'icons/cart.svg') }}" alt=""></button>
+            <button>Замовити <img src="{{ url_for('home.static', filename= 'icon/arrow.svg') }}" alt=""></button>
+        </div>
+    </div>
+    
+{% endblock %}
 
+{% block content %}
+    {% if product.product_name == "Тепловізор Pulsar Telos LRF XQ35" %}
+        <p>sdkjsdjksjkdjklsdf</p>
+    {% else %}
+    
+    {% endif %}
+    <div>
+        
+    </div>
+{% endblock content %}

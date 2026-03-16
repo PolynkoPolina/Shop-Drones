@@ -1,6 +1,28 @@
 const addressForm = document.querySelector("#address-form");
 const addAddressBtn = document.querySelector("#add-address");
-let addressCount = 0;
+let addressArray = Array.from(addressForm.children);
+let addressCount = addressForm.childElementCount - 1;
+addressArray.forEach(setupAddress);
+
+function setupAddress(addressDiv){
+    let changeAddressBtn = addressDiv.querySelector(".change-address-btn");
+
+    changeAddressBtn.addEventListener('click', () => {
+        addressDiv.classList.toggle('openned');
+        addressDiv.classList.toggle('closed');
+    });
+
+    const defaultCitiesSpan = addressDiv.querySelector(".default-cities");
+    const cityInput = addressDiv.querySelector(".city-div input");
+
+    defaultCitiesSpan.querySelectorAll("a").forEach(city=>{
+        city.addEventListener("click", 
+            (event)=>{
+                cityInput.value = city.textContent;
+            }
+        );
+    });
+}
 
 
 addAddressBtn.addEventListener(
@@ -15,7 +37,7 @@ addAddressBtn.addEventListener(
             <div class = 'closed-div'>
                 <div>
                     <input type="radio" name = "address">
-                    <span>м. Київ, Відділення №3: вул. Жулянська, 11</span>
+                    <span>м. Назва, Відділення №1: вул. Назва, Номер</span>
                 </div>
                 <button type="button" class = "change-address-btn"></button>
             </div>
@@ -57,28 +79,7 @@ addAddressBtn.addEventListener(
             `
             )
         addressForm.insertAdjacentElement('beforeend',newAddressDiv);
-
+        addressArray.push(newAddressDiv);
+        setupAddress(newAddressDiv);
     }
 )
-
-let changeAddressBtn = document.querySelectorAll(".change-address-btn")[addressCount];
-changeAddressBtn.addEventListener(
-    'click',
-    (event) =>{
-        newAddressDiv.classList.toggle('openned');
-        newAddressDiv.classList.toggle('closed');
-    }
-)
-
-const defaultCitiesSpan = document.querySelectorAll(".default-cities")[addressCount]
-const defaultCitiesArray = Array.from(defaultCitiesSpan.children);
-const cityDiv = document.querySelectorAll(".city-div")[addressCount];
-const cityInput = cityDiv.children[1]
-defaultCitiesArray.forEach(city => {
-    city.addEventListener(
-        'click',
-        (event)=>{
-            cityInput.value = city.textContent;
-        }
-    )
-});

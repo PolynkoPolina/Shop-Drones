@@ -3,6 +3,7 @@ import flask_login
 
 from Project.db import DATABASE
 from Project.config_page import config_page
+from datetime import datetime
 
 from .apps import user
 
@@ -83,26 +84,59 @@ def render_restore_password():
 
 def render_account():
     if flask_login.current_user.is_authenticated:
-        if flask.request.method == "POST":
-            city_form = flask.request.form['city']
-            street_form = flask.request.form['street']
-            house_form = flask.request.form['house']
-            appartment_form = flask.request.form['appartment']
-            entrance_form = flask.request.form['entrance']
-
-            new_address = Address(
-                    city = city_form,
-                    street = street_form,
-                    house = house_form,
-                    appartment = appartment_form,
-                    entrance = entrance_form,
-                    user_id = flask_login.current_user.id
-                )
-            DATABASE.session.add(new_address)
-            DATABASE.session.commit()
-            return flask.redirect('/account?page=delivery_address')
-        list_address = Address.query.filter_by(user_id= flask_login.current_user.id).all()
         page = flask.request.args.get('page')
+        if flask.request.method == "POST":
+            if page == 'contacts_data':
+
+                username_form = flask.request.form['username']
+                lastname_form = flask.request.form['lastname']
+                middlename_form = flask.request.form['middlename']
+                phone_form = flask.request.form['phone']
+                bd_form = flask.request.form['dateofbirth']
+                email_form = flask.request.form["email"]
+
+                user = flask_login.current_user
+                
+                if user:
+                    user.username = username_form
+                    user.lastname = lastname_form
+                    user.middlename= middlename_form
+                    user.phone = phone_form
+                    user.date_of_birth = datetime.strptime(bd_form, "%Y-%m-%d").date()
+                    user.email = email_form
+
+                    DATABASE.session.commit()
+            elif page == "delivery_address":
+
+                address_id = flask.request.form.get("address_id")
+
+                city_form = flask.request.form['city']
+                street_form = flask.request.form['street']
+                house_form = flask.request.form['house']
+                appartment_form = flask.request.form['appartment']
+                entrance_form = flask.request.form['entrance']
+
+                if address_id:
+                    address = Address.query.filter_by(id=address_id, user_id=flask_login.current_user.id ).first()
+
+                    address.city = city_form
+                    address.street = street_form
+                    address.house = house_form
+                    address.appartment = appartment_form
+                    address.entrance = entrance_form
+                else:
+                    new_address = Address(
+                            city = city_form,
+                            street = street_form,
+                            house = house_form,
+                            appartment = appartment_form,
+                            entrance = entrance_form,
+                            user_id = flask_login.current_user.id
+                        )
+                    DATABASE.session.add(new_address)
+                DATABASE.session.commit()
+                return flask.redirect('/account?page=delivery_address')
+        list_address = Address.query.filter_by(user_id= flask_login.current_user.id).all()
         return flask.render_template(f'{page}.html', list_address= list_address)
     else:
         return {"error":"is_not_authenticated"}

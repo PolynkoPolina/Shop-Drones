@@ -123,5 +123,9 @@ def delete():
     }
 
 def render_product_page():
-    product = flask.request.args.get('product')
-    return flask.render_template('product.html', product = product)
+    product_id = flask.request.args.get("product_id")
+    product = Product.query.get(product_id)
+    if product.product_name == "DJI Mini 4 Pro" or product.product_name == "Тепловізор Pulsar Telos LRF XQ35":
+        return flask.render_template('product.html', product = product)
+    else:
+        return {'error': 'page doesn`t exist'}

@@ -69,7 +69,6 @@ changeSizeButtons.forEach((button) => {
                 } else if (button.className == 'login-button'){
                     modalStatus = 'authorization';
                     closeAuthRegistr();
-                    window.location.reload();
                 }
 
                 if(modalStatus == 'authorization'){
