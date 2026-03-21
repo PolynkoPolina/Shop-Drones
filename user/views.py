@@ -139,4 +139,4 @@ def render_account():
         list_address = Address.query.filter_by(user_id= flask_login.current_user.id).all()
         return flask.render_template(f'{page}.html', list_address= list_address)
     else:
-        return {"error":"is_not_authenticated"}
+        return {"error":"not_authenticated"}

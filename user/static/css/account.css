@@ -1,8 +1,10 @@
 hr{
-    height: 2px;
     width: 321px;
-    border: 2px solid #CDD5DD;
+    border: none;
+    height: 1px;
+    background-color: var(--inputgrey);
 }
+
 
 .content{
     display: flex;

@@ -1,6 +1,7 @@
 import flask
 from Project.config_page import config_page
 from shop.models import Product
+import flask_login
 
 @config_page(template_name= 'cart.html')
 def render_cart():
@@ -31,7 +32,12 @@ def render_cart():
         
     # 
     if (products_price != 0):
-        return {'list_products': list_products,'products_price': products_price, 'products_discount': products_discount, 'general_products_price': general_products_price }
+        return {
+            'list_products': list_products,
+            'products_price': products_price, 
+            'products_discount': products_discount, 
+            'general_products_price': general_products_price 
+        }
     elif (products_price == 0):
         return {'list_products': list_products}
 
@@ -49,25 +55,36 @@ def delete_product_to_cart():
 
 def render_order_processing():
     # 
-    list_products = [] #
-    cookies = flask.request.cookies.get(key= 'list_products')
-    products_price = 0
-    products_discount = 0
-    general_products_price = 0
-    if cookies:
-        list_id_product = cookies.split('|')
-       
-        for id in list_id_product:
-            # 
-            if id != '':
-                count_id = list_id_product.count(id)
-                # 
-                product: Product = Product.query.get(ident= id)
-                #  
-                if product:
-                    products_price += product.price * count_id
-                    products_discount += int(product.discount * count_id)
-                    general_products_price = int(products_price - products_discount)
-
+    if flask_login.current_user.is_authenticated:
+        list_products = [] #
+        cookies = flask.request.cookies.get(key= 'list_products')
+        products_price = 0
+        products_discount = 0
+        general_products_price = 0
+        if cookies:
+            list_id_product = cookies.split('|')
         
-    return flask.render_template('order_processing.html', list_products= list_products, products_price= products_price, products_discount= products_discount, general_products_price= general_products_price)
+            for id in list_id_product:
+                # 
+                if id != '':
+                    count_id = list_id_product.count(id)
+                    # 
+                    product: Product = Product.query.get(ident= id)
+                    #  
+                    if product:
+                        products_price += product.price * count_id
+                        products_discount += int(product.discount * count_id)
+                        general_products_price = int(products_price - products_discount)
+                    if [product, count_id] not in list_products:
+                        #
+                        list_products.append([product, count_id]) 
+            
+        return flask.render_template(
+            'order_processing.html', 
+            list_products= list_products,
+            products_price= products_price,
+            products_discount= products_discount,
+            general_products_price= general_products_price
+            )
+    else:
+        return {'error': 'not_authenticated'}

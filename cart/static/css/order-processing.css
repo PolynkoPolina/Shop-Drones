@@ -1,0 +1,306 @@
+header{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    overflow: hidden;
+    z-index: 1;
+}
+
+body{
+    position: relative;
+    z-index: 1;
+}
+
+
+header a:hover{
+    transform: scale(1.05);
+}
+
+main{
+    width: 100vw;
+    display: flex;
+    padding: 9rem 2vw 7.8rem 2vw;
+    gap: 1vw;
+}
+
+p, h1, h2, span, label{
+    color: var(--bluegrey);
+}
+
+.background-blur-div{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(12, 18, 42, 70%);
+    backdrop-filter: blur(10px);
+    z-index: 250;
+}
+
+.nav-header{
+    position: fixed;
+    top: 3vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    height: 4rem;
+    padding: 0.625rem 43vw 0.625rem 40px;
+    border: 1px solid #E4E4E7;
+    border-radius: 62px;
+    background-color: rgba(255, 255, 255, 50%);
+    backdrop-filter: blur(10px);
+}
+
+.links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 15vw;
+}
+
+.links a{
+    font-size: 1.75vh;
+    color: #9EA0AA;
+    text-transform: uppercase;
+}
+
+.links a:hover{
+    color: #0C122A;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 13.125rem;
+    background-color: #CDD5DD;
+    width: 100vw;
+    overflow-y: hidden;
+    bottom: 0;
+    gap: 2rem;
+}
+
+hr{
+    height: 1px;
+    width: 95vw;
+    border: 0.1vh solid #FFFFFF;
+}
+
+.drones-footer{
+    color: #9EA0AA;
+    height: 1.125rem;
+}
+
+.logo-footer{
+    height: 3.2rem;
+}
+
+
+/* ------------------------ */
+
+.order-processing{
+    position: relative;
+    width: 46vw;
+    height: 103rem;
+    display:flex;
+    flex-direction: column;
+    gap: 2.75rem; 
+}
+
+.order-box{
+    display:flex;
+    flex-direction: column;
+    gap: 2.75rem; 
+}
+
+.order-processing h1{
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.order-processing h1, .order-processing h2{
+    font-weight: 100;
+}
+
+.order-processing hr{
+    border: none;
+    height: 1px;
+    background-color: var(--inputgrey);
+    width: 100%;
+}
+
+
+.contacts, .contacts form, .delivery, .delivery form, .payment,.payment form, .openned form{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+.inputs-container, .address {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: fit-content;
+    font-size: 1rem;
+}
+
+.inputs-container label,  .address label{
+    font-size: 1rem;
+}
+
+.inputs-container input{
+    padding: 0rem 1rem 0rem 1rem;
+    border: 0.1vw solid var(--inputgrey);
+    border-radius: 0.4rem;
+    width: 100%;
+    height: 2.5rem;
+    font-size: 1rem;
+}
+
+.inputs-container textarea{
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border: 0.1vw solid var(--inputgrey);
+    border-radius: 0.4rem;
+    height: auto;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 2.5rem;
+    font-size: 1rem;
+}
+
+.inputs-container div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-height: 4rem;
+    max-height: fit-content;
+}
+
+
+.address, .pay-later, .pay-now{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--lightgrey);
+    padding: 0.4rem 1rem 0.4rem 1rem;
+    width: 100%;
+    gap: 1rem;
+
+}
+
+.address input[type="radio"], .payment input[type="radio"]{
+    width: 1.2rem;
+    height: 1.8rem;
+}
+
+.address > div:first-of-type, .pay-later, .pay-now> div:first-of-type{
+    display: flex;
+    gap: 1.3vw;
+    align-items: center;
+    font-weight: 600
+}
+
+
+.closed {
+    width: 100%;
+    height: 2.75rem;
+    background-color: transparent;   
+}
+
+.openned{
+    border: 1px solid var(--darkblue);
+}
+
+.pay-now div{
+    display: flex;
+    align-items: center;
+    gap:1.3vw;
+}
+.order-view{
+    position: relative;
+    width: 46vw;
+    height: fit-content;
+    border: 2px solid var(--lightgrey);
+    border-radius: 0.625rem;
+    padding-bottom: 1rem;
+}
+
+.nova-post-img{
+    width: 1.25rem;
+    height: 1.25rem;
+    background-image: url(../icon/nova_post.svg);
+}
+
+.pay-later{
+    height: 2.75rem;
+    flex-direction: row;
+}
+
+.default-cities a{
+    font-size: 0.8rem;
+    text-decoration: underline;
+    color: var(--darkblue);
+}
+
+.city-div{
+    height: 6rem;
+}
+
+
+.iframe-cart, .iframe-auth-registr{
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    position: relative;
+}
+
+.cart-modal{
+    height: 38rem;
+    width: 38vw;
+    z-index: 3;
+    position: fixed;
+    background-color: #FFFFFF;
+    border-radius: 2vh;
+    box-shadow: 0.1vh 0.07vh 1.3vh rgb(19, 19, 19, 0.3);
+    transform: translateY(-50%);
+    top: 50vh;
+}
+
+
+.background-blur-div{
+    position: fixed;
+    width: 100%;
+    height: 1000vh;
+    background-color: rgb(12, 18, 42, 70%);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+}
+
+.pay-now-img{
+    width: 3.3rem;
+    height: 2rem;
+}
+
+.visa{
+    background-image: url(../icon/Visa.svg);
+}
+
+.mastercard{
+    background-image: url(../icon/Mastercard.svg);
+}
+
+.google{
+    background-image: url(../icon/GooglePay.svg);
+}
+
+.apple{
+    background-image: url(../icon/ApplePay.svg);
+}

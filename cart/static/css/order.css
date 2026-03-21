@@ -1,0 +1,205 @@
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+    height: 100%;
+    overflow: hidden;
+    padding: 0 0.5rem 0 0.5rem;
+}
+
+.product-container{
+    height: fit-content;
+    width: 96%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.product{
+    display: flex;
+    width: 94%;
+    height: 7rem;
+    padding: 2.1vh;
+}
+
+.product img{
+    width: 6.3rem;
+    height: 5.3rem;
+    background-color: #F4F4F4;
+    border-radius: 0.3rem;
+}
+
+.product-id{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+hr{
+    width: 43vw;
+    border: none;
+    background-color: var(--lightgrey);
+    height: 2px;
+}
+
+.product-content{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.name-price{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-left: 3vw;
+}
+
+.name-price h4{
+    height: 2.5rem;
+    font-size: 1.5rem;
+}
+
+.name-price p{
+    font-weight: 600;
+}
+
+.modal-header{
+    width: 100%;
+    height: 3.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vh 2vw 0vh 2vw;
+    font-size: 1.5rem;
+}
+
+.price{
+    height: 7rem;
+}
+
+.buttons{
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 1.5vw;
+}
+
+.buttons span{
+    font-size: 1.5rem;
+    color: var(--grey);
+}
+
+.global-price{
+    text-decoration: line-through;
+    font-weight: 600;
+}
+
+.discount{
+    color: var(--grey);
+    font-weight: 600;
+}
+
+.final-price{
+    color: var(--red);
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.create-order{
+    font-family: GT Walsheim Pro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6.25rem;
+    font-weight: 500;
+    letter-spacing: 0.3vw;
+    text-transform: uppercase;
+    gap: 1vw;
+    font-size: 0.8rem;
+    width: 40.3%;
+    height: 2.5rem;
+    background-color: var(--darkblue);
+    border: none;
+    color: #FFFFFF;
+}
+
+
+.buy-buttons{
+    display: flex;
+    justify-content: end;
+    margin-top: 3vh;
+    gap: 1vw;
+    padding-right: 2vw;
+}
+
+.prices{
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.modalContent-description{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 92.5%;
+    gap: 1vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;    
+    padding-left: 1vw;
+}
+
+.product-container::selection {
+  background-color: rgb(197, 209, 211); 
+  color: var(--darkblue); 
+}
+
+.product-container::-webkit-scrollbar {
+    background-color: none;
+    height: 30%;
+    width: 1vw;
+}
+
+.product-container::-webkit-scrollbar-track {
+    background-color: #9EA0AA;
+    border-radius: 2vh;
+}
+
+.product-container::-webkit-scrollbar-thumb {
+    background: var(--darkblue);
+    border-radius: 2vh;
+}
+
+.product-container::-webkit-scrollbar-thumb:hover {
+    opacity: 70%;
+    background: var(--darkbluehover);
+}
+
+.cart-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 14rem;
+    align-items: center;
+    font-size: 1.25rem;
+    color: #6D717F;
+}
+
+.buttons-r{
+    display: flex;
+    justify-content: end;
+    width: 92.5vw;
+}
+
+.edit-order{
+    width: 2em;
+    height: 1.5rem;
+    background-color: transparent;
+    border: none;
+    background-image: url(../icon/change.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
