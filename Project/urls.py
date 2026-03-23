@@ -4,7 +4,8 @@ home.home.add_url_rule(rule = '/', view_func = home.render_home)
 home.home.add_url_rule(rule = '/about', view_func = home.render_about_us)
 home.home.add_url_rule(rule = '/contacts', view_func = home.render_contacts)
 cart.cart.add_url_rule(rule = '/cart', view_func = cart.render_cart)
-cart.cart.add_url_rule(rule= "/order-processing", view_func= cart.render_order_processing)
+cart.cart.add_url_rule(rule= "/order/processing", view_func= cart.render_order_processing)
+cart.cart.add_url_rule(rule= "/order/success", view_func= cart.render_order_success)
 # cart.cart.add_url_rule(rule = '/delete_product_to_cart', view_func = cart.delete_product_to_cart, methods = ['GET','POST'])
 
 user.user.add_url_rule(

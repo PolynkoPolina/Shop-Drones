@@ -73,13 +73,10 @@ changeSizeButtons.forEach((button) => {
 
                 if(modalStatus == 'authorization'){
                     authRegistrModal.style.height = '22rem';
-                    console.log(modalStatus)
                 } else if( modalStatus == 'registration'){
                     authRegistrModal.style.height = '35rem';
-                    console.log(modalStatus)
                 } else if (  modalStatus == 'succesRegisrt'){
                     authRegistrModal.style.height = '13rem';
-                    console.log(modalStatus)
                 }
             }
         )

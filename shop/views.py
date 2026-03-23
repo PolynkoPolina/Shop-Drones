@@ -12,6 +12,7 @@ from .admin import is_admin
 
 @config_page(template_name= 'shop.html')
 def render_shop():
+    flask.session['cart_page'] = 'cart'
     message = ''
     # 
     type = flask.request.args.get('type')
@@ -87,6 +88,7 @@ def add_product_id_cookies():
         return response
 
 def filter():
+    
     data_type = flask.request.get_data(as_text= True)
     if data_type != "all":
         list_filter = []
@@ -123,6 +125,7 @@ def delete():
     }
 
 def render_product_page():
+    flask.session['cart_page'] = 'cart'
     product_id = flask.request.args.get("product_id")
     product = Product.query.get(product_id)
     if product.product_name == "DJI Mini 4 Pro" or product.product_name == "Тепловізор Pulsar Telos LRF XQ35":

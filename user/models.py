@@ -11,6 +11,7 @@ class User(DATABASE.Model, UserMixin):
     email = DATABASE.Column(DATABASE.String(50), nullable = False)
     password = DATABASE.Column(DATABASE.String(25), nullable = False)
     addresses = DATABASE.relationship('Address', backref= 'user', lazy= 'dynamic')
+    orders = DATABASE.relationship('Order', backref= 'user', lazy= 'dynamic')
 
     lastname= DATABASE.Column(DATABASE.String(50), nullable =True)
     middlename= DATABASE.Column(DATABASE.String(50), nullable =True)
@@ -30,3 +31,6 @@ class Address(DATABASE.Model):
 
     appartment = DATABASE.Column(DATABASE.Integer, nullable = True)
     entrance= DATABASE.Column(DATABASE.Integer, nullable = True)
+
+
+    

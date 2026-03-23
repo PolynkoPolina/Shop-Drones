@@ -2,7 +2,7 @@ const cart = window.parent.document.getElementById('cart-modal');
 let listIdProduct = document.cookie.split('=')[1];
 let backgroundBlurDiv = window.parent.document.querySelector('.background-blur-div');
 
-if (window.parent.window.location.pathname != "/order-processing"){
+if (window.parent.window.location.pathname != "/order/processing"){
 
     let uniqueListProducts = new Set(listIdProduct);
     let cartCircle = window.parent.document.getElementById('full-cart');
@@ -27,7 +27,7 @@ if (window.parent.window.location.pathname != "/order-processing"){
         'click',
         (event)=>{
             closeCart();
-            window.parent.window.location.replace("/order-processing")
+            window.parent.window.location.replace("/order/processing")
         }
     )
     
@@ -46,9 +46,12 @@ if (window.parent.window.location.pathname != "/order-processing"){
 }
 
 
-function closeCart(){
+function closeCart(value){
     cart.style.display = 'none';
     if( backgroundBlurDiv){
         backgroundBlurDiv.style.display = 'none';
     }
-};
+    if (value=='save'){
+        window.parent.window.location.reload()
+    }
+    };

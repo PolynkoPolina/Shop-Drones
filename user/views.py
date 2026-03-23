@@ -83,6 +83,7 @@ def render_restore_password():
 
 
 def render_account():
+    flask.session['cart_page'] = 'cart'
     if flask_login.current_user.is_authenticated:
         page = flask.request.args.get('page')
         if flask.request.method == "POST":

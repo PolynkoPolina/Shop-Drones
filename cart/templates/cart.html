@@ -10,12 +10,20 @@
 <body>
     <main>
         <div class="modal-header">
-            <h3>Кошик</h3>
-            <button id= "close-cart" onclick="closeCart()"></button>
+            {% if cart_page == 'edit_products' %}
+                <h3>Редагувати продукти</h3>
+            {% else %}
+                <h3>Кошик</h3>
+            {% endif %}
+            <button id= "close-cart" onclick="closeCart('')"></button>
         </div>
             {% if list_products %}
              <div class="modal-body">
-                <div class="product-container">
+                {% if cart_page == 'edit_products' %}
+                <div class="product-container edit">
+                {% else%}
+                <div class="product-container cart">
+                {% endif %}
                     {% for product, count in list_products %}
                         <div id="product-{{product.id}}" class="product-id">
                             <div  class="product">
@@ -51,8 +59,13 @@
             </div>
             <hr>
             <div class = "buy-buttons">
-                <button class = "go-to-cart" type = "button">Перейти до кошика</button>
-                <button class = "create-order" id="create-order">Оформити замовлення <img src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt=""></button>
+                {% if cart_page == 'edit_products' %}
+                    <button class = "cancel" type = "button" onclick="closeCart('')">Скасувати</button>
+                    <button class = "save" id="save" onclick="closeCart('save')">Зберегти</button>
+                {% else %}
+                    <button class = "go-to-cart" type = "button">Перейти до кошика</button>
+                    <button class = "create-order" id="create-order">Оформити замовлення <img src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt=""></button>
+                {% endif %}
             </div>  
             </div>
         {% else %}

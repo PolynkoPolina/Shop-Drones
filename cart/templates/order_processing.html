@@ -1,255 +1,231 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order</title>
+{% extends 'order_base.html' %}
+
+{% block orderlinks %}
     <link rel="stylesheet" href="{{ url_for('cart.static', filename= 'css/order-processing.css') }}">
     <link rel="stylesheet" href="{{ url_for('cart.static', filename= 'css/order.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/base.css') }}">
-</head>
-<body>
-    <header>
-            <nav class="nav-header">
-                <span class="links">
-                    <a href="/shop">Продовжити покупки</a>
-                </span>
+{% endblock orderlinks %}
 
-                <div class="logo">
-                    <a href = "/">
-                        <img src="{{ url_for('static', filename= 'icon/logo.svg') }}" alt="">
-                    </a>
-                </div>
-            </nav>
-            
-            <div id="cart-modal" class="cart-modal" style="display: none;">
-                <iframe src= "/cart" frameborder="0" class="iframe-cart"></iframe>
-            </div>
-            <div class="background-blur-div" style="display: none;" ></div>     
-        </header>
-    <main>
-        <div class="order-processing">
-            <h1>оформити замовлення</h1>
-            <hr>
-            <div class="order-box">
-                <div class="contacts">
-                    <h2>Ваші контактні дані</h2>
-                    <div class="inputs-container">
-                        <form action="">
-                            <div>
-                                <label for="lastname">Прізвище</label>
-                                <input type="text" name="lastname" id= 'lastname'placeholder="Ваше Прізвище" value = '{{current_user.lastname}}'>
-                            </div>
-                            <div>
-                                <label for="username">Ім'я</label>
-                                <input type="text" name = 'username' id="username" placeholder="Ваше Ім'я" value = '{{current_user.username}}'>
-                            </div>
-                            <div>
-                                <label for="middlename">По батькові</label>
-                                <input type="text" name = 'middlename' id="middlename" placeholder="По батькові" value = '{{current_user.middlename}}'>
-                            </div>
-                            <div>
-                                <label for="phone">Телефон</label>
-                                <input type="phone" name = 'phone' id="phone" placeholder="+38 0" value = '{{current_user.phone}}'>
-                            </div>
-                            <div>
-                                <label for="email">E-mail</label>
-                                <input type="email" name = 'email' id="email" placeholder="Ваш E-mail" value = '{{current_user.email}}'>
-                            </div>
-                            <div>
-                                <label for="comment">Коментар до замовлення</label>
-                                <textarea name="comment" id="comment" placeholder="Що б ви хотіли уточнити"></textarea>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <hr>
-                <div class="delivery">
-                    <h2>Доставка</h2>
-                    <div class="adresses-container">
-                        <form action="">
-                            <div class="address closed">
-                                <div>
-                                    <input type="radio" class = "radio-inpt-delivery" name = 'delivery-choice'>
-                                    <span>Нова Пошта до поштомату</span>
-                                    <div class="nova-post-img"></div>
-                                </div>
-                                <div class="inputs-container">
-                                    <div>
-                                        <label for="city">Місто</label>
-                                        <input type="text" name = 'city' id="city" class="city-div">
-                                        <span class="default-cities"> 
-                                             <a>Вінниця</a> 
-                                             <a>Одеса</a> 
-                                             <a>Харків</a> 
-                                             <a>Дніпро</a> 
-                                             <a>Київ</a> 
-                                             <a>Львів</a> 
-                                        </span>
-                                    </div>
-                                    <div>
-                                        <label for="post">Поштомат</label>
-                                        <input type="text" name="post" id="post">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="address closed">
-                                <div>
-                                    <input type="radio" class = "radio-inpt-delivery" name = 'delivery-choice'>
-                                    <span>Нова Пошта до відділення</span>
-                                    <div class="nova-post-img"></div>
-                                </div>
-                                <div class="inputs-container">
-                                    <div>
-                                        <label for="city">Місто</label>
-                                        <input type="text" name = 'city' id="city" class="city-div">
-                                        <span class="default-cities"> 
-                                             <a>Вінниця</a> 
-                                             <a>Одеса</a> 
-                                             <a>Харків</a> 
-                                             <a>Дніпро</a> 
-                                             <a>Київ</a> 
-                                             <a>Львів</a> 
-                                        </span>
-                                    </div>
-                                    <div>
-                                        <label for="post-office">Відділення</label>
-                                        <input type="text" id="post-office">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="address closed">
-                                <div>
-                                    <input type="radio" class = "radio-inpt-delivery" name = 'delivery-choice'>
-                                    <span>Експрес-доставка по Києву</span>
-                                </div>
-                                <div class="inputs-container">
-                                    <div>
-                                        <label for="address">Адреса</label>
-                                        <input type="text" name="address" id="address">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="address closed">
-                                <div>
-                                    <input type="radio" class = "radio-inpt-delivery" name = 'delivery-choice'>
-                                    <span>Нова Пошта кур'єром</span>
-                                    <div class="nova-post-img"></div>
-                                </div>
-                                <div class="inputs-container">
-                                    <div>
-                                        <label for="city">Місто</label>
-                                        <input type="text" name = 'city' id="city" class="city-div">
-                                        <span class="default-cities"> 
-                                             <a>Вінниця</a> 
-                                             <a>Одеса</a> 
-                                             <a>Харків</a> 
-                                             <a>Дніпро</a> 
-                                             <a>Київ</a> 
-                                             <a>Львів</a> 
-                                        </span>
-                                    </div>
-                                    <div>
-                                        <label for="address">Адреса</label>
-                                        <input type="text"  name="address">
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <hr>
-                <div class="payment">
-                    <h2>Оплата</h2>
-                    <div class="payment-container">
-                        <form action="">
-                            <div class="pay-later">
-                                <input type="radio" name="payment-choice" class="radio-inpt-payment">
-                                <span>Оплата при отриманні</span>
-                            </div>
-                            
-                            <div class="pay-now closed">
-                                <div>
-                                    <input type="radio" name="payment-choice" class="radio-inpt-payment">
-                                    <span>Отримати зараз</span>
-                                    <div class="pay-now-img visa"></div>
-                                    <div class="pay-now-img google"></div>
-                                    <div class="pay-now-img apple"></div>
-                                    <div class="pay-now-img mastercard"></div>
-                                </div>
-                                
-                                <div>
-                                    <input type="radio" name="pay-now-choice">
-                                    <span>Карткою онлайн</span>
-                                </div>
-                                <div>
-                                    <input type="radio" name="pay-now-choice">
-                                    <span>Private Pay</span>
-                                </div>
-                                <div>
-                                    <input type="radio" name="pay-now-choice">
-                                    <span>Apple Pay</span>
-                                </div>
-                                <div>
-                                    <input type="radio" name="pay-now-choice">
-                                    <span>Google Pay</span>
-                                </div>
-                            
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="order-view">
-            <div class="modal-header">
-            <h3>Замовлення</h3>
-            <button class="edit-order" id = 'edit-order' onclick="editOrder()"></button>
-        </div>
-            {% if list_products %}
-             <div class="modal-body">
-                <div class="product-container">
-                    {% for product, count in list_products %}
-                        <div id="product-{{product.id}}" class="product-id">
-                            <div  class="product">
-                                <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
-                                <div class="product-content">
-                                    <div class="name-price">
-                                        <div class="price">
-                                            <h4>{{ product.product_name }}</h4>
-                                        </div>
-                                        <p>{{product.price|string| replace('000', ' 000')}} ₴</p>
-                                    </div>
-                                    <div class="buttons">
-                                        <span class="count-{{product.id}}">{{count}}</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
+{% block ordercontent %}
+    
+    <div class="order-processing">
+        <h1>оформити замовлення</h1>
+        <hr>
+        <div class="order-box">
+            <div class="contacts">
+                <h2>Ваші контактні дані</h2>
+                <div class="inputs-container">
+                    <form action="">
+                        <div>
+                            <label for="lastname">Прізвище</label>
+                            <input type="text" name="lastname" id= 'lastname'placeholder="Ваше Прізвище" value = '{{current_user.lastname}}'>
                         </div>
-                    {% endfor %}
-                </div>  
-            <hr>
-            <div class = "prices">
-                <div class = "modalContent-description"><p>Загальна сумма</p> <p class = "global-price">{{products_price|string| replace('000', ' 000')}} ₴</p></div>
-                <div class = "modalContent-description"><p>Заощаджено</p> <p class = "discount">{{products_discount|string| replace('000', ' 000')}} ₴</p></div>
-                <div class = "modalContent-description"><p>Доставка</p> <p class = "discount">За тарифом перевізника</p></div>
-                <div class = "modalContent-description"><p>Зі знижкою</p> <p class = "final-price">{{general_products_price|string| replace('000', ' 000')}} ₴</p></div>
+                        <div>
+                            <label for="username">Ім'я</label>
+                            <input type="text" name = 'username' id="username" placeholder="Ваше Ім'я" value = '{{current_user.username}}'>
+                        </div>
+                        <div>
+                            <label for="middlename">По батькові</label>
+                            <input type="text" name = 'middlename' id="middlename" placeholder="По батькові" value = '{{current_user.middlename}}'>
+                        </div>
+                        <div>
+                            <label for="phone">Телефон</label>
+                            <input type="phone" name = 'phone' id="phone" placeholder="+38 0" value = '{{current_user.phone}}'>
+                        </div>
+                        <div>
+                            <label for="email">E-mail</label>
+                            <input type="email" name = 'email' id="email" placeholder="Ваш E-mail" value = '{{current_user.email}}'>
+                        </div>
+                        <div>
+                            <label for="comment">Коментар до замовлення</label>
+                            <textarea name="comment" id="comment" placeholder="Що б ви хотіли уточнити"></textarea>
+                        </div>
+                    </form>
+                </div>
             </div>
             <hr>
-            <div class = "buy-buttons">
-                <button class = "create-order">Підтвердити замовлення</button>
-            </div>  
+            <div class="delivery">
+                <h2>Доставка</h2>
+                <div class="adresses-container">
+                    <form action="">
+                        <div class="address closed">
+                            <div>
+                                <input type="radio" class = "radio-inpt-delivery" name = 'delivery-choice'>
+                                <span>Нова Пошта до поштомату</span>
+                                <div class="nova-post-img"></div>
+                            </div>
+                            <div class="inputs-container">
+                                <div>
+                                    <label for="city">Місто</label>
+                                    <input type="text" name = 'city' id="city" class="city-div">
+                                    <span class="default-cities"> 
+                                        <a>Вінниця</a> 
+                                        <a>Одеса</a> 
+                                        <a>Харків</a> 
+                                        <a>Дніпро</a> 
+                                        <a>Київ</a> 
+                                        <a>Львів</a> 
+                                    </span>
+                                </div>
+                                <div>
+                                    <label for="post">Поштомат</label>
+                                    <input type="text" name="post" id="post">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="address closed">
+                            <div>
+                                <input type="radio" class = "radio-inpt-delivery" name = 'delivery-choice'>
+                                <span>Нова Пошта до відділення</span>
+                                <div class="nova-post-img"></div>
+                            </div>
+                            <div class="inputs-container">
+                                <div>
+                                    <label for="city">Місто</label>
+                                    <input type="text" name = 'city' id="city" class="city-div">
+                                    <span class="default-cities"> 
+                                        <a>Вінниця</a> 
+                                        <a>Одеса</a> 
+                                        <a>Харків</a> 
+                                        <a>Дніпро</a> 
+                                        <a>Київ</a> 
+                                        <a>Львів</a> 
+                                    </span>
+                                </div>
+                                <div>
+                                    <label for="post-office">Відділення</label>
+                                    <input type="text" id="post-office">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="address closed">
+                            <div>
+                                <input type="radio" class = "radio-inpt-delivery" name = 'delivery-choice'>
+                                <span>Експрес-доставка по Києву</span>
+                            </div>
+                            <div class="inputs-container">
+                                <div>
+                                    <label for="address">Адреса</label>
+                                    <input type="text" name="address" id="address">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="address closed">
+                            <div>
+                                <input type="radio" class = "radio-inpt-delivery" name = 'delivery-choice'>
+                                <span>Нова Пошта кур'єром</span>
+                                <div class="nova-post-img"></div>
+                            </div>
+                            <div class="inputs-container">
+                                <div>
+                                    <label for="city">Місто</label>
+                                    <input type="text" name = 'city' id="city" class="city-div">
+                                    <span class="default-cities"> 
+                                        <a>Вінниця</a> 
+                                        <a>Одеса</a> 
+                                        <a>Харків</a> 
+                                        <a>Дніпро</a> 
+                                        <a>Київ</a> 
+                                        <a>Львів</a> 
+                                    </span>
+                                </div>
+                                <div>
+                                    <label for="address">Адреса</label>
+                                    <input type="text"  name="address">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-        {% endif %}
-        
+            <hr>
+            <div class="payment">
+                <h2>Оплата</h2>
+                <div class="payment-container">
+                    <form action="">
+                        <div class="pay-later">
+                            <input type="radio" name="payment-choice" class="radio-inpt-payment">
+                            <span>Оплата при отриманні</span>
+                        </div>
+                        
+                        <div class="pay-now closed">
+                            <div>
+                                <input type="radio" name="payment-choice" class="radio-inpt-payment">
+                                <span>Отримати зараз</span>
+                                <div class="pay-now-img visa"></div>
+                                <div class="pay-now-img google"></div>
+                                <div class="pay-now-img apple"></div>
+                                <div class="pay-now-img mastercard"></div>
+                            </div>
+                            
+                            <div>
+                                <input type="radio" name="pay-now-choice">
+                                <span>Карткою онлайн</span>
+                            </div>
+                            <div>
+                                <input type="radio" name="pay-now-choice">
+                                <span>Private Pay</span>
+                            </div>
+                            <div>
+                                <input type="radio" name="pay-now-choice">
+                                <span>Apple Pay</span>
+                            </div>
+                            <div>
+                                <input type="radio" name="pay-now-choice">
+                                <span>Google Pay</span>
+                            </div>
+                        
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-    </main>
-    <footer>
-         <img class = 'logo-footer' src="{{ url_for('static', filename= 'icon/logo_footer.svg') }}" alt="">
-            <hr>
-            <p class="drones-footer">© 2025 Drones Всі права захищені.</p>
-    </footer>
+    </div>
+    <div class="order-view">
+        <div class="modal-header">
+        <h3>Замовлення</h3>
+        <button class="edit-order" id = 'edit-order' onclick="editOrder()"></button>
+    </div>
+        {% if list_products %}
+        <div class="modal-body">
+            <div class="product-container">
+                {% for product, count in list_products %}
+                    <div id="product-{{product.id}}" class="product-id">
+                        <div  class="product">
+                            <img src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}" width="200px" height="200px">
+                            <div class="product-content">
+                                <div class="name-price">
+                                    <div class="price">
+                                        <h4>{{ product.product_name }}</h4>
+                                    </div>
+                                    <p>{{product.price|string| replace('000', ' 000')}} ₴</p>
+                                </div>
+                                <div class="buttons">
+                                    <span class="count-{{product.id}}">{{count}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                {% endfor %}
+            </div>  
+        <hr>
+        <div class = "prices">
+            <div class = "modalContent-description"><p>Загальна сумма</p> <p class = "global-price">{{products_price|string| replace('000', ' 000')}} ₴</p></div>
+            <div class = "modalContent-description"><p>Заощаджено</p> <p class = "discount">{{products_discount|string| replace('000', ' 000')}} ₴</p></div>
+            <div class = "modalContent-description"><p>Доставка</p> <p class = "discount">За тарифом перевізника</p></div>
+            <div class = "modalContent-description"><p>Зі знижкою</p> <p class = "final-price">{{general_products_price|string| replace('000', ' 000')}} ₴</p></div>
+        </div>
+        <hr>
+        <div class = "buy-buttons">
+            <a href="/order/success"><button class = "create-order">Підтвердити замовлення</button></a>
+        </div>  
+        </div>
+    {% endif %}
+
+    </div>
+{% endblock ordercontent %}
+
+{% block orderscript %}
     <script src="../cart/static/js/orderProcessing.js"></script>
-</body>
-</html>
+{% endblock orderscript %}
+

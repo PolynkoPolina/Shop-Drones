@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    {% block orderlinks %}
+    {% endblock orderlinks %}
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('cart.static', filename= 'css/order_base.css') }}">
+</head>
+<body>
+    <header>
+            <nav class="nav-header">
+                <span class="links">
+                    <a href="/shop">Продовжити покупки</a>
+                </span>
+
+                <div class="logo">
+                    <a href = "/">
+                        <img src="{{ url_for('static', filename= 'icon/logo.svg') }}" alt="">
+                    </a>
+                </div>
+            </nav>
+            
+            <div id="cart-modal" class="cart-modal" style="display: none;">
+                <iframe src= "/cart" frameborder="0" class="iframe-cart"></iframe>
+            </div>
+            <div class="background-blur-div" style="display: none;" ></div>     
+    </header>
+    <main>
+        {% block ordercontent %}
+            
+        {% endblock ordercontent %}
+    </main>
+    <footer>
+         <img class = 'logo-footer' src="{{ url_for('static', filename= 'icon/logo_footer.svg') }}" alt="">
+        <hr>
+        <p class="drones-footer">© 2025 Drones Всі права захищені.</p>
+    </footer>
+    {% block orderscript %}
+        
+    {% endblock orderscript %}
+</body>
+</html>

@@ -1,5 +1,6 @@
 body{
     overflow: hidden;
+    padding-bottom: 1rem;
 }
 
 main{
@@ -27,10 +28,16 @@ main{
 }
 
 .product-container{
-    height: 23.6rem;
-    width: 96vw;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+.cart{
+    height: 23.6rem;
+}
+
+.edit{
+    height: fit-content;
 }
 
 .product{
@@ -100,7 +107,7 @@ main{
     height: 2.5rem;
     background-color: #FFFFFF;
     border: 0.1vh solid var(--lightgrey);
-    font-size: 4vh;
+    font-size:2rem;
     color: var(--bluegrey);
 }
 
@@ -141,7 +148,7 @@ main{
     font-size: 1.25rem;
 }
 
-.go-to-cart, .create-order, .empty-cart-button{
+.go-to-cart, .create-order, .empty-cart-button, .cancel, .save{
     font-family: GT Walsheim Pro;
     display: flex;
     justify-content: center;
@@ -154,7 +161,7 @@ main{
     font-size: 0.8rem;
 }
 
-.go-to-cart, .empty-cart-button{
+.go-to-cart, .empty-cart-button, .cancel{
     width: 33.3vw;
     height: 2.6rem;
     background-color: #FFFFFF;
@@ -162,13 +169,23 @@ main{
     font-weight: bold;
     color: var(--darkblue);
 }
+.cancel{
+    width: 18.8vw;
+    height: 2.5rem;
+}
 
-.create-order{
+
+.create-order, .save{
     width: 40.3vw;
     height: 6.7vh;
     background-color: var(--darkblue);
     border: none;
     color: #FFFFFF;
+}
+
+.save{
+    width: 16.4vw;
+    height: 2.5rem;
 }
 
 .buy-buttons{

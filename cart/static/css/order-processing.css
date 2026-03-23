@@ -1,108 +1,3 @@
-header{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    overflow: hidden;
-    z-index: 1;
-}
-
-body{
-    position: relative;
-    z-index: 1;
-}
-
-
-header a:hover{
-    transform: scale(1.05);
-}
-
-main{
-    width: 100vw;
-    display: flex;
-    padding: 9rem 2vw 7.8rem 2vw;
-    gap: 1vw;
-}
-
-p, h1, h2, span, label{
-    color: var(--bluegrey);
-}
-
-.background-blur-div{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(12, 18, 42, 70%);
-    backdrop-filter: blur(10px);
-    z-index: 250;
-}
-
-.nav-header{
-    position: fixed;
-    top: 3vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90vw;
-    height: 4rem;
-    padding: 0.625rem 43vw 0.625rem 40px;
-    border: 1px solid #E4E4E7;
-    border-radius: 62px;
-    background-color: rgba(255, 255, 255, 50%);
-    backdrop-filter: blur(10px);
-}
-
-.links{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 15vw;
-}
-
-.links a{
-    font-size: 1.75vh;
-    color: #9EA0AA;
-    text-transform: uppercase;
-}
-
-.links a:hover{
-    color: #0C122A;
-}
-
-footer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 13.125rem;
-    background-color: #CDD5DD;
-    width: 100vw;
-    overflow-y: hidden;
-    bottom: 0;
-    gap: 2rem;
-}
-
-hr{
-    height: 1px;
-    width: 95vw;
-    border: 0.1vh solid #FFFFFF;
-}
-
-.drones-footer{
-    color: #9EA0AA;
-    height: 1.125rem;
-}
-
-.logo-footer{
-    height: 3.2rem;
-}
-
-
-/* ------------------------ */
-
 .order-processing{
     position: relative;
     width: 46vw;
@@ -255,15 +150,14 @@ hr{
 }
 
 
-.iframe-cart, .iframe-auth-registr{
+.iframe-cart{
     width: 100%;
-    height: 100%;
     border-radius: 2rem;
     position: relative;
 }
 
 .cart-modal{
-    height: 38rem;
+    height:fit-content;
     width: 38vw;
     z-index: 3;
     position: fixed;

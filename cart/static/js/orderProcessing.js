@@ -2,6 +2,8 @@ const arrayAddressInpt = Array.from(document.querySelectorAll('.radio-inpt-deliv
 const cart = document.getElementById('cart-modal');
 const arrayPaymentInpt = Array.from(document.querySelectorAll('.radio-inpt-payment'));
 const backgroundBlurDiv = window.parent.document.querySelector('.background-blur-div');
+const iframe = document.querySelector('.iframe-cart');
+
 
 
 arrayAddressInpt.forEach(
@@ -38,6 +40,7 @@ arrayAddressInpt.forEach(
 function editOrder(){
     cart.style.display = 'flex';
     backgroundBlurDiv.style.display = 'flex';
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
 }
 
 arrayPaymentInpt.forEach(
