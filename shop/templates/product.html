@@ -10,14 +10,13 @@
 
 
 {% block header %}
-    <img src="{{ url_for('shop.static', filename = 'images/Ellipse.png') }}" alt="" class = "ellipse">
+<img src="{{ url_for('shop.static', filename = 'images/Ellipse.png') }}" alt="" class = "ellipse">
     <div class = "description">
         <h1>{{product.product_name}}</h1>
         {% if product.product_name == "Тепловізор Pulsar Telos LRF XQ35" %}            
             <p>Pulsar Telos LRF XQ35 – тепловізійний монокуляр з лазерним далекоміром. Перед вами наймолодший представник інноваційної лінійки продуктів від світового гіганта індустрії Yukon Advanced Optics Worldwide із заявленою дальністю виявлення в 1300 метрів.</p>
         {% else %}
-        <P>100-мегапіксельна основна камера Hasselblad, великі CMOS-телекамери, нескінченний карданний шарнір з можливістю обертання на 360°, всеспрямоване зондування перешкод 0,1-Lux Nightscape, передача відео O4+.</P>
-                
+            <P>100-мегапіксельна основна камера Hasselblad, великі CMOS-телекамери, нескінченний карданний шарнір з можливістю обертання на 360°, всеспрямоване зондування перешкод 0,1-Lux Nightscape, передача відео O4+.</P>
         {% endif %}
     </div>
     <img class="product-img" src="{{ url_for('shop.static', filename= 'images/for_products_pages/' + product.product_name. replace(' ', '_') + '.png') }}" alt="{{product.product_name}}">
@@ -26,24 +25,141 @@
             <img src="{{ url_for('shop.static', filename= 'images/for_products_pages/' + product.product_name. replace(' ', '_') + '.png') }}" alt="{{product.product_name}}">
             <div class = "price">
                 <p>{{product.product_name}}</p>
-                <p>{{product.price}}</p>
+                <p>{{product.price|string| replace('000', ' 000')}} ₴</p>
             </div>
         </div>
         <div class = "product-buy">
-            <button type="button" class="buy" id="{{product.id}}"><img src="{{ url_for('shop.static', filename= 'icons/cart.svg') }}" alt=""></button>
-            <button>Замовити <img src="{{ url_for('home.static', filename= 'icon/arrow.svg') }}" alt=""></button>
+            <button type="button" class="buy" id="{{product.id}}"></button>
+            <button class = "order">Замовити <img src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt=""></button>
         </div>
     </div>
-    
 {% endblock %}
 
 {% block content %}
-    {% if product.product_name == "Тепловізор Pulsar Telos LRF XQ35" %}
-        <p>sdkjsdjksjkdjklsdf</p>
-    {% else %}
-    
-    {% endif %}
-    <div>
+    <div class = "main-div">
+        <div class = div-1>
+            <div class = "title">
+                    {% if product.product_name == "DJI Mini 4 Pro" %}
+                        <h1>Володійте кожним кутом</h1>
+                        <p>Представляємо вдосконалену систему з трьома камерами, де кожен об'єктив має свої переваги, створюючи виняткові зображення - від широких ширококутних пейзажів до детальних телефото-знімків крупним планом. Усі три камери оснащені функцією Dual Native ISO Fusion, яка бездоганно поєднує переваги високих і низьких значень ISO для захоплення приголомшливих деталей, яких неможливо досягти за допомогою традиційних рішень. </p>
+                        <p>Крім того, ви можете розкрити свій творчий потенціал завдяки можливості створення знімків у форматі RAW з високою роздільною здатністю (до 5 кадрів), а також таким функціям, як «Вільні панорами» та «Фокусування на об'єкті», які доступні на всіх камерах.</p>
+                        <img src="{{ url_for('shop.static', filename= 'images/for_products_pages/big_drone.png') }}" alt="">
+                    {% else %}
+                        <h1>Майбутнє готове. Модернізована продуктивність</h1>
+                        <p>Бездоганна якість термографічної картинки дозволить точно ідентифікувати ціль, а лазерний далекомір допоможе дізнатися точну відстань до неї. Під капотом традиційний набір мультимедійних опцій по запису відео, високошвидкісний модуль Wi-Fi, великий набір колірних палітр, режим PIP і багато іншого. </p>
+                        <p>Завдяки оновленій концепції корпусу, управляти приладом однаково зручно як правшам, так і лівшам. Велика батарея контейнерного типу забезпечить до 8,5 годин автономної роботи. Pulsar Telos LRF XQ35 відгуки власників має тільки позитивні.</p>
+                        <p>Монокуляр повністю герметичний і готовий до роботи в найскладніших умовах експлуатації. Дану модель можна сміливо використовувати в якості військового тепловізора.</p>
+                        <img src="{{ url_for('shop.static', filename= 'images/for_products_pages/man.png') }}" alt="">
+                    {% endif %}
+            </div>
+        </div>
+        <div class = "div-2">
+            {% if product.product_name == "DJI Mini 4 Pro" %}
+                <div class = "main-cam">
+                    <h1>Основна камера 4/3 CMOS Hasselblad Hasselblad</h1>
+                    <p>У ретельно розробленій 4/3 CMOS-камері Hasselblad використовується абсолютно новий 100-мегапіксельний сенсор і відома технологія Hasselblad Natural Color Solution (HNCS), що забезпечує виняткову точність передачі кольору. </p>
+                    <p>Вона створює захоплюючі 100-мегапіксельні зображення з високою деталізацією та чіткістю, пропонуючи безпрецедентну гнучкість у пост-обробці. Конструкція об'єктива була перероблена відповідно до вимог 100-мегапіксельної матриці, що забезпечує неймовірну різкість.</p>
+                    
+                </div>
+                <img src="{{ url_for('shop.static', filename= 'images/for_products_pages/black_drone.png') }}" alt="">
+            {% else %}
+                <div class = "main-cam">
+                    <h1>Оновлений пристрій</h1>
+                    <p>Компоненти та п  рограмні рішення у високотехнологічних галузях з кожним роком удосконалюються. Теплобачення не є винятком. Згодом вибір та переваги користувачів змінюються. Крім того, з досвідом у користувачів виробилися власні вимоги до можливостей та роботи пристрою. Тепловізійні монокуляри Telos створені з урахуванням технологій та потреб користувачів. </p>
+                    <p>Телос - перша лінійка тепловізійних приладів на ринку з можливістю технічного оновлення за бажанням клієнта. Стати власником Телоса та отримайте можливість гнучко та вигідно покращувати його на довгі роки. Оснастіть його потужною оптикою, сенсором і дисплеєм з більш високою роздільною здатністю, більш ефективною та функціональною електронікою,</p>                    
+                </div>
+                <img src="{{ url_for('shop.static', filename= 'images/for_products_pages/camera.png') }}" alt="">
+            {% endif %}
+        </div>
+        <div class = "div-3">
+            {% if product.product_name == "DJI Mini 4 Pro" %}
+                <img src="{{ url_for('shop.static', filename= 'images/for_products_pages/flying_drone.png') }}" alt="">
+                <div class = "fly-time">
+                    <h1>51-хв час польоту</h1>
+                    <p>Pulsar Image Boost забезпечує тепловізору Telos найвищий рівень деталізації, чіткості та контрастності завдяки набору оригінальних алгоритмів обробки зображень. Тепловізійні монокуляри Telos візуалізують складні сцени у широкому діапазоні напівтонів з рівномірним виділенням малоконтрастних об'єктів, таких як небо, трава та водні поверхні. </p>
+                    <p>Програмна деталізація та різкість об'єктів на різних відстанях робить теплове зображення високоінформативним. </p>
+                </div>   
+            {% else %}
+                <img src="{{ url_for('shop.static', filename= 'images/for_products_pages/wolf.png') }}" alt="">
+                <div class = "fly-time">
+                    <h1>Удосконалена технологія підвищення якості зображення Pulsar</h1>
+                    <p>Pulsar Image Boost забезпечує тепловізору Telos найвищий рівень деталізації, чіткості та контрастності завдяки набору оригінальних алгоритмів обробки зображень. Тепловізійні монокуляри Telos візуалізують складні сцени у широкому діапазоні напівтонів з рівномірним виділенням малоконтрастних об'єктів, таких як небо, трава та водні поверхні.</p>
+                    <p>Програмна деталізація та різкість об'єктів на різних відстанях робить теплове зображення високоінформативним. </p>
+                </div>   
+            {% endif %}
+        </div>
+        <div class = "div-4">
+            {% if product.product_name == "DJI Mini 4 Pro" %}
+                <div class = "upper-desc">
+                    <h1>До 512 ГБ вбудованої пам'яті</h1>
+                    <p>Стандартна версія DJI Mavic 4 Pro поставляється з 64 ГБ вбудованої пам'яті [14], тому ви можете відразу ж почати зйомку без зовнішньої карти пам'яті. Mavic 4 Pro 512GB в комплектації Creator Combo має 512 ГБ високошвидкісної вбудованої пам'яті [15],</p>
+                </div>
+                <div class = "block-4">
+                    <div class = "blocks">
+                        <h1>ALL-I 4:2:2</h1>
+                        <p>Кодування</p>
+                    </div>
+                    <div class = "blocks">
+                        <h1>512 GB</h1>
+                        <p>UFS Сховище</p>
+                    </div>
+                    <div class = "blocks">
+                        <h1>64 GB</h1>
+                        <p>eMMC Storage</p>
+                    </div>
+                </div>
+                <img src="{{ url_for('shop.static', filename= 'images/for_products_pages/techno_drone.png') }}" alt="">
+            {% else %}
+                <div class = "upper-desc">
+                    <h1>Регулятор масштабування кільця об'єктива</h1>
+                    <p>Ідеально налаштувати зображення в Телос можна однією рукою - кільця фокусування і плавного зуму розташовані на об'єктиві в класичній компонуванні, одне за одним, як в об'єктивах професійних фотоапаратів. Послідовне розташування кілець дозволяє швидко та з мінімальними зусиллями отримати чітке зображення з необхідним збільшенням.</p>
+                </div>
+                <div class = "block-4">
+                    <div class = "blocks">
+                        <h1>до 1000 м</h1>
+                        <div class = "column">
+                            <p>Точний лазер із </p>
+                            <p>дальністю дії<p>
+                        </div>
+                    </div>
+                    <div class = "blocks">
+                        <h1>від -25 до +40 °C</h1>
+                        <p>Діапазон температур</p>
+                    </div>
+                    <div class = "blocks">
+                        <h1>LPS 7i</h1>
+                        <div class = "column">
+                            <p>eMMC понад 8</p>
+                            <p>годин роботи<p>
+                        </div>
+                    </div>
+                </div>
+                <img src="{{ url_for('shop.static', filename= 'images/for_products_pages/techno_camera.png') }}" alt="">
+            {% endif %}
+        </div>
+        <div class = "similar-products">
+            <h1>Схожі товари</h1>
+            {% if products %}
+            <div class="catalog">
+                {% for product in products[:4] %}
+                    
+                    <div class = "catalog-product">
+                        <img class = "catalog-img" src="{{ url_for('shop.static', filename= 'images/products/' + product.product_name + '.png') }}" alt="{{product.product_name}}">                                         <div class = "catalog-price">
+                        <h2>{{product.product_name}}</h2>
+                            <div class="discount-container">
+                                <p class = "discount">{{product.price}}$</p>
+                                <p class="price-with-discount">{{product.price}}$</p>
+                            </div>
+                            <button type="button" class="buy-icon" id="{{product.id}}"><img src="{{ url_for('shop.static', filename= 'icons/cart.svg') }}" alt=""></button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            {% endif %} 
+            <a href="/shop"><button class = "view-all-button">Дивитись всі <img class= "catalog-arrow" src="{{ url_for('home.static', filename= 'icon/arrow_white.svg') }}" alt=""></button></a>
+        </div>
+    </div>
         
     </div>
+ 
 {% endblock content %}

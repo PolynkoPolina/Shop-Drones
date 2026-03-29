@@ -1,6 +1,6 @@
 header{
     padding-top: 20vh;
-    height:100vh;
+    height:120vh;
     background-color: #CDD5DD;
     z-index: 100;
 }
@@ -16,7 +16,7 @@ header{
 }
 
 main{
-    height: 100vh;
+    height: auto;
 }
 
 header h1{
@@ -29,10 +29,10 @@ header h1{
 
 .description{
     text-align: center;
-    width: 45vw;
+    width: 47vw;
     gap: 2vh;
     color: #3D4155;
-    margin-bottom: 50vh;
+    margin-bottom: 65vh;
 }
 
 .product-img{
@@ -43,30 +43,56 @@ header h1{
     object-fit: contain;
 }
 
-.product:hover .buy{
-    opacity: 1;
-}
-
 .buy{
-    width: 3vw;
-    height: 6vh;
+    width: 2.75rem;
+    height: 2.75rem;
     background: #FFFFFF;
     border-radius: 50%;
-    border: 0.2vh solid .0C122A;  
-    opacity: 0;
-    margin-top: 3vh;
+    border: 0.2vh solid #0C122A;  
+    background-image: url(../icons/cart.svg);
+    background-size: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.order{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:8vw;
+    height: 2.7rem;
+    padding:1rem;
+    border:none;
+    border-radius:2rem;
+    background:#0c1b3a;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    text-transform: uppercase;
+}
+
+.order img{
+    height: 1rem;
+    width: auto;
 }
 
 .product{
-    position: absolute;
+    position: fixed;
     background-color: white;
     right: 3vw;
-    bottom: 25vh;
+    bottom: 20vh;
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
+    border: 0.2vh solid white;
+    gap: 1.5rem;
+    padding: 1rem 0.75rem 1rem 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0.1vh 0.07vh 1.3vh rgb(19, 19, 19, 0.3);
 }
 
-.product img{
+.upper img{
     width: 3vw;
     height:6vh;
     margin-top: 1vh;
@@ -78,6 +104,254 @@ header h1{
 }
 
 .price{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin-top: 1vh;
     margin-left: 1vh;
+    margin-right: 2vw;
+}
+
+.product-buy{
+    display: flex;
+    justify-content: space-between;
+}
+
+.div-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+}
+
+.title{
+    margin-top: 30vh;
+    width: 43vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+    text-align: center;
+}
+
+.title h1{
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.main-div{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.div-2{
+    margin-top: 10vh;
+    margin-left: 5vw;
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.div-2 img{
+    width: 46vw;
+    height: 53vh;
+    
+}
+
+.main-cam{
+    width: 43vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2vh;
+}
+
+.main-cam h1{
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.div-3{
+    width: 90vw;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3vw;
+}
+
+.fly-time{
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.fly-time h1{
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.div-4{
+    margin-top: 10vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+}
+
+.upper-desc{
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    text-align: center;
+}
+
+.upper-desc h1{
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+.blocks{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2vh;
+}
+
+.blocks h1{
+    font-size: 3rem;
+    color: #6D717F;
+}
+
+.block-4{
+    display: flex;
+    gap: 10vw;
+}
+
+.div-1 p, .div-2 p, .div-3 p, .div-4 p {
+    color: #6D717F;
+}
+
+
+.similar-products{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.similar-products h1{
+    color: #CDD5DD;
+    margin-top: 13vh;
+    margin-top: 13vh;
+    padding-bottom: 8vh;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.catalog-product:hover{
+    transform: translateY(-2vh);
+    box-shadow: 0.1vh 0.07vh 1.3vh rgb(19, 19, 19, 0.3);
+}
+
+.buy-icon{
+    position: absolute;
+    width: 3vw;
+    height: 6vh;
+    background: #FFFFFF;
+    border-radius: 50%;
+    border: 0.2vh solid .0C122A;  
+    opacity: 0;
+    right: 3vw
+}
+
+.catalog:hover .buy-icon{
+    opacity: 1;
+}
+
+.catalog{
+    display: flex;
+    gap: 1.6vw;
+}
+
+.catalog-h1{
+    color: #CDD5DD;
+    margin-top: 13vh;
+    padding-bottom: 5vh;
+    font-family: GT Walsheim Pro UltraBold;
+}
+
+.catalog-container{
+    display: flex;
+    justify-content: center;
+    gap: 5vh;
+}
+
+
+.catalog-product{
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    align-items: center;
+    justify-content: start;
+    width: 22.3vw;
+    height: 45vh;
+    transition: transform 0.9s;
+    border-radius: 2vh;
+}
+
+.catalog-img{
+    width: 14.3vw;
+    height: 31.5vh;
+}
+
+.catalog-price{
+    display: flex;
+    flex-direction: column;
+    margin-right: 12vw;
+    gap: 5vh;
+}
+
+.discount-container{
+    display: flex;
+    gap: 1vw;
+}
+
+.discount{
+    text-decoration: line-through;
+}
+
+.price-with-discount{
+    color: #B62D11;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.view-all-button{
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16vw;
+    height: 7vh;
+    background-color: #0C122A;
+    color: white;
+    border-radius: 6.25rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.catalog-arrow{
+    width: 1.6vw;
+    height: 2.8vh;
 }

@@ -50,20 +50,7 @@ def render_shop():
         'message': message,
         'list_product': list_products,
     }
-    
-# @is_admin(redirect_url= '/shop')
-# def delete_product():
-#     product_id = int(flask.request.args.get('id'))
-#     model_product : Product = Product.query.get(product_id) # object_sqlite_product | None
-    
-#     if model_product is not None:
-#         DATABASE.session.delete(model_product)
-#         DATABASE.session.commit()
-#         os.remove(path= abspath(join(__file__, "..", "static", "images", "products", f"{model_product.product_name}.png")))
 
-# Створити нову функцію видалення продукту для AJAX 
-# тут пишемо код
-# 
 def add_product_id_cookies():
     try:
         # Отримуємо по запросу користувача id продукту, який додамо до cookie файлів
@@ -108,18 +95,13 @@ def filter():
             'is_admin': current_user.is_admin if current_user.is_authenticated else False,
         }
     else:
-        # Написати віправку всіх продуктів якщо фільтр був "all" 
+        
         pass
 
 def delete():
     data_type = flask.request.get_data(as_text = True)
-    # model_product : Product = Product.query.get(int(data_type)) # object_sqlite_product | None
     print(data_type)
-    # if model_product is not None:
-        # DATABASE.session.delete(model_product)
-        # DATABASE.session.commit()
-        # os.remove(path= abspath(join(__file__, "..", "static", "images", "products", f"{model_product.product_name}.png")))
-
+    
     return {
         'success': True
     }
@@ -128,7 +110,8 @@ def render_product_page():
     flask.session['cart_page'] = 'cart'
     product_id = flask.request.args.get("product_id")
     product = Product.query.get(product_id)
+    products= Product.query.filter_by(type_product = 'drone').all()
     if product.product_name == "DJI Mini 4 Pro" or product.product_name == "Тепловізор Pulsar Telos LRF XQ35":
-        return flask.render_template('product.html', product = product)
+        return flask.render_template('product.html', product = product, products= products)
     else:
         return {'error': 'page doesn`t exist'}
