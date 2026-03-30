@@ -235,7 +235,8 @@ header h1{
     gap: 10vw;
 }
 
-.div-1 p, .div-2 p, .div-3 p, .div-4 p {
+
+.div p {
     color: #6D717F;
 }
 
@@ -354,4 +355,15 @@ header h1{
 .catalog-arrow{
     width: 1.6vw;
     height: 2.8vh;
+}
+
+.div{
+    transform:translateY(6vh);
+    opacity: 0;
+    transition: all 0.9s;
+}
+
+.visible{
+    transform: translateY(0);
+    opacity: 1;
 }

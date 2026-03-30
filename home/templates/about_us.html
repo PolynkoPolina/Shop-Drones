@@ -11,7 +11,7 @@
 
 {% block content %}
 
-    <div class = "about_us">
+    <div class = "about_us div">
         <div class = "about_us_text"> 
             <h1>Про НАС</h1>
             <div>
@@ -26,7 +26,7 @@
         </div>
     </div>  
 
-    <div class = "our_mission">
+    <div class = "our_mission div">
         <div class = "our_mission_text">
             <h3 class = "title">Наша місія</h3>
             <div>
@@ -41,7 +41,7 @@
         </div>
     </div>
 
-    <div class = "team">
+    <div class = "team div">
         <div>
             <img src="{{ url_for('home.static', filename= 'media/images/about_window.png')}}" alt="">
         </div>
@@ -57,5 +57,8 @@
         </div>
     </div>
         
-
 {% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('home.static', filename= 'js/animation.js') }}"></script>
+{% endblock scripts %}

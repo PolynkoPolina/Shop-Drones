@@ -1,4 +1,4 @@
-const newDrones = document.querySelectorAll('.new-drones');
+const boxes = document.querySelectorAll('.div')
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -8,5 +8,5 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.3 });
 
-newDrones.forEach(drone => observer.observe(drone));
+boxes.forEach(entry => observer.observe(entry));
 

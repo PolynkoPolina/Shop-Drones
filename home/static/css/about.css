@@ -66,3 +66,15 @@ h3{
 .our_mission img, .team img{
     width: 40vw;
 }
+
+
+.div{
+    transform:translateY(6vh);
+    opacity: 0;
+    transition: all 0.9s;
+}
+
+.visible{
+    transform: translateY(0);
+    opacity: 1;
+}

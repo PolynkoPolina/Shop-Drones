@@ -37,7 +37,7 @@
 
 {% block content %}
     <div class = "main-div">
-        <div class = div-1>
+        <div class = 'div-1 div '>
             <div class = "title">
                     {% if product.product_name == "DJI Mini 4 Pro" %}
                         <h1>Володійте кожним кутом</h1>
@@ -53,7 +53,7 @@
                     {% endif %}
             </div>
         </div>
-        <div class = "div-2">
+        <div class = "div-2 div ">
             {% if product.product_name == "DJI Mini 4 Pro" %}
                 <div class = "main-cam">
                     <h1>Основна камера 4/3 CMOS Hasselblad Hasselblad</h1>
@@ -71,7 +71,7 @@
                 <img src="{{ url_for('shop.static', filename= 'images/for_products_pages/camera.png') }}" alt="">
             {% endif %}
         </div>
-        <div class = "div-3">
+        <div class = "div-3 div">
             {% if product.product_name == "DJI Mini 4 Pro" %}
                 <img src="{{ url_for('shop.static', filename= 'images/for_products_pages/flying_drone.png') }}" alt="">
                 <div class = "fly-time">
@@ -88,7 +88,7 @@
                 </div>   
             {% endif %}
         </div>
-        <div class = "div-4">
+        <div class = "div-4 div ">
             {% if product.product_name == "DJI Mini 4 Pro" %}
                 <div class = "upper-desc">
                     <h1>До 512 ГБ вбудованої пам'яті</h1>
@@ -163,3 +163,7 @@
     </div>
  
 {% endblock content %}
+
+{% block scripts %}
+    <script src="{{ url_for('shop.static', filename= 'js/animation.js') }}"></script>
+{% endblock scripts %}
